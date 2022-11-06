@@ -1,0 +1,10 @@
+<article id='{{ partial "anchor.html" . }}' class="p-2 p-xl-5 pt-xl-">
+    <header class="post-header">
+        <h2 class="post-title">{{ .Title }}</h2>
+    </header>
+    <section class="post-content">
+        <div class="container-fluid d-flex p-0 mt-md-4">
+            {{ .Content }}
+        </div>
+    </section>
+</article>

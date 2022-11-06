@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{/*  index page  */}}
+<header id="site-header-image" class="img-fluid vh-100" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
+    <div class="h-100 align-items-center justify-content-center d-flex">
+        <div id="site-head-content" class="text-center">
+
+            {{ with .Params.header_headline }}<h1 id="site-title">{{ . }}</h1>{{ end }}
+            {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
+
+            <div class="nav-bar mt-4">
+            {{ range where .Pages ".Params.header_menu" "eq" true }}
+                    <a class='btn btn-light site-menu' href='#{{if (isset .Params "url")}}{{ .Params.url }}{{else}}{{ .Title | anchorize }}{{end}}'>{{ .Title }}</a>
+            {{ end }}
+            </div>
+            {{ with .GetPage "uebermich/_index.md" }}
+                <a href='#{{ if (isset .Params "url") }}{{ .Params.url }}{{ else }}{{ .Title | anchorize }}{{ end }}'>
+                    <i id='header-arrow' class="fa fa-angle-down"></i>
+                </a>
+            {{ end }}
+        </div>
+    </div>
+</header>
+{{/*  load main content as onepager  */}}
+{{ template "onepager.html" . }}
+{{ end }}

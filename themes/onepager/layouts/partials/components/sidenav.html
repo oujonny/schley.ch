@@ -1,0 +1,10 @@
+<div id="side-div" class="col-md-2 p-0 d-none d-md-block">
+    <div id="side-navbar" class="sticky-top flex-column align-items-stretch pe-4">
+        <div class="side-nav d-grid gap-1 ps-5">
+        {{ range .Pages }}
+            <a class='nav-link' href='#{{ partial "anchor.html" . }}'>{{ .Title }}</a>
+            {{/*  <a class='' href='#{{if (isset .Params "url")}}{{ .Params.url }}{{else}}{{ .Title | anchorize }}{{end}}'>{{ .Title }}</a>  */}}
+        {{ end }}
+        </div>
+    </div>
+</div>

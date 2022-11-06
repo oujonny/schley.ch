@@ -1,0 +1,56 @@
+<article id='{{ partial "anchor.html" . }}' class="p-2 p-xl-5 pt-xl-">
+    <header class="post-header">
+        <h2 class="post-title">{{ .Title }}</h2>
+    </header>
+    <section class="post-content">
+        <div class="container-fluid d-flex p-0 mt-md-4">
+            <div class="row">
+                {{ if isset .Page.Params "page_image" }}
+                    {{ if eq .Page.Params.page_image.position "left" }}
+                        <div class="col-md-5">
+                            {{ partial "components/page_image.html" . }}
+                        </div>
+                        <div class="col-md-7">
+                            {{ .Content }}
+                        </div>
+                    {{ else }}
+                        <div class="col-md-7 p-4 shadow">
+                            {{ .Content }}
+                        </div>
+                        <div class="col-md-5">
+                            {{ partial "components/page_image.html" . }}
+                        </div>
+                    {{ end }}
+                {{ else }}
+                    <div class="col-12 p-4 pe-2 shadow">
+                        {{ .Content }}
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <div id='{{ partial "anchor.html" . }}-accordion' class="container-fluid p-0 mt-5 d-grid gap-3">
+            <div class="row">
+                {{ range $index, $element := .Pages }}
+                    <div class="col-{{ math.Floor (div 12 (len .Parent.Pages)) }} p-0 pe-2" role="group">
+                        <button class="btn-subpage btn shadow {{ if (ne $index 0) }}collapsed{{ end }}" type="radio" data-bs-toggle="collapse" data-bs-target='#{{ partial "anchor.html" . }}'>
+                            {{ .Title }}
+                        </button>
+                    </div>
+                {{ end }}
+            </div>
+            <div class="row">
+                {{ range $index, $element := .Pages }}
+                    <div class="col-12 p-0 pe-2">
+                        <div class="subpage p-4 shadow collapse {{ if (eq $index 0) }}show{{ end }}" id='{{ partial "anchor.html" . }}' data-bs-parent='#{{if (isset .Parent.Params "url")}}{{ .Parent.Params.url }}{{else}}{{ .Parent.Title | anchorize }}{{end}}-accordion'>
+                            {{ .Content }}
+                            {{ range .Pages }}
+                                {{ .Content }}
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</article>

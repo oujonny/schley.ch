@@ -1,0 +1,129 @@
+/* 
+#################
+#     colors    #
+################# 
+grey-blue: https://coolors.co/222222-ffffff-1c5d99-639fab-bbcde5 
+grey-red-yellow: https://coolors.co/333333-d81159-218380-fbb13c-73d2de
+grey-yellow-blue: https://coolors.co/333333-fbb13c-f7fff7-6ca6c1-848fa5
+
+https://coolors.co/fbb13c-32908f-333333-e0e0e0-f5f5f5
+
+*/
+
+:root {
+  --primary: #333333;
+  --secondary: #E0E0E0;
+  --highlight: #32908F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+/* #################
+#     header    #
+################# */
+#site-title {
+  font-size: 5rem;
+}
+
+#site-description {
+  font-size: 3.5rem;
+  color: #6c6c6c;
+}
+
+#site-header-image {
+    background-size: cover;
+}
+
+#header-arrow {
+    font-size: 140px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: -120px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+  }
+  #header-arrow:hover {
+    opacity: 0.9;
+  }
+
+/* #################
+#      sidenav     #
+################# */
+#side-navbar {
+  margin-top: 15vh;
+  top: 15vh;
+}
+.nav-link {
+  font-size: calc(0.25rem + .9vw);
+  color: var(--highlight);
+}
+.nav-link.active {
+  /* background-color: var(--highlight); */
+  color: #E0E0E0;
+}
+
+
+/* #################
+#     content    #
+################# */
+#wrap {
+  background-color: var(--primary);
+}
+
+#pages {
+  border: 0.7rem var(--highlight) solid;
+  border-top: none;
+}
+
+.page {
+  background-color: var(--secondary);
+}
+
+/* .first {
+  background-color: #848fa5;
+}
+
+.even {
+  background-color: blueviolet;
+}
+
+.odd {
+  background-color: green;
+} */
+
+.btn-subpage {
+  width: 100%;
+  border-bottom: 0.4rem var(--highlight) solid;
+  border-radius: 0px;
+
+  font-weight: 600;
+  color: var(--highlight);
+}
+
+.btn-subpage:not(.collapsed) {
+  border-bottom: none;
+  border-top: 0.4rem var(--highlight) solid;
+}
+
+/* #################
+#     text        #
+################# */
+h2 {
+  color: #32908F;
+  font-size: calc(1.75rem + .9vw);
+  font-weight: 600;
+}
+
+h3 {
+  color: #848fa5;
+}

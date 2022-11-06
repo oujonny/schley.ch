@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+name: Deploy to schley.ch
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,22 +28,23 @@ jobs:
     steps:
       - name: Install Hugo CLI
         run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: Build with Hugo
+      - name: Deploy with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --minify 
+          hugo --minify --noBuildLock
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v1
         with:
+          name: public
           path: ./public
 
   # Deployment job
@@ -51,5 +52,21 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: public
+          path: ./public
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: deploy
-        run: ""
+        env:
+          SSH_USER: "toxykiwo"
+          HOST: "s106.cyon.net"
+          DIR: "public_html/schley.ch/"
+        run: |
+          rsync -avz --delete public/ ${SSH_USER}@${HOST}:~/${DIR}

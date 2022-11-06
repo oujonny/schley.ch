@@ -4,6 +4,6 @@ HOST=s106.cyon.net
 DIR=public_html/schley.ch/ 
 
 hugo --minify --noBuildLock
-rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR}
+sshpass -p ${SSH_PASSWORD} rsync -avz --delete public/ ${USER}@${HOST}:~/${DIR}
 
 exit 0

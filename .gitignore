@@ -1,1 +1,6 @@
+# public dir
+public/
+
+# system files
 *.DS_Store*
+

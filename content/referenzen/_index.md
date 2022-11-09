@@ -1,6 +1,6 @@
 ---
 title: "Referenzen"
 header_menu: true
-article: false
+weight: 3
+type: carousel
 ---
-{{< carousel >}}

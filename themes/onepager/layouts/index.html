@@ -3,6 +3,9 @@
 <header id="site-header-image" class="img-fluid vh-100" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
     <div class="h-100 align-items-center justify-content-center d-flex">
         <div id="site-head-content" class="text-center">
+            <div class="site-logo">
+                <img src="images/logo.jpg" alt="Logo">
+            </div>
 
             {{ with .Params.header_headline }}<h1 id="site-title">{{ . }}</h1>{{ end }}
             {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}

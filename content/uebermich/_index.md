@@ -1,12 +1,13 @@
 ---
 title: "Dr. Frank Schley"
 url: "ueber-mich"
+url_title: "Über mich"
 weight: 1
 header_menu: true
 
 page_image:
     src: "portrait.jpg"
-    position: "right"
+    crop: "center"
 ---
 Schön haben Sie mich gefunden. Als **selbständiger Berater**, **Interims-Manager** oder **Verwaltungsrat** bringe ich mich mit Elan zugunsten Ihrer Organisation ein. Ich verfüge über vielfältige Erfahrungen in **strategischen Führungsfragen** im **politischen Umfeld**. In der gesamten beruflichen Karriere habe ich mich intensiv mit den Themen **Verkehr** und **Energie** befasst. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide **Fachkompetenz** und gute **Intuition** zeichnen mich aus.
 

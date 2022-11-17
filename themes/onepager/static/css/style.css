@@ -177,6 +177,12 @@ th, td {
   transition: font-size 100ms;
 }
 
+/* #################
+#     mobilenav    #
+################# */
+.modal-open {
+  overflow-y: auto !important;
+}
 
 /* #################
 #     content    #

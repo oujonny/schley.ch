@@ -21,7 +21,7 @@
         </div>
 
         {{ if gt (len .Pages) 0 }}
-        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="container-fluid mt-3">
+        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="container-fluid pt-3">
             <div class="row pb-2 pb-md-3 px-2 px-xl-0">
                 {{ range $index, $element := .Pages }}
                     <div class="col-{{ math.Floor (div 12 (len .Parent.Pages)) }} p-0" role="group">

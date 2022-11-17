@@ -5,7 +5,7 @@
             <div id="pages" class="container p-0" data-bs-target="#side-navbar" data-bs-smooth-scroll="true" tabindex="0">
                 {{ $sections := .Pages }}
                 {{ range $index, $element := $sections }}
-                    <div class='page px-0 px-md-2 px-xl-4
+                    <div class='page pb-4 px-0 px-md-2 px-xl-4
                     {{ if eq $index 0 }}first 
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 

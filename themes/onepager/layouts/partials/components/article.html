@@ -1,5 +1,5 @@
-<article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-2 pt-xl-5 px-xl-5">
-    <header class="post-header">
+<article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-0 pt-md-4 px-md-2 px-xl-3 pb-xl-5">
+    <header class="px-4 py-2 p-md-0 post-header">
         <h2 class="post-title">{{ .Title }}</h2>
     </header>
     <section class="post-content">
@@ -9,22 +9,23 @@
                         <div class="col-lg-7 p-4 shadow">
                             {{ .Content }}
                         </div>
-                        <div class="col-lg-5 p-0 ps-lg-3">
+                        <div class="col-lg-5 order-first order-xl-last p-0 px-4 p-xl-0 ps-xl-3">
                             {{ partial "utils/page_image.html" . }}
                         </div>
                 {{ else }}
-                    <div class="col-12 shadow">
+                    <div class="col-12 p-4 shadow">
                         {{ .Content }}
                     </div>
                 {{ end }}
             </div>
         </div>
 
-        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="container-fluid mt-5 d-grid gap-3">
-            <div class="row">
+        {{ if gt (len .Pages) 0 }}
+        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="container-fluid mt-3">
+            <div class="row pb-2 pb-md-3 px-2 px-xl-0">
                 {{ range $index, $element := .Pages }}
                     <div class="col-{{ math.Floor (div 12 (len .Parent.Pages)) }} p-0" role="group">
-                        <button class="btn-subpage btn shadow {{ if (ne $index 0) }}collapsed{{ end }}" type="radio" data-bs-toggle="collapse" data-bs-target='#{{ partial "utils/anchor.html" . }}'>
+                        <button class="btn-subpage btn {{ if (ne $index 0) }}collapsed{{ end }}" type="radio" data-bs-toggle="collapse" data-bs-target='#{{ partial "utils/anchor.html" . }}'>
                             {{ .Title }}
                         </button>
                     </div>
@@ -43,5 +44,6 @@
                 {{ end }}
             </div>
         </div>
+        {{ end }}
     </section>
 </article>

@@ -3,12 +3,13 @@
         {{ partial "components/sidenav.html" . }}
         <div class="col-md-9 ps-md-0">
             <div id="pages" class="container p-0" data-bs-target="#side-navbar" data-bs-smooth-scroll="true" tabindex="0">
-                {{ range $index, $element := .Pages }}
-                    <div class='page px-2 px-xl-5
-                    {{ if (eq $index 0) }}first
-                    {{ else if (modBool (len .Pages) 2)}}even
-                    {{ else if eq (modBool (len .Pages) 2) false}}odd
-                    {{ end }}'>
+                {{ $sections := .Pages }}
+                {{ range $index, $element := $sections }}
+                    <div class='page px-0 px-md-2 px-xl-4
+                    {{ if eq $index 0 }}first 
+                    {{ else if eq (add $index 1) (len $sections ) }} last 
+                    {{ else if modBool $index 2 }}even 
+                    {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
                         {{ if (eq .Params.type "carousel") }}
                             {{ partial "components/carousel.html" . }}
                         {{ else if (eq .Params.type "generic") }}
@@ -18,7 +19,8 @@
                         {{ end }}
                     </div>
                 {{ end }}
-            </div>        
+                {{ partial "footer.html" . }} 
+            </div>     
         </div>
     </div>
 </main>

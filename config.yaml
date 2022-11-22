@@ -1,6 +1,6 @@
 baseURL: 'https://schley.ch'
 languageCode: de
-title: Dr. Frank Schley Managementberatung
+title: Dr. Frank Schley Consulting
 disableKinds:
   - taxonomy
   - term

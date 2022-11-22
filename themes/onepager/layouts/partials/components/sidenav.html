@@ -2,7 +2,7 @@
     <div id="side-navbar" class="sticky-top flex-column align-items-stretch pe-4">
         <div class="side-nav d-grid gap-1 ps-5">
         {{ range .Pages }}
-            <a class='nav-link' href='#{{ partial "utils/anchor.html" . }}'>{{ .Title }}</a>
+            <a class='nav-link' href='#{{ partial "utils/anchor.html" . }}'>{{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}</a>
             {{/*  <a class='' href='#{{if (isset .Params "url")}}{{ .Params.url }}{{else}}{{ .Title | anchorize }}{{end}}'>{{ .Title }}</a>  */}}
         {{ end }}
         </div>

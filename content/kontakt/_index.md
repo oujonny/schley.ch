@@ -19,6 +19,7 @@ Schreiben Sie mir einfach eine Mail oder rufen Sie mich gleich an.
 | **Mail:**    | [mail@schley.ch](mailto:mail@schley.ch) |
 | **Telefon:** | [031 371 02 45](tel:+41313710245)       |
 |              |                                         |
-| **Adresse**  | Frank Schley                            |
+| **Adresse**  | Schley Consult GmbH
+|              |  Dr. Frank Schley                            |
 |              | Trachselweg 9                           |
 |              | 3008 Bern                               |

@@ -1,5 +1,5 @@
 ---
-title: "Dr. Frank Schley"
+title: "Frank Schley"
 url: "ueber-mich"
 url_title: "Über mich"
 weight: 1

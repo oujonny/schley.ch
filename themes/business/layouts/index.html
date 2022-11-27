@@ -10,18 +10,6 @@
             {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
 
             {{ partial "components/nav.html" . }}
-            {{ partial "components/mobilenav.html" . }}
-
-            {{/*  <div class="nav-bar mt-4">
-            {{ range where .Pages ".Params.header_menu" "eq" true }}
-                    <a class='btn btn-light site-menu' href='#{{if (isset .Params "url")}}{{ .Params.url }}{{else}}{{ .Title | anchorize }}{{end}}'>{{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}</a>
-            {{ end }}  
-            </div>*/}}
-            {{/*  {{ with .GetPage "uebermich/_index.md" }}
-                <a href='#{{ if (isset .Params "url") }}{{ .Params.url }}{{ else }}{{ .Title | anchorize }}{{ end }}'>
-                    <i id='header-arrow' class="fa fa-angle-down"></i>
-                </a>
-            {{ end }}  */}}
         </div>
     </div>
 </header>

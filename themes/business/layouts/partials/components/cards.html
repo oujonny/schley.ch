@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{ range $index, $element := .Pages }}
+            {{ if modBool $index 2 }}
+            <div class="card d-flex my-4 p-4">
+                {{ .Content }}
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+        <div class="col">
+            {{ range $index, $element := .Pages }}
+            {{ if eq (modBool $index 2) false }}
+            <div class="card d-flex my-4 p-4">
+                {{ .Content }}
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-light shadow">
+<nav class="navbar fixed-top navbar-expand-lg bg-light shadow-sm">
     <div id="nav" class="container-fluid mx-4">
         <a class="navbar-brand" href="{{ .Site.BaseURL }}">
             <img src="images/logo.jpg" alt="">
@@ -22,34 +22,3 @@
       </div>
     </div>
   </nav>
-
-
-
-
-
-
-
-<div id="mobilenav-div" class="p-0 d-block d-md-none">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mobilenavModal">
-        Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="mobilenavModal" tabindex="-1" aria-labelledby="mobilenavModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                {{ range .Pages }}
-                <a class='nav-link btn btn-link btn-block' href='#{{ partial "utils/anchor.html" . }}'>
-                    {{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}
-                </a>
-                {{ end }}
-            </div>
-        </div>
-        </div>
-    </div>
-</div>

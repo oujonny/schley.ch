@@ -9,13 +9,43 @@
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
                     {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
-                        {{ if (eq .Params.type "carousel") }}
-                            {{ partial "components/carousel.html" . }}
-                        {{ else if (eq .Params.type "generic") }}
-                            {{ partial "components/generic.html" . }}
-                        {{ else }}  {{/*  default is article  */}}
-                            {{ partial "components/article.html" . }}
-                        {{ end }}
+                    <article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-0 pt-md-4 px-md-2 px-lg-3 pb-xl-5">
+                        <div class="offset" style="padding-top: 68px;"></div>
+                        <header class="p-2 post-header">
+                            <h1 class="display-1 post-title">{{ .Title }}</h1>
+                        </header>
+                        <section class="post-content">
+                            <div class="container-fluid d-flex mt-md-0">
+                                <div class="row">
+                                    {{ if isset .Page.Params "page_image" }}
+                                            <div class="col-lg-7">
+                                                {{ .Content }}
+                                            </div>
+                                            <div class="col-lg-5 order-first order-lg-last pb-2 ps-xl-4">
+                                                {{ partial "utils/page_image.html" . }}
+                                            </div>
+                                    {{ else }}
+                                        <div class="col-12">
+                                            {{ .Content }}
+                                        </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                    
+                            {{/* subpages with spesific type  */}}
+                            {{ if gt (len .Pages) 0 }}
+                                {{ if (eq .Params.type "carousel") }}
+                                    {{ partial "components/carousel.html" . }}
+                                {{ else if (eq .Params.type "generic") }}
+                                    {{ partial "components/generic.html" . }}
+                                {{ else if (eq .Params.type "cards") }}
+                                    {{ partial "components/cards.html" . }}
+                                {{ else }}
+                                    {{ partial "components/accordion.html" .}}
+                                {{ end }}
+                            {{ end }}
+                        </section>
+                    </article>
                     </div>
                 {{ end }}
                 {{ partial "footer.html" . }} 

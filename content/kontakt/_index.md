@@ -2,10 +2,6 @@
 title: "Kontakt"
 header_menu: true
 weight: 4
-
-page_image:
-    src: "portrait2.jpg"
-    crop: center
 ---
 Kontaktieren Sie mich ungeniert. Gerne stehe ich für sie zu verfügung.
 Schreiben Sie mir einfach eine Mail oder rufen Sie mich gleich an.

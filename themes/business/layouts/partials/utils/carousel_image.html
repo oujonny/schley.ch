@@ -1,4 +1,0 @@
-{{ $image := .Resources.GetMatch .Page.Params.page_image.src }}
-{{ with $image.Fill "487x650 webp q100" }}
-<img class="img-fluid shadow" src="{{ .RelPermalink }}">
-{{ end }}

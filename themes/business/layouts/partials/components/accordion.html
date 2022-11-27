@@ -1,0 +1,15 @@
+<div id='{{ partial "utils/anchor.html" . }}-accordion' class="accordion accordion-flush pt-3 px-2 px-xl-0">
+    {{ range $index, $element := .Pages }}
+        <div class="accordion-item">
+            <div id='{{ partial "utils/anchor.html" . }}-heading' class="accordion-header">
+                <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target='#{{ partial "utils/anchor.html" . }}-content' aria-expanded="false" aria-controls='{{ partial "utils/anchor.html" . }}-content'>{{ .Title }}</button>
+            </div>
+            <div id='{{ partial "utils/anchor.html" . }}-content' class="py-4 accordion-collapse collapse" aria-labelledby='{{ partial "utils/anchor.html" . }}-heading'>
+                {{ .Content }}
+                {{ range .Pages }}
+                    {{ .Content }}
+                {{ end }}
+            </div>
+        </div>
+    {{ end }}
+</div>

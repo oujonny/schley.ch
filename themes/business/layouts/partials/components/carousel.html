@@ -1,20 +1,13 @@
-<article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-0 pt-md-4 px-md-2 px-xl-3 pb-xl-5">
-  <header class="p-4 pb-2 px-md-0 post-header">
-    <h2 class="post-title">{{ .Title }}</h2>
-  </header>
-  <section class="post-content">
-    <div class="row">
-      <div class="carousel-inner container-fluid pb-4">
-        {{ range $index, $element := .Pages }}
-          <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
-            <div class="d-flex shadow my-auto">
-              <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
-                {{ .Content }}
-              </div>
-            </div>
+<div class="carsousel slide" data-bs-ride="carousel" data-bs-interval="6000" data-bs-touch="false" data-bs-keyboard="false">
+  <div class="carousel-inner container-fluid p-3 pb-4">
+    {{ range $index, $element := .Pages }}
+      <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+        <div class="d-flex shadow">
+          <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
+            {{ .Content }}
           </div>
-        {{ end }}
+        </div>
       </div>
-    </div>       
-  </section>
-</article>
+    {{ end }}
+  </div>
+</div> 

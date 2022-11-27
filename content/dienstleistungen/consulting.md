@@ -2,16 +2,14 @@
 title: "Consulting"
 header_menu: false
 ---
-In Fragen der **Corporate Governance** öffentlicher oder gemischtwirtschaftlicher **Verkehrs- und Energieunternehmen** können Sie von meiner langjährigen Erfahrung aus der Eignersteuerung der bundesnahmen Unternehmen SBB, Post, Swisscom und Skyguide profitieren.
-
-Ich biete Ihnen **effiziente, individuelle, persönliche Beratung** und Projektunterstützung, die Ihr Unternehmen, Ihre Organisation oder Verwaltung weiterbringt.
-
-Mein Beratungsspektrum umfasst insbesondere:
-* Sparringpartner für Finanz-, Strategie- und Organisationsfragen in Unternehmen und Verwaltung
-* Diagnose, Entwicklung und Verbesserung von Prozessen und Organisationen (Aufbau und Abläufe)
+Ich stehe Ihnen als Sparringpartner in Finanz-, Strategie- und Organisationsfragen zur Verfügung. Mein analytischer Blick und meine ausgeprägten redaktionellen Fähigkeiten kommen Ihnen bei der Vorbereitug von Verwaltungsrats- oder Regierungsvorlagen zugute.
+ 
+Wenn Sie Ihre Organisationstruktur oder Ihre Prozesse überprüfen und neu gestalten wollen, können Sie auch meine Erfahrung aus zahlreichen Projekten in dre Bundesverwaltung 
 * Bewertung und Priorisierung von Massnahmen/Projekten
 * Entwicklung und Verbesserung von Eignerstrategien für öffentliche Unternehmen/Anstalten
 * Unterstützung von Gemeinden und Kantonen bei Finanzplanungen und Aufgabenüberprüfungen
 
+Ich biete Ihnen **effiziente, individuelle, persönliche Beratung** und Projektunterstützung, die Ihr Unternehmen, Ihre Organisation oder Verwaltung weiterbringt.
 Ich unterstütze Sie sowohl bei der Analyse vorliegender Problemstellungen als auch bei der Erarbeitung und Umsetzung von
 Lösungen. Dabei kombiniere ich **praxisbewährte Methoden** mit meiner **fundierten** spezifischen **Branchenkenntnis**.
+

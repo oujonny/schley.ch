@@ -3,38 +3,18 @@
     <h2 class="post-title">{{ .Title }}</h2>
   </header>
   <section class="post-content">
-    <div id='{{ partial "utils/anchor.html" .}}-carousel' class="container-fluid d-flex pb-4 p-0 pb-md-0 mt-md-4 carousel slide" data-bs-ride="none">
-      <div class="carousel-indicators">
+    <div class="row">
+      <div class="carousel-inner container-fluid pb-4">
         {{ range $index, $element := .Pages }}
-          <button class="{{ if (eq $index 0) }}active{{ end }}" type="button" data-bs-target='#{{ partial "utils/parentanchor.html" . }}-carousel' data-bs-slide-to="{{ $index }}" aria-current="{{ if (eq $index 0) }}true{{ end }}" aria-label="Slide {{ $index }}"></button>
-        {{ end }}
-      </div>
-      <div class="row">
-        <div class="carousel-inner container-fluid pb-4">
-          {{ range $index, $element := .Pages }}
-            <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
-              <div class="col-md-4 p-0 d-none d-md-flex my-auto">
-                <div class="carousel-item-img">
-                  {{ partial "utils/carousel_image.html" . }}
-                </div>
-              </div>
-              <div class="col-md-8 d-flex shadow my-auto">
-                <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
-                  {{ .Content }}
-                </div>
+          <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+            <div class="d-flex shadow my-auto">
+              <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
+                {{ .Content }}
               </div>
             </div>
-          {{ end }}
-        </div>
-      </div> 
-      <button class="carousel-control-prev" type="button" data-bs-target='#{{ partial "utils/anchor.html" .}}-carousel' data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target='#{{ partial "utils/anchor.html" .}}-carousel' data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>           
-    </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>       
   </section>
 </article>

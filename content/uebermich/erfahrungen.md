@@ -9,7 +9,7 @@ Nach meinem Studium der Betriebswirtschaftslehre war ich **10 Jahre als Berater 
 Universität Dresden** („Wege zu mehr Nachhaltigkeit im Verkehr –
 Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen als
 Instrument zur Begrenzung der Verkehrsnachfrage“) verfasst. Von 2000 bis 2010 war ich im **Bundesamt für Verkehr (BAV)** für das Controlling der Infrastrukturfinanzierung der SBB verantwortlich und mit der Leitung diverser Projekte im Bereich der Finanzierung der Bahninfrastruktur und des öffentlichen Verkehrs betraut. Anschliessend war ich bis Februar 2023 in der **Eidgenössischen Finanzverwaltung (EFV)** als
-Sektionsleiter verantwortlich für die finanzpolitische Beurteilung der von Bundesratsvorlagen zu Gesetzes- und Verordnungsanpassungen in den Bereichen Verkehr, Energie und Kommunikation. Zu meinen Aufgaben gehörte auch die Wahrung der Bundesinteressen im Rahmen der Eignerstrategien für Post, SBB, Swisscom und Skyguide.
+Sektionsleiter verantwortlich für die finanzpolitische Beurteilung von Bundesratsvorlagen zu Gesetzes- und Verordnungsanpassungen in den Bereichen Verkehr, Energie und Kommunikation. Zu meinen Aufgaben gehörte auch die Wahrung der Bundesinteressen im Rahmen der Eignerstrategien für Post, SBB, Swisscom und Skyguide.
 
 
 | 2011-2022                                 | 2000-2010                                 | 1996-1999               | 1991-1995         |

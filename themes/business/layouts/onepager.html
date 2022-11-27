@@ -1,9 +1,7 @@
 <main id="wrap" role="main">
     <div class="row" data-bs-spy="scroll">
-        {{ partial "components/sidenav.html" . }}
-        {{ partial "components/mobilenav.html" . }}
-        <div class="col-md-9 ps-md-0">
-            <div id="pages" class="container p-0" data-bs-target="#side-navbar" data-bs-smooth-scroll="true" tabindex="0">
+        <div class="col-12 ps-md-0">
+            <div id="pages" class="container p-0" data-bs-target="#nav" data-bs-smooth-scroll="true" tabindex="0">
                 {{ $sections := .Pages }}
                 {{ range $index, $element := $sections }}
                     <div class='page pb-4 px-0 px-md-2 px-xl-4

@@ -1,21 +1,21 @@
-baseURL: 'https://schley.ch'
+baseURL: 'https://schleyconsult.ch'
 languageCode: de
-title: Dr. Frank Schley Consulting
+title: schley consult.
 disableKinds:
   - taxonomy
   - term
   - RSS
   - robotsTXT
 
-theme: onepager
+theme: business
 
 params:
-  copyright: © Frank Schley
+  copyright: © Frank Schley GmbH
   description: |
     Dr. Frank Schley selbständiger Berater, Interims-Manager oder Verwaltungsrat. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide Fachkompetenz und gute Intuition zeichnen mich aus.
   favicon: images/favicon.png
   images:
     - images/cover-image.jpg
-  title: Schley Managementberatung
+  title: schley consult.
   meta:
-    keywords: 'management, beratung, consulting, madate, selbständiger, Verkehr, Energie, öffentlicher Verkehr, Coporate Governace'
+    keywords: 'consulting, schley, frank schley, management, beratung, consulting, madate, selbständiger, Verkehr, Energie, öffentlicher Verkehr, Coporate Governace'

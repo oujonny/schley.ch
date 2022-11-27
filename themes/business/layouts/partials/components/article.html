@@ -1,16 +1,16 @@
 <article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-0 pt-md-4 px-md-2 px-xl-3 pb-xl-5">
     <div class="offset" style="padding-top: 68px;"></div>
-    <header class="px-4 py-2 post-header">
+    <header class="px-4 px-lg-0 py-2 post-header">
         <h2 class="post-title">{{ .Title }}</h2>
     </header>
     <section class="post-content">
-        <div class="container-fluid d-flex mt-md-4">
+        <div class="container-fluid d-flex mt-md-0">
             <div class="row">
                 {{ if isset .Page.Params "page_image" }}
                         <div class="col-lg-7 p-4 shadow">
                             {{ .Content }}
                         </div>
-                        <div class="col-lg-5 order-first order-xl-last p-0 px-4 p-xl-0 ps-xl-3">
+                        <div class="col-lg-5 order-first order-lg-last p-0 px-4 p-xl-0 ps-xl-3">
                             {{ partial "utils/page_image.html" . }}
                         </div>
                 {{ else }}
@@ -22,28 +22,20 @@
         </div>
 
         {{ if gt (len .Pages) 0 }}
-        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="container-fluid pt-3">
-            <div class="row pb-2 pb-md-3 px-2 px-xl-0">
-                {{ range $index, $element := .Pages }}
-                    <div class="col-{{ math.Floor (div 12 (len .Parent.Pages)) }} p-0" role="group">
-                        <button class="btn-subpage btn {{ if (ne $index 0) }}collapsed{{ end }}" type="radio" data-bs-toggle="collapse" data-bs-target='#{{ partial "utils/anchor.html" . }}'>
-                            {{ .Title }}
-                        </button>
-                    </div>
-                {{ end }}
+        <div id='{{ partial "utils/anchor.html" . }}-accordion' class="accordion accordion-flush pt-3 px-2 px-xl-0s">
+        {{ range $index, $element := .Pages }}
+            <div class="accordion-item">
+                <h2 id='{{ partial "utils/anchor.html" . }}-heading' class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target='#{{ partial "utils/anchor.html" . }}-content' aria-expanded="false" aria-controls='{{ partial "utils/anchor.html" . }}-content'>{{ .Title }}</button>
+                </h2>
+                <div id='{{ partial "utils/anchor.html" . }}-content' class="p-4 shadow accordion-collapse collapse" aria-labelledby='{{ partial "utils/anchor.html" . }}-heading' data-bs-parent='#{{ partial "utils/parentanchor" . }}-accordion'>
+                    {{ .Content }}
+                    {{ range .Pages }}
+                        {{ .Content }}
+                    {{ end }}
+                </div>
             </div>
-            <div class="row">
-                {{ range $index, $element := .Pages }}
-                    <div class="col-12 p-0">
-                        <div class="subpage p-4 shadow collapse {{ if (eq $index 0) }}show{{ end }}" id='{{ partial "utils/anchor.html" . }}' data-bs-parent='#{{if (isset .Parent.Params "url")}}{{ .Parent.Params.url }}{{else}}{{ .Parent.Title | anchorize }}{{end}}-accordion'>
-                            {{ .Content }}
-                            {{ range .Pages }}
-                                {{ .Content }}
-                            {{ end }}
-                        </div>
-                    </div>
-                {{ end }}
-            </div>
+        {{ end }}
         </div>
         {{ end }}
     </section>

@@ -1,7 +1,6 @@
 ---
-title: "Dr. Frank Schley"
+title: "Portrait"
 url: "ueber-mich"
-url_title: "Über mich"
 weight: 1
 header_menu: true
 

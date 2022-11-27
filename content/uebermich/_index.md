@@ -1,6 +1,6 @@
 ---
-title: "Dr. Frank Schley"
-Inhaber und Geschäftsführer
+title: "Dr. Frank Schley
+Inhaber und Geschäftsführer"
 url: "ueber-mich"
 url_title: "Über mich"
 weight: 1

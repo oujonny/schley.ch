@@ -9,9 +9,8 @@ page_image:
     src: "portrait.jpg"
     crop: "center"
 ---
-Schön haben Sie mich gefunden. Als **selbständiger Berater**, **Interims-Manager** oder **Verwaltungsrat** bringe ich mich mit Elan zugunsten Ihrer Organisation ein. Ich verfüge über vielfältige Erfahrungen in **strategischen Führungsfragen** im **politischen Umfeld**. In der gesamten beruflichen Karriere habe ich mich intensiv mit den Themen **Verkehr** und **Energie** befasst. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide **Fachkompetenz** und gute **Intuition** zeichnen mich aus.
+**Inhaber und Geschäftsführer**
 
-Ich bin gut **vernetzt mit Führungskräften** in Verwaltung und Unternehmen, insbesondere im **öffentlichen Verkehr** . Mit dem politischen Geschehen, und den oftmals unterschiedlichen
-Lösungsstrategien, in der **Schweiz** und in **Deutschland** bin ich bestens vertraut. Während 12 Jahren war ich regelmässig an **Gesprächen auf oberster Führungsebene** zwischen
-Bund (DC UVEK, DC EFD) und den Unternehmensleitungen (VRP, CEO, CFO) von Post, SBB, Swisscom und Skyguide beteiligt. Mehr **Praxiserfahrung** mit der **Coporate Governace**
-öffentlicher Unternehmen werden Sie kaum finden.
+Als **selbständiger Berater**, **Interims-Manager** oder **Verwaltungsrat** bringe ich mich mit Elan zugunsten Ihrer Organisation ein. Ich verfüge über fundierte, vielfältige Erfahrungen in **strategischen Führungsfragen** im **politischen Umfeld**. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen **Verkehr** und **Energie** befasst. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide **Fachkompetenz, Verlässlichkeit** und gute **Intuition** zeichnen mich aus.
+
+Ich bin gut **vernetzt mit Führungskräften** in Verwaltung und Unternehmen, insbesondere im Bereich des **öffentlichen Verkehrs in der Schweiz**. Aufgrund meiner Herkunft bin ich aber auch mit dem politischen Geschehen und den vom Schweizer Kontext zuweilen stark abweichenden Problemstellungen, aber auch Lösungsstrategien, in **Deutschland** bestens vertraut. Über 12 Jahre war ich regelmässig an den Eignergesprächen zwischen dem Bund (Verkehrs- und Finanzdepartenment) und den Unternehmensleitungen von SBB, Post, Swisscom und Skyguide beteiligt, habe die vorbereitenden Fachgespräche mit den CFO geleitet und die jeweils für vier Jahre geltenden strategische Ziele des Bundesrats für die genannten Unternehmen mitgestaltet. Mehr **Praxiserfahrung** mit der **Coporate Governace** öffentlicher Unternehmen werden Sie kaum finden.

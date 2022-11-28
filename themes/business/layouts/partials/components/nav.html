@@ -14,7 +14,9 @@
             {{ range where .Pages ".Params.header_menu" true }}
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href='#{{ partial "utils/anchor.html" . }}'>
-                        {{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}
+                        <span data-bs-toggle=""  data-bs-target="#navbarSupportedContent">
+                            {{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}
+                        </span>
                     </a>
                 </li>
             {{ end }}

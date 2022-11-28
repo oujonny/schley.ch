@@ -141,21 +141,26 @@ th, td {
 .navbar-brand {
   max-width: 200px;
 }
- 
-div.show, div.collapsing {
-  height: 100vh !important;
+
+.collapse.show, div.collapsing {
+  /* height: 100vh !important; */
+
+  text-align: center;
+}
+
+div.show, div.collapsing > ul {
+  padding-top: 30vh;
 }
 
 /* #################
 #     header    #
 ################# */
-.site-logo {
-  width: 10rem;
-  height: auto;
+#site-head-container {
+  height: 44vh;
 }
 
-.site-logo > img {
-  width: 100%;
+#site-head-content {
+  background-color: rgba(255,255,255,.0);
 }
 
 #site-title {
@@ -164,7 +169,7 @@ div.show, div.collapsing {
 
 #site-description {
   font-size: 2.5rem;
-  color: #6c6c6c;
+  color: black;
 }
 
 #site-header-image {
@@ -195,7 +200,25 @@ div.show, div.collapsing {
 #page_image {
   object-fit: cover;
   object-position: top;
+  background-position: center;
 }
+
+@media (min-width: 576px) {
+.post-title::before {
+	content: '';
+	background: var(--primary);
+  display: inline-block;
+
+  width: 2.5rem;
+  height: 4px;
+
+  margin-left: 0.25rem;
+  margin-right: 0.75rem;
+  margin-top: auto;
+  margin-bottom: calc(0.4rem + 0.5vw);
+}
+}
+
 
 /* #################
 #      accordion     #

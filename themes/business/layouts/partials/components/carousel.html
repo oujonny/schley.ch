@@ -1,5 +1,5 @@
 <div class="carsousel slide" data-bs-ride="carousel" data-bs-interval="6000" data-bs-touch="false" data-bs-keyboard="false">
-  <div class="carousel-inner container-fluid p-3">
+  <div class="carousel-inner container-fluid p-3 px-0">
     {{ range $index, $element := .Pages }}
       <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
         <div class="d-flex border">

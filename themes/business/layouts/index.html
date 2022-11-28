@@ -1,14 +1,10 @@
 {{ define "main" }}
 {{/*  index page  */}}
 <header id="site-header-image" class="img-fluid vh-100" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
-    <div class="h-100 w-75 mx-auto align-items-center justify-content-center d-flex">
-        <div id="site-head-content" class="text-left">
-            <div class="site-logo">
-                <img src="images/logo.jpg" alt="Logo">
-            </div>
-
+    <div id="site-head-container" class="text-center container-fluid px-0 d-flex justify-content-center align-items-end">
+        <div id="site-head-content" class="py-2">            
             {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
-
+    
             {{ partial "components/nav.html" . }}
         </div>
     </div>

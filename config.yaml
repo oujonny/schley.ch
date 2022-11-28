@@ -1,5 +1,5 @@
 baseURL: 'https://schleyconsult.ch'
-languageCode: de
+languageCode: "de"
 title: schley consult.
 disableKinds:
   - taxonomy

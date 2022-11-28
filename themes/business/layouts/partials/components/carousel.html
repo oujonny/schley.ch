@@ -1,9 +1,9 @@
 <div class="carsousel slide" data-bs-ride="carousel" data-bs-interval="6000" data-bs-touch="false" data-bs-keyboard="false">
-  <div class="carousel-inner container-fluid p-3 pb-4">
+  <div class="carousel-inner container-fluid p-3">
     {{ range $index, $element := .Pages }}
       <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
-        <div class="d-flex shadow">
-          <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
+        <div class="d-flex border">
+          <div class="carousel-item-text p-3 p-md-4 blockqoute">
             {{ .Content }}
           </div>
         </div>

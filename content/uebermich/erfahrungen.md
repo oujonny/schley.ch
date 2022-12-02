@@ -12,12 +12,6 @@ Instrument zur Begrenzung der Verkehrsnachfrage“) verfasst. Von 2000 bis 2010 
 Sektionsleiter verantwortlich für die finanzpolitische Beurteilung von Bundesratsvorlagen zu Gesetzes- und Verordnungsanpassungen in den Bereichen Verkehr, Energie und Kommunikation. Zu meinen Aufgaben gehörte auch die Wahrung der Bundesinteressen im Rahmen der Eignerstrategien für Post, SBB, Swisscom und Skyguide.
 
 
-| 2011-2022                                 | 2000-2010                                 | 1996-1999               | 1991-1995         |
-| ------------------------------------------- | ------------------------------------------- | ------------------------- | ------------------- |
-| **Eidg. Finanzverwaltung**                | **Bundesamt für Verkehr**                | **selbständig**        | **Prognos AG**    |
-| Bern                                      | Bern                                      | Berlin                  | Berlin/Basel      |
-| Abteilung Ausgabenpolitik, Sektionsleiter | Abteilung Finanzierung, wiss. Mitarbeiter | freiberufliche Beratung | Junior Consultant |
-
 ##### Ehrenamtliche Aktivitäten
 
 Seit vielen Jahren bin ich in der Stadt Bern auf Gemeindeebene **ehrenamtlich engagiert** . Seit 2016 als **Vizepräsident des Kleinen Kirchenrats** , der Exekutive der ev.-ref.

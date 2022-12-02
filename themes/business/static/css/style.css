@@ -24,9 +24,9 @@ https://coolors.co/fbb13c-32908f-333333-e0e0e0-f5f5f5
 
 
 :root {
-  --primary: #0f1f33;
+  --primary: #1F3B60;
   --secondary: #fff;
-  --highlight: #52c6ed;
+  --highlight: #35A9E1;
   --teritairy: #FBB13C;
 
   --grey:  #858585;
@@ -284,21 +284,23 @@ nav > .collapse.show, nav > div.collapsing {
 
 .carousel-item-text > blockquote {
   margin-top: 1.5rem;
+  margin-left: 2.5rem;
+  font-style: italic;
 }
 
-.carousel-item-text > blockquote > p::before {
+/* .carousel-item-text > blockquote > p::before {
   content: '\f10d';
   color: var(--highlight);
   font-size: 2rem !important;
   margin-right: 0.75rem;
 
-  /* fa font icon stand stuff */
+  # fa font icon stand stuff
   display: inline-block;
   font: normal normal normal 14px/1 ForkAwesome;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 /* #################
 #      footer      #

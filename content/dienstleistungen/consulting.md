@@ -2,8 +2,6 @@
 title: "Consulting"
 header_menu: false
 ---
-Ich stehe Ihnen als Sparringpartner in Finanz-, Strategie- und Organisationsfragen zur Verfügung. Mein analytischer Blick und meine ausgeprägten redaktionellen Fähigkeiten kommen Ihnen bei der Vorbereitug von Verwaltungsrats- oder Regierungsvorlagen zugute.
- 
 Wenn Sie Ihre Organisationstruktur oder Ihre Prozesse überprüfen und neu gestalten wollen, können Sie auch meine Erfahrung aus zahlreichen Projekten in dre Bundesverwaltung 
 * Bewertung und Priorisierung von Massnahmen/Projekten
 * Entwicklung und Verbesserung von Eignerstrategien für öffentliche Unternehmen/Anstalten

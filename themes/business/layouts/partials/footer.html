@@ -6,8 +6,6 @@
           <section class="copyright w-100">{{ . | markdownify }}</section>
         {{ end }}
         </div>
-      </div>
-      <div class="row">
         <div class="col">
           <section>{{ echoParam .Site.Params "hidebyline" }}</section>
           {{ if ne .Site.Params.hidedesignbyline true }}
@@ -17,8 +15,6 @@
             </section>
           {{ end }}
         </div>
-      </div>
-
-  
+      </div>  
     </div>
   </footer>

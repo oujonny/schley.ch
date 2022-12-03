@@ -2,7 +2,7 @@
 title: "Consulting"
 header_menu: false
 ---
-Wenn Sie Ihre Organisationstruktur oder Ihre Prozesse überprüfen und neu gestalten wollen, können Sie auch meine Erfahrung aus zahlreichen Projekten in dre Bundesverwaltung 
+Wollen Sie Ihre Organisationstruktur oder Ihre Prozesse überprüfen und neu gestalten? Gerne unterstütze ich Sie hierbei mit meinen Erfahrung aus zahlreichen Projekten in der Bundesverwaltung.  
 * Bewertung und Priorisierung von Massnahmen/Projekten
 * Entwicklung und Verbesserung von Eignerstrategien für öffentliche Unternehmen/Anstalten
 * Unterstützung von Gemeinden und Kantonen bei Finanzplanungen und Aufgabenüberprüfungen

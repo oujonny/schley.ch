@@ -1,12 +1,11 @@
 ---
-title: "über mich"
+title: "Über mich"
 url: "ueber-mich"
 weight: 1
 header_menu: true
 
 page_image:
     src: "portrait.jpg"
-    crop: "center"
 ---
 ### Dr. Frank Schley
 

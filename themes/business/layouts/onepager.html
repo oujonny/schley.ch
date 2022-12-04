@@ -1,10 +1,10 @@
 <main id="wrap" role="main">
-    <div class="row" data-bs-spy="scroll">
+    <div id="warp-pages" class="row" data-bs-spy="scroll">
         <div class="col-12 ps-md-0">
             <div id="pages" class="container p-0" data-bs-target="#nav" data-bs-smooth-scroll="true" tabindex="0">
                 {{ $sections := .Pages }}
                 {{ range $index, $element := $sections }}
-                    <div class='page pb-4 px-0 px-md-2 px-xl-4
+                    <div class='page pb-4 px-0 px-md-4
                     {{ if eq $index 0 }}first 
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
@@ -20,10 +20,10 @@
                             <div class="container-fluid d-flex mt-md-0">
                                 <div class="row">
                                     {{ if isset .Page.Params "page_image" }}
-                                            <div class="col-lg-7">
+                                            <div class="col-lg-7 px-0">
                                                 {{ .Content }}
                                             </div>
-                                            <div class="col-lg-5 order-first order-lg-last pb-4 pb-xl-2 ps-xl-4 pe-xl-0">
+                                            <div class="col-lg-5 order-first order-lg-last px-0 pb-4 pb-xl-2 ps-xl-4 pe-xl-0">
                                                 {{ partial "utils/page_image.html" . }}
                                             </div>
                                     {{ else }}

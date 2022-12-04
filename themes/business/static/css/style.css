@@ -142,6 +142,10 @@ th, td {
   max-width: 200px;
 }
 
+.navbar-toggler {
+  border: none;
+}
+
 nav > .collapse.show, nav > div.collapsing {
   /* height: 100vh !important; */
 
@@ -209,11 +213,12 @@ nav > .collapse.show, nav > div.collapsing {
 #     content    #
 ################# */
 #wrap {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
 }
 
 #pages {
-  border: 0.7rem var(--highlight) solid;
+  max-width: 1100px;
+  /* border: 0.7rem var(--highlight) solid; */
   border-top: none;
 }
 
@@ -288,11 +293,25 @@ nav > .collapse.show, nav > div.collapsing {
   font-style: italic;
 }
 
+@media (max-width: 576px) {
+  .carousel-item-text > blockquote  { 
+    margin-left: 0rem;
+  }
+}
+
+blockquote > p {
+  font-family: Moderat;
+  font-weight: 200;
+  font-size: var(--text-font-size);
+  color: black;
+}
+
 /* .carousel-item-text > blockquote > p::before {
   content: '\f10d';
   color: var(--highlight);
-  font-size: 2rem !important;
+  font-size: 1.75rem !important;
   margin-right: 0.75rem;
+  margin-left: -2.25rem;
 
   # fa font icon stand stuff
   display: inline-block;
@@ -312,11 +331,8 @@ nav > .collapse.show, nav > div.collapsing {
 /* 
 mobile tweeeks
 
-  1. no div's shadow on mobile devices
+  1. no scroll bars on mobile
 */
-.shadow {
-	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-}
 
 @media (max-width: 576px) {
   /* Hide scrollbar for Chrome, Safari and Opera */

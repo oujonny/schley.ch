@@ -5,10 +5,8 @@ weight: 1
 ---
 ##### Berufliche Stationen
 
-Nach meinem Studium der Betriebswirtschaftslehre war ich **10 Jahre als Berater in Verkehrs- und Umweltthemen** tätig. Teilweise parallel dazu habe ich meine **Dissertation an der Technischen
-Universität Dresden** („Wege zu mehr Nachhaltigkeit im Verkehr –
-Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen als
-Instrument zur Begrenzung der Verkehrsnachfrage“) verfasst. Von 2000 bis 2010 war ich im **Bundesamt für Verkehr (BAV)** für das Controlling der Infrastrukturfinanzierung der SBB verantwortlich und mit der Leitung diverser Projekte im Bereich der Finanzierung der Bahninfrastruktur und des öffentlichen Verkehrs betraut. Anschliessend war ich bis Februar 2023 in der **Eidgenössischen Finanzverwaltung (EFV)** als
+Nach meinem Betriebswirtschaftsstudium an der Uni Saarbrücken war ich von 1991 bis 1996 für die **Prognos AG** in Basel und Berlin als wissenschaftlicher Mitarbeiter tätig. Parallel zur meiner **Dissertation an der Technischen Universität Dresden** („Wege zu mehr Nachhaltigkeit im Verkehr –
+Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen als Instrument zur Begrenzung der Verkehrsnachfrage“) habe ich bis 1997-2000 a. Von 2000 bis 2010 war ich im **Bundesamt für Verkehr (BAV)** für das Controlling der Infrastrukturfinanzierung der SBB verantwortlich und mit der Leitung diverser Projekte im Bereich der Finanzierung der Bahninfrastruktur und des öffentlichen Verkehrs betraut. Anschliessend war ich bis Februar 2023 in der **Eidgenössischen Finanzverwaltung (EFV)** als
 Sektionsleiter verantwortlich für die finanzpolitische Beurteilung von Bundesratsvorlagen zu Gesetzes- und Verordnungsanpassungen in den Bereichen Verkehr, Energie und Kommunikation. Zu meinen Aufgaben gehörte auch die Wahrung der Bundesinteressen im Rahmen der Eignerstrategien für Post, SBB, Swisscom und Skyguide.
 
 

@@ -18,11 +18,12 @@ Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finan
 ›	Beurteilung von Unternehmensstrategien und M&A-Projekten (Second Opinions) 
 
 
-##### Ehrenamtliche Aktivitäten
+##### Mandate und ehrenamtliche Aktivitäten
 
-Seit vielen Jahren bin ich in der Stadt Bern auf Gemeindeebene **ehrenamtlich engagiert** . Seit 2016 als **Vizepräsident des Kleinen Kirchenrats** , der Exekutive der ev.-ref.
-**Gesamtkirchgemeinde Bern** (ca. 50‘000 Mitglieder, ca. 250
-Beschäftigte). Hier bin ich für die Ressorts Personal und Kommunikation
-zuständig. Davor während 8 Jahren als
-**Co-Präsident der Quartierkommission QM3** für den Stadtteil III (Mattenhof-Weissenbühl). Mehr als 15 Jahre war ich der Sektion Bern-Mittelland der
-Carsharing-Genossenschaft **Mobility** engagiert (**Delegierter**).
+Seit 2017 bin ich Vizepräsident des Verwaltungsrats der RefBernImmo AG (RBI), einer Immobilengesellschaft im Eignetum der evangelisch-reformierten Gesamtkirchgemeinde Bern (GKG). Die RBI wurde gegründet für die Bewirtschaftung und Entwickelung von Liegenschaften, die nicht mehr für kirchliche Zweke genutzt werden.
+
+Seit 2016 bin ich Mitglied (seit 2018 Vizepräsident) des **Kleinen Kirchenrats**, der Exekutive der ev.-ref. **Gesamtkirchgemeinde Bern** (ca. 50‘000 Mitglieder, ca. 250 Beschäftigte). Hier bin ich für die Ressorts Personal und Kommunikation zuständig. 
+
+Von 2008 bis 2015 war ich **Co-Präsident der Quartierkommission QM3** für den Stadtteil III (Mattenhof-Weissenbühl). 
+
+Ausserdem bis ich seit mehr als 15 Jahre war ich der Sektion Bern-Mittelland der Carsharing-Genossenschaft **Mobility** engagiert (**Delegierter**).

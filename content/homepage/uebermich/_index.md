@@ -6,6 +6,7 @@ header_menu: true
 
 page_image:
     src: "portrait.jpg"
+    crop: "center"
 ---
 ### Dr. Frank Schley
 

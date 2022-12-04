@@ -2,51 +2,56 @@
     <div id="warp-pages" class="row" data-bs-spy="scroll">
         <div class="col-12 ps-md-0">
             <div id="pages" class="container p-0" data-bs-target="#nav" data-bs-smooth-scroll="true" tabindex="0">
-                {{ $sections := .Pages }}
+                {{ $sections := (.Site.GetPage "/homepage").Pages }}
                 {{ range $index, $element := $sections }}
-                    <div class='page pb-4 px-0 px-md-4
+                    <div class='page px-0 px-md-4
+
+                    {{ if isset .Page.Params "background_color"}}page-bg-{{ .Page.Params.background_color }}{{ end }}
+
                     {{ if eq $index 0 }}first 
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
                     {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
-                    <article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-3 pt-md-4 px-md-2 px-lg-3 pb-xl-5">
-                        <div class="offset" style="padding-top: 50px;"></div>
-                        {{ if ne .Params.hide_title true }}    
-                        <header class="post-header">
-                            <h1 class="display-1 post-title">{{ .Title }}</h1>
-                        </header>
-                        {{ end }}
-                        <section class="post-content">
-                            <div class="container-fluid d-flex mt-md-0">
-                                <div class="row">
-                                    {{ if isset .Page.Params "page_image" }}
-                                            <div class="col-lg-7 px-0">
+                    <article id='{{ partial "utils/anchor.html" . }}' class="px-4 px-lg-3">
+                        <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+                        <div class="post py-3 py-md-5">
+                            {{ if ne .Params.hide_title true }}    
+                            <header class="post-header">
+                                <h1 class="display-1 post-title">{{ .Title }}</h1>
+                            </header>
+                            {{ end }}
+                            <section class="post-content">
+                                <div class="container-fluid d-flex mt-md-0">
+                                    <div class="row">
+                                        {{ if isset .Page.Params "page_image" }}
+                                                <div class="col-lg-7 px-0">
+                                                    {{ .Content }}
+                                                </div>
+                                                <div class="col-lg-5 order-first order-lg-last px-0 pb-4 pb-xl-2 ps-xl-4 pe-xl-0">
+                                                    {{ partial "utils/page_image.html" . }}
+                                                </div>
+                                        {{ else }}
+                                            <div class="col-12 px-0">
                                                 {{ .Content }}
                                             </div>
-                                            <div class="col-lg-5 order-first order-lg-last px-0 pb-4 pb-xl-2 ps-xl-4 pe-xl-0">
-                                                {{ partial "utils/page_image.html" . }}
-                                            </div>
-                                    {{ else }}
-                                        <div class="col-12 px-0">
-                                            {{ .Content }}
-                                        </div>
-                                    {{ end }}
+                                        {{ end }}
+                                    </div>
                                 </div>
-                            </div>
-                    
-                            {{/* subpages with spesific type  */}}
-                            {{ if gt (len .Pages) 0 }}
-                                {{ if (eq .Params.type "carousel") }}
-                                    {{ partial "components/carousel.html" . }}
-                                {{ else if (eq .Params.type "generic") }}
-                                    {{ partial "components/generic.html" . }}
-                                {{ else if (eq .Params.type "cards") }}
-                                    {{ partial "components/cards.html" . }}
-                                {{ else }}
-                                    {{ partial "components/accordion.html" .}}
+                        
+                                {{/* subpages with spesific type  */}}
+                                {{ if gt (len .Pages) 0 }}
+                                    {{ if (eq .Params.type "carousel") }}
+                                        {{ partial "components/carousel.html" . }}
+                                    {{ else if (eq .Params.type "generic") }}
+                                        {{ partial "components/generic.html" . }}
+                                    {{ else if (eq .Params.type "cards") }}
+                                        {{ partial "components/cards.html" . }}
+                                    {{ else }}
+                                        {{ partial "components/accordion.html" .}}
+                                    {{ end }}
                                 {{ end }}
-                            {{ end }}
-                        </section>
+                            </section>
+                        </div>
                     </article>
                     </div>
                 {{ end }}

@@ -11,7 +11,8 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
-            {{ range where .Pages ".Params.header_menu" true }}
+            {{ $sections := (.Site.GetPage "/homepage").Pages }}
+            {{ range where $sections ".Params.header_menu" true }}
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href='#{{ partial "utils/anchor.html" . }}'>
                         <span data-bs-toggle=""  data-bs-target="#navbarSupportedContent">

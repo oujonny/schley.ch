@@ -35,6 +35,8 @@ https://coolors.co/fbb13c-32908f-333333-e0e0e0-f5f5f5
   --white: #fff;
 
   --text-font-size: calc(1rem + 0.2vw);
+
+  --scroll-offset: 55px;
 }
 
 html, body {
@@ -133,6 +135,10 @@ th, td {
 /* #################
 #         nav      #
 ################# */
+nav.navbar {
+  height: var(--scroll-offset);
+}
+
 #navbar-img {
   width: 100%;
   height: auto;
@@ -226,10 +232,6 @@ nav > .collapse.show, nav > div.collapsing {
   background-color: var(--secondary);
 }
 
-.even {
-  background-color: var(--secondary);
-}
-
 #page_image {
   object-fit: cover;
   object-position: top;
@@ -252,6 +254,32 @@ nav > .collapse.show, nav > div.collapsing {
 }
 }
 
+.page-bg-primary {
+  background-color: transparent;
+  position: relative;
+}
+
+.page-bg-primary .display-1, .page-bg-primary > h2, .page-bg-primary h4, .page-bg-primary h6, .page-bg-primary p {
+  color: var(--white) !important;
+}
+
+@media (min-width: 576px) {
+  .page-bg-primary .post-title::before {
+    background: var(--white);
+  }
+}
+
+.page-bg-primary::before {
+	content: '';
+	background: var(--primary);
+	position: absolute;
+  margin-left: -40vw;
+	top: calc(var(--scroll-offset));
+	left: 0;
+	width: 140vw;
+	height: calc(100% - var(--scroll-offset));
+  z-index: -1;
+}
 
 /* #################
 #      accordion     #

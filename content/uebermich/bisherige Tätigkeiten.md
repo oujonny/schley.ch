@@ -20,7 +20,7 @@ Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finan
 
 ##### Mandate und ehrenamtliche Aktivitäten
 
-Seit 2017 bin ich **Vizepräsident des Verwaltungsrats der RefBernImmo AG (RBI)**, einer Immobilengesellschaft im Eignetum der evangelisch-reformierten Gesamtkirchgemeinde Bern (GKG). Die RBI wurde gegründet für die Bewirtschaftung und Entwickelung von Liegenschaften, die nicht mehr für kirchliche Zweke genutzt werden.
+Seit 2017 bin ich **Vizepräsident des Verwaltungsrats der RefBernImmo AG (RBI)**, einer Immobilengesellschaft im Eignetum der evangelisch-reformierten Gesamtkirchgemeinde Bern (GKG). Die RBI wurde gegründet für die Bewirtschaftung und Entwicklung von Liegenschaften, die nicht mehr für kirchliche Zweke genutzt werden.
 
 Seit 2016 bin ich Mitglied (seit 2018 Vizepräsident) des **Kleinen Kirchenrats**, der Exekutive der ev.-ref. **Gesamtkirchgemeinde Bern** (ca. 50‘000 Mitglieder, ca. 250 Beschäftigte). Hier bin ich für die Ressorts Personal und Kommunikation zuständig. 
 

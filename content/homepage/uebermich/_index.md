@@ -1,5 +1,5 @@
 ---
-title: "Über mich"
+title: "über mich"
 url: "ueber-mich"
 weight: 1
 header_menu: true

@@ -9,7 +9,5 @@ type: "cards"
 #     src: "portrait2.jpg"
 ---
 
-Wenn Sie fachkompetente und persönliche Beratung an der Nahtstelle zwischen **Staat und Unternehmen** suchen, strategische und organisatorische Veränderungen in
-**Verkehrs- und Energieunternehmen** anstehen oder für **Finanzierungsfragen** im Bereich des **öffentlichen Verkehrs** Unterstützung benötigen, sind
-Sie bei schleyconsult. an der richtigen Adresse.
+Suchen Sie fachkompetente und persönliche Beratung an der Nahtstelle zwischen **Staat und öffentlichen Unternehmen**, oder benötigen Sie Unterstützung bei anstehenden strategischen und organisatorischen Veränderungen? 
 

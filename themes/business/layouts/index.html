@@ -6,7 +6,8 @@
         <div id="site-head-content" class="py-2">            
             {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
     
-            {{ range first 1 .Pages }}
+            {{ $sections := (.Site.GetPage "/homepage").Pages }}
+            {{ range first 1 $sections }}
             <a href='#{{ if (isset .Params "url") }}{{ .Params.url }}{{ else }}{{ .Title | anchorize }}{{ end }}'>
                 <i id='header-arrow' class="fa fa-angle-down"></i>
             </a>

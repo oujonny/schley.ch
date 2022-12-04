@@ -9,7 +9,6 @@ page_image:
     crop: "center"
 ---
 
-### Inhaber und Geschäftsführer
 
 Als **selbständiger Berater**, **Interims-Manager** oder **Verwaltungsrat** bringe ich mich mit Elan zugunsten Ihrer Organisation ein. Ich verfüge über fundierte, vielfältige Erfahrungen in **strategischen Führungsfragen** im **politischen Umfeld**. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen **Verkehr** und **Energie** befasst. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide **Fachkompetenz, Verlässlichkeit** und gute **Intuition** zeichnen mich aus.
 

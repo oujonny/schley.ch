@@ -13,7 +13,9 @@
                     {{ else if modBool $index 2 }}even 
                     {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
                     <article id='{{ partial "utils/anchor.html" . }}' class="px-4 px-lg-3">
-                        <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+                        {{ if ne .Params.hide_title true }}
+                            <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+                        {{ end }}
                         <div class="post py-3 py-md-5">
                             {{ if ne .Params.hide_title true }}    
                             <header class="post-header">
@@ -39,23 +41,12 @@
                                 </div>
                         
                                 {{/* subpages with spesific type  */}}
-                                {{ if gt (len .Pages) 0 }}
-                                    {{ if (eq .Params.type "carousel") }}
-                                        {{ partial "components/carousel.html" . }}
-                                    {{ else if (eq .Params.type "generic") }}
-                                        {{ partial "components/generic.html" . }}
-                                    {{ else if (eq .Params.type "cards") }}
-                                        {{ partial "components/cards.html" . }}
-                                    {{ else }}
-                                        {{ partial "components/accordion.html" .}}
-                                    {{ end }}
-                                {{ end }}
+                                {{ partial "utils/subpage_selector.html" . }}
                             </section>
                         </div>
                     </article>
                     </div>
                 {{ end }}
-                {{ partial "footer.html" . }} 
             </div>     
         </div>
     </div>

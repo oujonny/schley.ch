@@ -6,9 +6,9 @@
             </div>
             <div id='{{ partial "utils/anchor.html" . }}-content' class="py-4 accordion-collapse collapse" aria-labelledby='{{ partial "utils/anchor.html" . }}-heading'>
                 {{ .Content }}
-                {{ range .Pages }}
-                    {{ .Content }}
-                {{ end }}
+
+                {{/* subpages with spesific type  */}}
+                {{ partial "utils/subpage_selector.html" . }}
             </div>
         </div>
     {{ end }}

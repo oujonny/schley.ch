@@ -10,7 +10,7 @@ disableKinds:
 theme: business
 
 params:
-  copyright: © Frank Schley GmbH
+  copyright: © Schley consult GmbH
   description: |
     Dr. Frank Schley selbständiger Berater, Interims-Manager oder Verwaltungsrat. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide Fachkompetenz und gute Intuition zeichnen mich aus.
   favicon: images/favicon.png

@@ -286,11 +286,17 @@ nav > .collapse.show, nav > div.collapsing {
 ################# */
 .accordion-button {
   font-size: var(--text-font-size);
-  color: var(--primary);
+  color: var(--primary) !important;
   font-weight: 600;
 
   background-color: var(--white) !important;
 }
+
+/* do not change collor if open */
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
+}
+
 /* 
 .accordion p {
   font-size: 1rem;
@@ -353,7 +359,7 @@ blockquote > p {
 #      footer      #
 ################# */
 .site-footer {
-  background-color: var(--brightgrey);
+  background-color: var(--white);
 }
 
 /* 

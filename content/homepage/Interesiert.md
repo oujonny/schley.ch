@@ -5,4 +5,4 @@ weight: 4
 
 background_color: "primary"
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id venenatis a condimentum vitae. Eu feugiat pretium nibh ipsum consequat nisl vel. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Vestibulum mattis ullamcorper velit sed ullamcorper. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna.
+Ich biete Ihnen effiziente, individuelle, persönliche Beratung und Projektunterstützung, die Ihr Unternehmen, Ihre Organisation oder Verwaltung weiterbringt. Ich unterstütze Sie sowohl bei der Analyse vorliegender Problemstellungen als auch bei der Erarbeitung und Umsetzung von Lösungen. Dabei kombiniere ich praxisbewährte Methoden mit meiner fundierten spezifischen Branchenkenntnis.

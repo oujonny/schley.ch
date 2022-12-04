@@ -11,7 +11,7 @@ Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen als Instrument 
 Von 2000 bis 2010 war ich im **Bundesamt für Verkehr (BAV)** für die Entwicklung des Controllings der Infrastrukturfinanzierung der SBB verantwortlich und mit der Leitung diverser Projekte im Bereich der Finanzierung der Bahninfrastruktur und des öffentlichen Verkehrs betraut (u.a. Leiter der Arbeitsgruppe "Finanzierung Bahninfrastruktur" (Grundlagen für die Schaffung des Bahninfrastrukturfonds). 
 
 Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finanzverwaltung (EFV)**. Dabei war ich insbesondere für folgende Aufgaben verantwortlich:
-*	finanzpolitische Beurteilung von Regierungsvorlagen des Eidg. Departements für Umwelt, Verkehr, Energie und Kom-munikation (UVEK)
+*	finanzpolitische Beurteilung von Regierungsvorlagen des Eidg. Departements für Umwelt, Verkehr, Energie und Kommunikation (UVEK)
 *	Controlling der strategischen Ziele des Bundesrats (Eignerstrategien) für SBB, Post, Swisscom und Skyguide
 *	Beteiligung an Eignergesprächen auf oberster Führungsebene zwischen Bund den Unternehmen 
 *	Leitung der vorbereitenden Fachgespräche mit Beteilung von Konzernleitungsmitgliedern

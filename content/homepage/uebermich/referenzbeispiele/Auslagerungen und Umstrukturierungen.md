@@ -1,5 +1,6 @@
 ---
-title: "Auslagerungen und Umstruckturierungen"
+title: "Auslagerungen und Umstrukturierungen"
+weight: 1
 header_menu: false
 ---
 

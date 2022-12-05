@@ -1,6 +1,6 @@
 ---
 title: "Forschung"
-waight: 3
+weight: 3
 header_menu: true
 ---
 

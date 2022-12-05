@@ -1,5 +1,6 @@
 ---
 title: "Prozzess und Kriesenmanagement"
+weight: 2
 header_menu: true
 ---
 

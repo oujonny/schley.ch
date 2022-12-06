@@ -1,5 +1,5 @@
 ---
-title: "Prozzess- und Kriesenmanagement"
+title: "Prozzess- und Krisenmanagement"
 weight: 1
 header_menu: true
 ---

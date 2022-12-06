@@ -1,5 +1,5 @@
 ---
-title: "Referenzbeispiele"
+title: "Projektreferenzen"
 header_menu: false
 weight: 3
 

@@ -1,18 +1,19 @@
 <footer class="site-footer container-fluid px-2 py-3 mt-5">
   <div class="row mx-2 mx-md-2">
-    <div class="col-8 d-flex">
-    {{ with .Site.Params.copyright }}
-      <section class="copyright pe-3 me-3 border-end border-2">{{ . | markdownify }}</section>
-    {{ end }}
-      
-      <section>
-        built with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-        <a href="https://github.com/oujonny" target="_blank" title="oujonny">oujonny</a>
-      </section>
+    <div class="col-12 col-sm-8 d-flex">
+        {{ with .Site.Params.copyright }}
+        <div class="copyright pe-3 me-3 border-sm-end border-2"><p class="mb-0">{{ . | markdownify }}</p></div>
+        {{ end }}
+        
+        <div class="">
+          <p class="mb-0">built with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+          <a href="https://github.com/oujonny" target="_blank" title="oujonny">oujonny</a></p>
+        </div>
+
     </div>
-    <div class="col-4 text-end">
-      <a class="ps-3" href="/impressum">Impressum</a>
-      <a class="ps-3" href="/datenschutz">Datenschutz</a>
+    <div class="col-12 col-sm-4 d-flex justify-content-md-end pt-2 pt-sm-0">
+        <a class="ms-sm-3" href="/impressum">Impressum</a>
+        <a class="ms-3" href="/datenschutz">Datenschutz</a>
     </div>
   </div>  
   </footer>

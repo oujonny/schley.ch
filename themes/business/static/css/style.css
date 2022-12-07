@@ -113,6 +113,35 @@ h6 {
   font-weight: 600;
 }
 
+a{
+  text-decoration: none;
+  color: var(--black);
+  position: relative;
+}
+
+a:hover{
+  color: var(--black);
+}
+
+a::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
 /* #################
 #     table        #
 ################# */
@@ -135,10 +164,6 @@ th, td {
 /* #################
 #         nav      #
 ################# */
-nav.navbar {
-  height: var(--scroll-offset);
-}
-
 #navbar-img {
   width: 100%;
   height: auto;
@@ -152,10 +177,8 @@ nav.navbar {
   border: none;
 }
 
-nav > .collapse.show, nav > div.collapsing {
-  /* height: 100vh !important; */
-
-  text-align: center;
+.navbar-collapse {
+  height: unset !important;
 }
 
 /* #################

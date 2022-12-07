@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top sticky-lg-top navbar-expand-lg bg-light shadow-sm">
-    <div id="nav" class="container-fluid mx-2 mx-md-4">
+    <div id="nav" class="container-fluid mx-2 mx-md-4 p-1">
         <a class="navbar-brand w-100 p-0" href="{{ .Site.BaseURL }}">
             <img id="navbar-img" clas="" src="/images/logo.svg" alt="Company Logo">
         </a>
@@ -15,7 +15,7 @@
             {{ $sections := (.Site.GetPage "/homepage").Pages }}
             {{ range where $sections ".Params.header_menu" true }}
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href='{{ if ne $currentPage "/" }}/{{ end }}#{{ partial "utils/anchor.html" . }}'>
+                    <a class="nav-link px-0 mx-2" aria-current="page" href='{{ if ne $currentPage "/" }}/{{ end }}#{{ partial "utils/anchor.html" . }}'>
                         <span data-bs-toggle=""  data-bs-target="#navbarSupportedContent">
                             {{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}
                         </span>

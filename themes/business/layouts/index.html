@@ -5,7 +5,7 @@
         <div id="site-logo" class="position-absolute"><img src="/images/logo-neg.svg" alt="Company Logo"> </div>      
         {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
     </div>
-    <div id="site-head-content" class="d-flex text-center py-2">    
+    <div id="site-head-content" class="d-flex text-center justify-content-center py-2">    
 
         {{ $sections := (.Site.GetPage "/homepage").Pages }}
         {{ range first 1 $sections }}

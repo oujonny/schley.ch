@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main id="wrap" role="main">
   <div id="warp-pages" class="row" data-bs-spy="scroll">
-      <div class="col-12 ps-md-0">
+      <div class="col-12 px-md-0">
           <div id="pages" class="container p-0" data-bs-smooth-scroll="true" tabindex="0">
             <div class='page px-0 px-md-4 {{ if isset .Page.Params "background_color"}}page-bg-{{ .Page.Params.background_color }}{{ end }}'>
               <article id='{{ partial "utils/anchor.html" . }}' class="px-4 px-lg-3">

@@ -1,19 +1,21 @@
 {{ define "main" }}
 {{/*  index page  */}}
 <header id="site-header-image" class="img-fluid vh-100" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
-    <div id="site-head-container" class="text-center container-fluid px-0 d-flex justify-content-center align-items-end">
-        <div id="site-head-content" class="py-2">            
-            {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
-    
-            {{ $sections := (.Site.GetPage "/homepage").Pages }}
-            {{ range first 1 $sections }}
-            <a href='#{{ if (isset .Params "url") }}{{ .Params.url }}{{ else }}{{ .Title | anchorize }}{{ end }}'>
-                <i id='header-arrow' class="fa fa-angle-down"></i>
-            </a>
-            {{ end }}
-        </div>
+    <div id="site-head-container" class="d-none d-lg-block text-center container-fluid px-0">
+        <div id="site-logo" class="position-absolute"><img src="/images/logo-neg.svg" alt="Company Logo"> </div>      
+        {{ with .Params.header_subheadline }}<h2 id="site-description">{{ . }}</h2>{{ end }}
+    </div>
+    <div id="site-head-content" class="d-flex text-center py-2">    
+
+        {{ $sections := (.Site.GetPage "/homepage").Pages }}
+        {{ range first 1 $sections }}
+        <a href='#{{ if (isset .Params "url") }}{{ .Params.url }}{{ else }}{{ .Title | anchorize }}{{ end }}'>
+            <i id='header-arrow' class="fa fa-angle-down"></i>
+        </a>
+        {{ end }}
     </div>
 </header>
 {{/*  load main content as onepager  */}}
+{{ partial "components/nav.html" . }}
 {{ template "onepager.html" . }}
 {{ end }}

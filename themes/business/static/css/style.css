@@ -173,6 +173,11 @@ th, td {
   max-width: 200px;
 }
 
+/* disable hover effect on logo */
+.navbar-brand::before {
+  all: unset;
+} 
+
 .navbar-toggler {
   border: none;
 }

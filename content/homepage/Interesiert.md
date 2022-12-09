@@ -1,5 +1,5 @@
 ---
-title: "meine Versprechen"
+title: "mein Versprechen"
 header_menu: true
 weight: 4
 

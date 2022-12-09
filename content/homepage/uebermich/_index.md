@@ -16,7 +16,7 @@ Kompetente Beratung von Bund, Kantonen und Gemeinden sowie öffentlichen Unterne
 Ich verfüge über fundierte, vielfältige Erfahrungen in strategischen Führungsfragen im politischen Umfeld. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen Verkehr und Energie befasst. Ich bin gut vernetzt mit Führungskräften in Verwaltung und Unternehmen, insbesondere im Bereich des öffentlichen Verkehrs in der Schweiz. 
 
 **Meine Alleinstellungsmerkmal:**
-Über 12 Jahre regelmässige Beteiligung an den Eignergesprächen zwischen Bund und den Unternehmensleitungen von SBB, Post, Swisscom und Skyguide. Leitung der vorbereitenden Fachgespräche mit Beteiligung von GL-Mitgliedern. Mitgestaltung der strategischen Ziele des Bundesrats für die genannten Unternehmen. Mehr Praxiserfahrung mit der Coporate Governace öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.
+Über 12 Jahre war ich regelmässige an den Eignergesprächen zwischen Bund und den Unternehmensleitungen von SBB, Post, Swisscom und Skyguide beteiligt, habe die vorbereitenden Fachgespräche geleitet und mehrfach strategische Ziele des Bundesrats für die genannten Unternehmen mitgestaltet. Mehr Praxiserfahrung mit der Coporate Governace öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.
 
 **Mein Plus:**
 Aufgrund meiner Herkunft bin ich auch mit dem politischen Geschehen in Deutschland, und den vom Schweizer Kontext zuweilen abweichenden Problemstellungen und Lösungsansätzen, bestens vertraut. 

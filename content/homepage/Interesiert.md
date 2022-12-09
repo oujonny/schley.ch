@@ -5,6 +5,4 @@ weight: 4
 
 background_color: "primary"
 ---
-1. Ehrlichkeit und Transparenz sind 
-2. Verlässlichkeit und ...
-3. Hoher Anspruch an sich selbst, Haltung und Stil ...
+Als unabhängier Berater, Interims-Manager oder Verwaltungsrat bringe ich mich mit Elan zugunsten Ihrer Organisation ein. Ich führe alle Mandate persönlich aus und berate meine Kunden effizient und resultatorientiert. Solide Fachkompetenz, Verlässlichkeit und gute Intuition zeichnen mich aus.

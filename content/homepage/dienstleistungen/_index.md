@@ -1,5 +1,5 @@
 ---
-title: "Dienstleistungen"
+title: "Angebot"
 weight: 2
 header_menu: true
 

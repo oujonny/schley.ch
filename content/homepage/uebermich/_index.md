@@ -1,6 +1,6 @@
 ---
 title: "Home"
-url: "ueber-mich"
+url: "Home"
 weight: 1
 header_menu: true
 

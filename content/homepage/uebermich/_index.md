@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Portrait"
 url: "Home"
 weight: 1
 header_menu: true

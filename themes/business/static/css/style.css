@@ -190,26 +190,19 @@ th, td {
 #     header    #
 ################# */
 #site-logo {
-  top: 10vh;
-  left: 10vh;
+  top: 30vh;
 
-  width: 40%;
+  width: 90%;
+  max-width: 35rem;
 }
 
-#site-description {
-  position: absolute;
-  bottom: 10vh;
-  right: 10vh;
-
-  width: 30%;
-
-  text-align: left;
-  font-size: calc(1.8rem + 0.5vw);
-  color: var(--white);
-}
+/* disable hover effect on logo */
+#site-logo > a::before {
+  all: unset;
+} 
 
 #site-head-content {
-  background-color: rgba(31, 59, 96, 0.7);
+  background-color: rgba(31, 59, 96, 0.3);
   height: 100vh;
   width: 100vw;
 }
@@ -233,18 +226,8 @@ th, td {
   animation: bounce 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  animation-delay: 5s;
-
-  /* fade in */
-  /* animation: fadein 0.5s;
-  animation-delay: 5s; */
-
+  animation-delay: 2s;
 }
-
-/* @keyframes fadein {
-  from { opacity: 0;}
-  to { opacity: 1;}
-} */
 
 @keyframes bounce{
   from { transform: translate3d(0, 0, 0);}
@@ -348,9 +331,19 @@ th, td {
   background-color: var(--brightgrey);
 }
 
+.card a {
+  color: inherit;
+}
+
 .card:hover {
   background-color: var(--primary);
   color: var(--white);
+}
+
+.cards-grid-only {
+  background-color: unset !important;
+  box-shadow: unset !important;
+  color: unset !important;
 }
 
 
@@ -375,6 +368,28 @@ blockquote > p {
   font-weight: 200;
   font-size: var(--text-font-size);
   color: black;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #1f3b60;
+}
+/* .carousel-control-prev, .carousel-control-prev:focus, .carousel-control-next, .carousel-control-next:focus  {
+  font-size: 2.75rem;
+  color: var(--primary);
+  opacity: 0.2;
+}
+
+.carousel-control-next:hover, .carousel-control-prev:hover {
+	color: var(--primary);
+	opacity: .4;
+} */
+
+.carousel-control-prev {
+  margin-left: -8rem;
+}
+
+.carousel-control-next {
+  margin-right: -8rem;
 }
 
 /* .carousel-item-text > blockquote > p::before {

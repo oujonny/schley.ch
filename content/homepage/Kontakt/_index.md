@@ -1,9 +1,10 @@
 ---
 title: "Kontakt"
 header_menu: true
-weight: 5
+weight: 6
 
-text_colums: 2
+page_image:
+    src: "portrait2.jpg"
 ---
 
 |                     |                                                                |

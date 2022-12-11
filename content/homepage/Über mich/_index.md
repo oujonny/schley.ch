@@ -1,12 +1,11 @@
 ---
 title: "Portrait"
 url: "Home"
-weight: 1
+weight: 2
 header_menu: true
 
 page_image:
     src: "portrait.jpg"
-    crop: "center"
 ---
 ### Dr. Frank Schley
 **Mein Fokus:**

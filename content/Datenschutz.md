@@ -24,7 +24,7 @@ Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werde
 Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln. Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
 
 
-#### Allgemeine Hinweise & Pflichtinformationen
+## Allgemeine Hinweise & Pflichtinformationen
 ##### Widerruf Ihrer Einwilligung zur Datenverarbeitung
 Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmässigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
 
@@ -53,15 +53,22 @@ Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur 
 Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
 Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.
 
-#### Datenerfassung auf dieser Website
+## Datenerfassung auf dieser Website
 ##### Cookies
 Es werden keinerlei Cookies auf dieser Webseite gesetzt und verwendet.
 
 ##### Anfrage per E-Mail oder Telefon
 Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Massnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde. Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
 
-#### Plugins & Tools
 ##### Social Plugins (Linkedin)
 Alle eingebundenen Social-Plugins funktionieren über das 2-Klick-Verfahren; das heisst, dass das Aufzeichnen Ihres Surfverhaltens durch ein Plugin erst dann startet, wenn Sie das entsprechende Plugin durch Anklicken überhaupt erst aktivieren.
 
 Aktualisiert: 30.07.2020
+
+## Kontakt 
+|                     |                                                                                |
+| --------------------- | -------------------------------------------------------------------------------- |
+| Schley Consult GmbH | [+41 79 673 94 31](tel:+41796739431)                                           |
+| Dr. Frank Schley    | [mail@schleyconsult.ch](mailto:mail@schleyconsult.ch)                          |
+| Trachselweg 9       | [LinkedIn](https://www.linkedin.com/in/frank-schley-654654aa/)                 |
+| 3008 Bern           | UID:[CHE-201.810.474](https://www.zefix.ch/en/search/entity/list/firm/1561860) |

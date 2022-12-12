@@ -10,5 +10,3 @@ Seit 2017 bin ich **Vizepräsident des Verwaltungsrats der RefBernImmo AG (RBI)*
 Seit 2016 bin ich Mitglied (seit 2018 Vizepräsident) des **Kleinen Kirchenrats**, der Exekutive der ev.-ref. **Gesamtkirchgemeinde Bern** (ca. 50‘000 Mitglieder, ca. 250 Beschäftigte). Hier bin ich für die Ressorts Personal und Kommunikation zuständig. 
 
 Von 2008 bis 2015 war ich **Co-Präsident der Quartierkommission QM3** für den Stadtteil III (Mattenhof-Weissenbühl). 
-
-Ausserdem bis ich seit mehr als 15 Jahre war ich der Sektion Bern-Mittelland der Carsharing-Genossenschaft **Mobility** engagiert (**Delegierter**).

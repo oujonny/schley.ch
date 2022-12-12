@@ -1,4 +1,4 @@
 {{ $image := .Resources.GetMatch .Page.Params.page_image.src }}
-{{ with $image.Fill "800x1000 center jpeg p100 picture" }}
+{{ with $image.Resize "x1000 q90 center" }}
 <img id="page_image" class="shadow-sm w-100 h-100" src="{{ .RelPermalink }}" alt="Portrait">
 {{ end }}

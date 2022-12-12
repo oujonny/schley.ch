@@ -49,7 +49,7 @@ body {
   color: var(--black);
 }
 
-p, li {
+p, li, th, td {
   font-family: Moderat;
   font-weight: 200;
   font-size: var(--text-font-size);
@@ -153,8 +153,7 @@ table {
 }
 
 thead th, thead td {
-  font-size: 1.3rem;
-  font-weight: 400 !important;
+  font-weight: bold !important;
 }
 
 th, td {
@@ -217,21 +216,24 @@ th, td {
   font-size: 5rem;
   opacity: 1;
 
+  width: 5rem;
+
   position: absolute;
   bottom: 2rem;
   left: 0;
   right: 0;
+  transform: translateX(-50%);
 
   /* bounce animation  */
   animation: bounce 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 
 @keyframes bounce{
-  from { transform: translate3d(0, 0, 0);}
-  to { transform: translate3d(0, -10px, 0);}
+  from { transform: translate(-50%, 0)}
+  to { transform: translate(-50%, -10px);}
 }
 
 /* #################
@@ -245,6 +247,10 @@ th, td {
 
 .page {
   background-color: var(--secondary);
+}
+
+.page-image-div {
+  max-height: 33rem;
 }
 
 #page_image {
@@ -355,6 +361,13 @@ th, td {
 /* #################
 #     carousel     #
 ################# */
+.carousel {
+  min-height: 20rem;
+}
+
+.carousel > a::before {
+  all: unset;
+} 
 
 .carousel-item-text > blockquote {
   margin-top: 1.5rem;
@@ -363,6 +376,11 @@ th, td {
 }
 
 @media (max-width: 576px) {
+  .carousel {
+    min-height: unset;
+    padding-bottom: 3rem;
+  }
+
   .carousel-item-text > blockquote  { 
     margin-left: 0rem;
   }
@@ -378,39 +396,6 @@ blockquote > p {
 .carousel-indicators [data-bs-target] {
   background-color: #1f3b60;
 }
-/* .carousel-control-prev, .carousel-control-prev:focus, .carousel-control-next, .carousel-control-next:focus  {
-  font-size: 2.75rem;
-  color: var(--primary);
-  opacity: 0.2;
-}
-
-.carousel-control-next:hover, .carousel-control-prev:hover {
-	color: var(--primary);
-	opacity: .4;
-} */
-
-.carousel-control-prev {
-  margin-left: -8rem;
-}
-
-.carousel-control-next {
-  margin-right: -8rem;
-}
-
-/* .carousel-item-text > blockquote > p::before {
-  content: '\f10d';
-  color: var(--highlight);
-  font-size: 1.75rem !important;
-  margin-right: 0.75rem;
-  margin-left: -2.25rem;
-
-  # fa font icon stand stuff
-  display: inline-block;
-  font: normal normal normal 14px/1 ForkAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
 
 /* #################
 #      footer      #

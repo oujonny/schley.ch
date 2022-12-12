@@ -1,6 +1,7 @@
 ---
 title: "Slogan"
 hide_title: true
+offset: true
 header_menu: false
 weight: 1
 

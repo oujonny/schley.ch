@@ -274,7 +274,7 @@ th, td {
   position: relative;
 }
 
-.page-bg-primary .display-1, .page-bg-primary > h2, .page-bg-primary h4, .page-bg-primary h6, .page-bg-primary p {
+.page-bg-primary .display-1, .page-bg-primary h1, .page-bg-primary h2, .page-bg-primary h4, .page-bg-primary h6, .page-bg-primary p {
   color: var(--white) !important;
 }
 
@@ -299,6 +299,11 @@ th, td {
   right: 0;
   height: calc(100% - var(--scroll-offset));
   z-index: -1;
+}
+
+.no-offset::before {
+  height: 100% !important;
+  margin-top: 0 !important;
 }
 
 /* #################

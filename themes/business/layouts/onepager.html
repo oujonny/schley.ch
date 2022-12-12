@@ -8,7 +8,7 @@
 
                     {{ if isset .Page.Params "background_color"}}page-bg-{{ .Page.Params.background_color }}{{ end }}
 
-                    {{ if eq $index 0 }}first 
+                    {{ if eq $index 0 }}first no-offset
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
                     {{ else if ne (modBool $index 2) true }}odd {{ end }}'>

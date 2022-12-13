@@ -8,4 +8,4 @@ weight: 1
 background_color: "primary"
 ---
 # Kompetenz an der Schnittstelle von 
-Staat und öffentlichen Unternehmen
+# Staat und öffentlichen Unternehmen

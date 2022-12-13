@@ -1,7 +1,7 @@
 ---
 title: "Mandate und ehrenamtliche Aktivitäten"
 header_menu: false
-weight: 2
+weight: 
 ---
 ##### Mandate und ehrenamtliche Aktivitäten
 

@@ -9,7 +9,7 @@ page_image:
 ---
 ### Dr. Frank Schley
 **Mein Fokus:**
-Kompetente Beratung von Bund, Kantonen und Gemeinden sowie öffentlichen Unternehmen, insbesondere in Fragen der Corporate Governance. Sparringpartner für strategischen und regulatorischen Fragen von öffentlichen Unternehmen. 
+Kompetente Beratung von Bund, Kantonen und Gemeinden sowie öffentlichen Unternehmen, insbesondere in Fragen der Corporate Governance. Sparringpartner für das Management öffentlicher Unternehmen in strategischen und regulatorischen Themen. 
 
 **Meine Kompetenzen:**
 Ich verfüge über fundierte, vielfältige Erfahrungen in strategischen Führungsfragen im politischen Umfeld. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen Verkehr und Energie befasst. Ich bin gut vernetzt mit Führungskräften in Verwaltung und Unternehmen, insbesondere im Bereich des öffentlichen Verkehrs in der Schweiz. 

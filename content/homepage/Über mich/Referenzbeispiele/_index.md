@@ -1,7 +1,7 @@
 ---
 title: "Referenzbeispiele"
 header_menu: false
-weight: 4
+weight: 
 
 type: "accordion"
 ---

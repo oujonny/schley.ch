@@ -1,6 +1,6 @@
 ---
 title: "Véronique Gigon"
-weight: 4
+weight: 2
 ---
 #### Véronique Gigon
 ##### Administratrice indépendante et ancienne secrétaire générale adjointe DETEC (UVEK)

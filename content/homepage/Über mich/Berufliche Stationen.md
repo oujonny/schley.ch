@@ -1,7 +1,7 @@
 ---
 title: "Berufliche Stationen"
 header_menu: false
-weight: 2
+weight: 1
 ---
 ##### Berufliche Stationen
 

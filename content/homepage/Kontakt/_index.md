@@ -6,7 +6,7 @@ weight: 6
 page_image:
     src: "portrait2.jpg"
 ---
-Brauchen Sie Unterstützung? Lassen Sie uns darüber reden. 
+Brauchen Sie Unterstützung? Lassen Sie uns darüber reden! 
 |                     |                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- |
 | Schley Consult GmbH |                                           |

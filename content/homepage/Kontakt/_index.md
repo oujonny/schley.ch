@@ -6,7 +6,7 @@ weight: 6
 page_image:
     src: "portrait2.jpg"
 ---
-Ich freue mich auf Ihre Kontaktaufnahme.
+Brauchen Sie Unterstützung? Lassen Sie uns darüber reden. 
 |                     |                                                                                |
 | --------------------- | -------------------------------------------------------------------------------- |
 | Schley Consult GmbH |                                           |

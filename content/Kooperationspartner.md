@@ -1,5 +1,10 @@
 ---
-Title: "Kooperationspartner"
-heaer_menu: false
+title: "Partner"
+header_menu: true
+Draft: true
 ---
-test
+Netzwerkpertner 
+
+* kcw, Strategie- und Managementberatung für den öffentlichen Verkehr, kcw-online.de
+* Infras, Forschung und Beratung, infras.ch
+* Kurt Moll, Rechtsanwalt, kurtmoll.ch

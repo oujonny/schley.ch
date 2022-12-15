@@ -1,0 +1,53 @@
+<main id="wrap" role="main">
+    <div id="warp-pages" class="row">
+        <div class="col-12 px-md-0">
+            <div id="pages" class="container p-0" data-bs-target="#nav" data-bs-smooth-scroll="true" tabindex="0">
+                {{ $sections := (.Site.GetPage "/homepage").Pages }}
+                {{ range $index, $element := $sections }}
+                    <div class='page px-0 px-md-4
+
+                    {{ if isset .Page.Params "background_color"}}page-bg-{{ .Page.Params.background_color }}{{ end }}
+
+                    {{ if eq $index 0 }}first
+                    {{ else if eq (add $index 1) (len $sections ) }} last 
+                    {{ else if modBool $index 2 }}even 
+                    {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
+                    <article id='{{ partial "utils/anchor.html" . }}' class="px-4 px-lg-3">
+                        {{ if or (ne .Params.hide_title true) (eq .Params.offset true) }}
+                            <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+                        {{ end }}
+                        <div class="post py-3 py-md-5">
+                            {{ if ne .Params.hide_title true }}    
+                            <header class="post-header">
+                                <h1 class="display-1 post-title">{{ .Title }}</h1>
+                            </header>
+                            {{ end }}
+                            <section class="post-content">
+                                <div class="container-fluid d-flex mt-md-0">
+                                    <div class="row">
+                                        {{ if isset .Page.Params "page_image" }}
+                                                <div class="col-lg-7 px-0">
+                                                    {{ .Content }}
+                                                </div>
+                                                <div class="page-image-div col-lg-5 order-first order-lg-last px-0 pb-4 pb-lg-2 ps-lg-4 pe-lg-0">
+                                                    {{ partial "utils/page_image.html" . }}
+                                                </div>
+                                        {{ else }}
+                                            <div class="col-12 px-0">
+                                                {{ .Content }}
+                                            </div>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                        
+                                {{/* subpages with spesific type  */}}
+                                {{ partial "utils/subpage_selector.html" . }}
+                            </section>
+                        </div>
+                    </article>
+                    </div>
+                {{ end }}
+            </div>     
+        </div>
+    </div>
+</main>

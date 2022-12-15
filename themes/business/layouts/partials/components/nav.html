@@ -1,0 +1,28 @@
+<nav class="navbar fixed-top sticky-lg-top navbar-expand-lg bg-light shadow-sm">
+    <div id="nav" class="container-fluid mx-2 mx-md-4 p-1">
+        <a class="navbar-brand w-100 p-0" href="{{ .Site.BaseURL }}">
+            <img id="navbar-img" clas="" src="/images/logo.svg" alt="Company Logo">
+        </a>
+
+        {{/*  mobile stuff  */}}
+        <button class="navbar-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+            {{ $currentPage := .Page.RelPermalink }}
+            {{ $sections := (.Site.GetPage "/homepage").Pages }}
+            {{ range where $sections ".Params.header_menu" true }}
+                <li class="nav-item">
+                    <a class="nav-link px-0 mx-2" aria-current="page" href='{{ if ne $currentPage "/" }}/{{ end }}#{{ partial "utils/anchor.html" . }}'>
+                        <span data-bs-toggle=""  data-bs-target="#navbarSupportedContent">
+                            {{ if isset  .Params "url_title" }} {{ .Params.url_title }} {{ else }} {{ .Title }} {{ end }}
+                        </span>
+                    </a>
+                </li>
+            {{ end }}
+            </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,23 @@
+<div id='{{ partial "utils/anchor.html" . }}-carousel' class="position-relative carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="6000" data-bs-touch="true" data-bs-keyboard="true">
+  <a class="unset" type="button" data-bs-slide="next" href='#{{ partial "utils/anchor.html" . }}-carousel'>
+    <div class="carousel-inner container-fluid p-0 px-0"> 
+      {{ range $index, $element := .Pages }}
+      <div class="carousel-item">
+        <div class="d-flex">
+          <div class="carousel-item-text p-0 blockqoute">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </a>
+  <div class="position-absolute carousel-indicators">
+    <button class="" type="button" data-bs-target='#{{ partial "utils/anchor.html" . }}-carousel' data-bs-slide="prev"></button>
+    <button class="" type="button" data-bs-target='#{{ partial "utils/anchor.html" . }}-carousel' data-bs-slide="next"></button>
+
+    {{ range $index, $element := .Pages }}
+    <button class="visually-hidden {{ if (eq $index 0) }}active{{ end }}" type="button" data-bs-target='#{{ partial "utils/parentanchor.html" . }}-carousel' data-bs-slide-to="{{ $index }}" aria-current="{{ if (eq $index 0) }}true{{ end }}" aria-label="Slide {{ $index }}"></button>
+    {{ end }}
+  </div> 
+</div>

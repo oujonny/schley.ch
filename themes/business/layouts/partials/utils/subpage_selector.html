@@ -1,0 +1,12 @@
+{{/* subpages with spesific type  */}}
+{{ if gt (len .Pages) 0 }}
+    {{ if (eq .Params.type "carousel") }}
+        {{ partial "components/carousel.html" . }}
+    {{ else if (eq .Params.type "generic") }}
+        {{ partial "components/generic.html" . }}
+    {{ else if (eq .Params.type "cards") }}
+        {{ partial "components/cards.html" . }}
+    {{ else }}
+        {{ partial "components/accordion.html" .}}
+    {{ end }}
+{{ end }}

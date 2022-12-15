@@ -1,0 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer, same-origin">
+    {{/*  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'https://* self'; child-src 'none';" />  */}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Site.Params.description }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+    <!-- Loead bootstrap js script -->
+    <script defer="defer" src="/js/bootstrap.min.js"></script>
+    <script defer="defer" src="/js/script.js"></script>
+
+    {{/*  css  */}}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/fork-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>

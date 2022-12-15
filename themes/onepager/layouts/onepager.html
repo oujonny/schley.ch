@@ -1,6 +1,7 @@
 <main id="wrap" role="main">
     <div class="row" data-bs-spy="scroll">
         {{ partial "components/sidenav.html" . }}
+        {{ partial "components/mobilenav.html" . }}
         <div class="col-md-9 ps-md-0">
             <div id="pages" class="container p-0" data-bs-target="#side-navbar" data-bs-smooth-scroll="true" tabindex="0">
                 {{ $sections := .Pages }}
@@ -9,7 +10,9 @@
                     {{ if eq $index 0 }}first 
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
-                    {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
+                    {{ else if ne (modBool $index 2) true }}odd {{ end }}
+                    
+                    {{ if .Page.Params.underline_links }}underline{{ end }}'>
                         {{ if (eq .Params.type "carousel") }}
                             {{ partial "components/carousel.html" . }}
                         {{ else if (eq .Params.type "generic") }}

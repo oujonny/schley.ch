@@ -1,7 +1,6 @@
 ---
 title: "Kooperationspartner"
 header_menu: true
-Draft: true
 ---
 
 * kcw, Strategie- und Managementberatung für den öffentlichen Verkehr, kcw-online.de

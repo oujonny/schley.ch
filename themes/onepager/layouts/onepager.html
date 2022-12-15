@@ -10,7 +10,9 @@
                     {{ if eq $index 0 }}first 
                     {{ else if eq (add $index 1) (len $sections ) }} last 
                     {{ else if modBool $index 2 }}even 
-                    {{ else if ne (modBool $index 2) true }}odd {{ end }}'>
+                    {{ else if ne (modBool $index 2) true }}odd {{ end }}
+                    
+                    {{ if .Page.Params.underline_links }}underline{{ end }}'>
                         {{ if (eq .Params.type "carousel") }}
                             {{ partial "components/carousel.html" . }}
                         {{ else if (eq .Params.type "generic") }}

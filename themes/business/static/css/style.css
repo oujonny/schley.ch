@@ -49,8 +49,11 @@ body {
   color: var(--black);
 }
 
-p, li, th, td {
+p, li, th, td, a, h1, h2, h3, h4, h5, h6 {
   font-family: Moderat;
+}
+
+p, li, th, td {
   font-weight: 200;
   font-size: var(--text-font-size);
 }

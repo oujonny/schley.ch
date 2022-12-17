@@ -49,11 +49,16 @@ body {
   color: var(--black);
 }
 
+<<<<<<< HEAD
 p, li, th, td, a, h1, h2, h3, h4, h5, h6 {
   font-family: Moderat;
 }
 
 p, li, th, td {
+=======
+p, li, th, td {
+  font-family: Moderat;
+>>>>>>> main
   font-weight: 200;
   font-size: var(--text-font-size);
 }

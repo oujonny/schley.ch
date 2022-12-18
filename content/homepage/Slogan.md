@@ -3,7 +3,7 @@ title: "Slogan"
 hide_title: true
 offset: true
 header_menu: false
-weight: 1
+weight: 5
 
 background_color: "primary"
 ---

@@ -167,6 +167,18 @@ th, td {
   padding: 2px 5px;
 }
 
+@media screen and (max-width:370px) {
+  thead,tbody,tr {
+    display: grid; 
+    width: 100%; 
+  }
+  td {
+    min-width: 100px;
+  }
+
+  tr { grid-template-columns: auto auto auto; }
+}
+
 /* #################
 #         nav      #
 ################# */

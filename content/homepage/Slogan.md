@@ -7,5 +7,7 @@ weight: 1
 
 background_color: "primary"
 ---
-## Kompetenz an der Schnittstelle von staatlichen Behörden und öffentlichen Unternehmen
+<p>## Kompetenz an der Schnittstelle von <br>
+staatlichen Behörden und <br>
+öffentlichen Unternehmen</p>
 

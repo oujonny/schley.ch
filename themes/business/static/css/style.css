@@ -256,7 +256,7 @@ th, td {
 }
 
 @media (min-width: 576px) {
-  #slogan h1 {
+  #slogan h1, #slogan h2, #slogan h3 {
     max-width: 60%;
   }
 }

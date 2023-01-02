@@ -9,10 +9,10 @@ page_image:
 ---
 ### Dr. Frank Schley
 **Mein Fokus:**
-Kompetente Managementberatung für Bund, Kantone und Gemeinden sowie öffentliche Unternehmen. Sparringpartner für Personen in Führungsverantwortung, insbesondere für Strategie-, Regulierungs- und Finanzierungsthemen. 
+Kompetente Managementberatung für Bund, Kantone und Gemeinden sowie öffentliche Unternehmen. Sparringpartner für Personen in Führungsverantwortung, insbesondere für Strategie-, Regulierungs- und Finanzierungsthemen im Bereich der Netzwerkinfrastrukturen (Eisenbahn, Energie, Telekommunikation).
 
 **Meine Kompetenzen:**
-Ich verfüge über fundierte, vielfältige Erfahrungen in strategischen Führungsfragen im politischen Umfeld. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen Verkehr und Energie befasst. Ich bin gut vernetzt mit Führungskräften in Verwaltung und Unternehmen, insbesondere im Bereich des öffentlichen Verkehrs in der Schweiz. 
+Ich verfüge über langjährige Erfahrungen in strategischen Führungsfragen im politischen Umfeld und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen. Personen mit denen ich zusammengearbeitet habe attestieren mir ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundiertes Fachwissen in Finanzierungsfragen.
 
 **Meine Alleinstellungsmerkmal:**
 Während 12 Jahren war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und stets an den Eignergesprächen zwischen Bund und den Unternehmensleitungen dabei. Mehr Praxiserfahrung mit der Corporate Governance öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.

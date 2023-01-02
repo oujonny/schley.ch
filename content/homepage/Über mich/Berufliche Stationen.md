@@ -17,5 +17,5 @@ Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finan
 * Controlling der strategischen Ziele des Bundesrats (Eignerstrategien) für SBB, Post, Swisscom und Skyguide
 * Beteiligung an Eignergesprächen auf oberster Führungsebene zwischen Bund den Unternehmen 
 * Leitung der vorbereitenden Fachgespräche mit Beteilung von Konzernleitungsmitgliedern
-* Regelmässiger Austausch mit dem Staatsverteter im Swisscom Verwaltungsrat
+* Regelmässiger Austausch mit dem Staatsverteter im Verwaltungsrat der Swisscom AG
 * Beurteilung von Unternehmensstrategien und M&A-Projekten (Second Opinions)

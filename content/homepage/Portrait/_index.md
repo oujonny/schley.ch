@@ -12,7 +12,7 @@ page_image:
 Kompetente Managementberatung für Bund, Kantone und Gemeinden sowie öffentliche Unternehmen. Sparringpartner für Personen in Führungsverantwortung, insbesondere für Strategie-, Regulierungs- und Finanzierungsthemen im Bereich der Netzwerkinfrastrukturen (Eisenbahn, Energie, Telekommunikation).
 
 **Meine Kompetenzen:**
-Ich verfüge über langjährige Erfahrungen in strategischen Führungsfragen im politischen Umfeld und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen. Personen mit denen ich zusammengearbeitet habe attestieren mir ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundiertes Fachwissen in Finanzierungsfragen.
+Ich verfüge über langjährige Erfahrung in strategischen Führungsfragen im politischen Umfeld und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen. Personen mit denen ich zusammengearbeitet habe attestieren mir ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundierte betriebs- und volkswirtschaftliche Kompetenzen.
 
 **Meine Alleinstellungsmerkmal:**
 Während 12 Jahren war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und stets an den Eignergesprächen zwischen Bund und den Unternehmensleitungen dabei. Mehr Praxiserfahrung mit der Corporate Governance öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.

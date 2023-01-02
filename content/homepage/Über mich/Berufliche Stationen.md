@@ -15,6 +15,7 @@ Von 2000 bis 2010 war ich im **Bundesamt für Verkehr (BAV)** für die Entwicklu
 Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finanzverwaltung (EFV)**. Dabei war ich insbesondere für folgende Aufgaben verantwortlich: 
 * finanzpolitische Beurteilung von Regierungsvorlagen des Eidg. Departements für Umwelt, Verkehr, Energie und Kommunikation (UVEK)
 * Controlling der strategischen Ziele des Bundesrats (Eignerstrategien) für SBB, Post, Swisscom und Skyguide
-* Beteiligung an Eignergesprächen auf oberster Führungsebene zwischen Bund den Unternehmen und dm regelmässigen Austausch mit dem Staatsverteter im Swisscom Verwaltungsrat
+* Beteiligung an Eignergesprächen auf oberster Führungsebene zwischen Bund den Unternehmen 
 * Leitung der vorbereitenden Fachgespräche mit Beteilung von Konzernleitungsmitgliedern
+* Regelmässiger Austausch mit dem Staatsverteter im Swisscom Verwaltungsrat
 * Beurteilung von Unternehmensstrategien und M&A-Projekten (Second Opinions)

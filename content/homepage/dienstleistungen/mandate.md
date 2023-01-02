@@ -3,4 +3,4 @@ title: "Mandate"
 weight: 4
 header_menu: false
 ---
-Für Verwaltungsräte von öffentlichen Unternehmen sind fundierte Kenntnisse des regulatorischen Umfelds und der relevanten politischen und administrativen Prozesse essenziell; bei mir finden Sie die besondere Kombination von langjähriger Verwaltungserfahrung und unternehmerischem Esprit! Mit diesen Kompetenzen kann ich als unabhängige, integre Persönlichkeit **Verwaltungsräte von öffentlichen Unternehmen** effektiv verstärken. 
+Für Verwaltungsräte von öffentlichen Unternehmen sind fundierte Kenntnisse des regulatorischen Umfelds und der relevanten politischen und administrativen Prozesse essenziell; bei mir finden Sie die besondere Kombination von langjähriger Verwaltungserfahrung und unternehmerischem Esprit! Mit diesen Kompetenzen kann ich als unabhängige, integre Persönlichkeit **Verwaltungsräte von öffentlichen Unternehmen** verstärken. 

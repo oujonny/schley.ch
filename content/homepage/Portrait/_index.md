@@ -9,13 +9,13 @@ page_image:
 ---
 ### Dr. Frank Schley
 **Mein Fokus:**
-Kompetente Beratung von Bund, Kantonen und Gemeinden sowie öffentlichen Unternehmen, insbesondere in Fragen der Corporate Governance. Sparringpartner für das Management öffentlicher Unternehmen in strategischen und regulatorischen Themen. 
+Kompetente Managementberatung für Bund, Kantone und Gemeinden sowie öffentliche Unternehmen. Sparringpartner für Personen in Führungsverantwortung, insbesondere für Strategie-, Regulierungs- und Finanzierungsthemen im Bereich der Netzwerkinfrastrukturen (Eisenbahn, Energie, Telekommunikation).
 
 **Meine Kompetenzen:**
-Ich verfüge über fundierte, vielfältige Erfahrungen in strategischen Führungsfragen im politischen Umfeld. In der gesamten beruflichen Karriere habe ich mich vertieft mit den Themen Verkehr und Energie befasst. Ich bin gut vernetzt mit Führungskräften in Verwaltung und Unternehmen, insbesondere im Bereich des öffentlichen Verkehrs in der Schweiz. 
+Ich verfüge über langjährige Erfahrung in strategischen Führungsfragen im politischen Umfeld und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen. Personen mit denen ich zusammengearbeitet habe attestieren mir ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundierte betriebs- und volkswirtschaftliche Kompetenzen.
 
 **Meine Alleinstellungsmerkmal:**
-Während 12 Jahren war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und stets an den Eignergesprächen zwischen Bund und den Unternehmensleitungen dabei. Mehr Praxiserfahrung mit der Corporate Governace öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.
+Während 12 Jahren war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und stets an den Eignergesprächen zwischen Bund und den Unternehmensleitungen dabei. Mehr Praxiserfahrung mit der Corporate Governance öffentlicher Unternehmen werden Sie in der Schweiz kaum finden.
 
 **Mein Plus:**
 Aufgrund meiner Herkunft bin ich auch mit dem politischen Geschehen in Deutschland, und den vom Schweizer Kontext zuweilen abweichenden Problemstellungen und Lösungsansätzen, bestens vertraut. 

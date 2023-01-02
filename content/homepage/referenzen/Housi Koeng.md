@@ -1,5 +1,5 @@
 ---
-title: "Hansruedi Koeng"
+title: "Hansruedi Köng"
 weight: 3
 ---
 ####  Hansruedi Koeng 

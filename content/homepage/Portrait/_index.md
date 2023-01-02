@@ -15,7 +15,7 @@ Kompetente Managementberatung für Bund, Kantone und Gemeinden sowie öffentlich
 Ich verfüge über langjährige Erfahrung in strategischen Führungsfragen und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen. Ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundiertes betriebs- und volkswirtschaftliches Knowhow zeichnen mich aus.
 
 **Mein Alleinstellungsmerkmal:**
-Einzigartige Praxiserfahrung mit der Corporate Governance öffentlicher Unternehmen. Über 12 Jahre war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und habe mich an den Eignergesprächen zwischen Bund und den Unternehmensleitungen eingebracht.
+Einzigartige Praxiserfahrung mit der Corporate Governance öffentlicher Unternehmen. Über 12 Jahre war ich an der Ausarbeitung und dem Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom beteiligt und habe mich bei den Eignergesprächen zwischen Bund und den Unternehmensleitungen aktiv eingebracht.
 
 **Mein Plus:**
-Aufgrund meiner Herkunft bin ich auch mit dem politischen Geschehen in Deutschland, und den vom Schweizer Kontext zuweilen abweichenden Problemstellungen und Lösungsansätzen, bestens vertraut. 
+Aufgrund meiner Herkunft bin ich auch mit dem politischen Geschehen in Deutschland und den vom Schweizer Kontext abweichenden Problemstellungen und Lösungsansätzen bestens vertraut. 

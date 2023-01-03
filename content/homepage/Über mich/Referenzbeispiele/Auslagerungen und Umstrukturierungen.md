@@ -14,4 +14,4 @@ header_menu: false
 * Vertreter EFD im Projekt Auslagerung der Post (Gründung Schweizerische Post AG/PostFinance AG)
 * Leiter der interdepartementalen Arbeitsgruppe "Finanzierung Bahninfrastruktur" [(Erarbeitung der Grundlagen für die Schaffung des Bahninfrastrukturfonds ,BIF)](https://www.newsd.admin.ch/newsd/message/attachments/21849.pdf)
 * Mitglied der Projektleitung für die Ausgliederung der Eisenbahninfrastruktur der BLS und Gründung der BLS Netz AG
-* Fachvertreter des Bundes in Fusionsverfahren von Eisenbahnunternehmen (SBB AG + Luzern-Stans-Engelberg-Bahn AG -> Zentralbahn AG; BLS Lötschbergbahn AG + Regionalverkehr Mittelland AG -> BLS AG)
+* Vertreter des Bundes in Fusionsverfahren von Eisenbahnunternehmen (SBB AG + Luzern-Stans-Engelberg-Bahn AG -> Zentralbahn AG; BLS Lötschbergbahn AG + Regionalverkehr Mittelland AG -> BLS AG)

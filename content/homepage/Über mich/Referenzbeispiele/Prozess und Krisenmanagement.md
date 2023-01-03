@@ -10,4 +10,4 @@ header_menu: true
 * Operative Leitung der Task Force "Covid-Unterstützungsmassnahmen für die Schweizer Luftfahrt"
 * Aushandlung der Finanzierungsvereinbarung für die Durchmesserlinie Zürich
 * Fachverantwortlicher für die Finanzierung der deutschen Bahnstrecken in der Schweiz
-* Prozessverantwortlicher für das Controlling der Finanzierung der SBB-Infrastruktur durch den Bund
+* Prozessverantwortlicher für das Controlling der Finanzierung der SBB-Infrastruktur

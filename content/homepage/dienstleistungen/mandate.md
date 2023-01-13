@@ -1,5 +1,6 @@
 ---
 title: "Mandate"
+weight: 4
 header_menu: false
 ---
-Suchen Sie eine integre, unabhängige Persönlichkeit für den **Verwaltungsrat** eines Verkehrs- oder Diestleistungsunternehmens? In Verwaltungsräten von öffentlichen Unternehmen sind Erfahrungen mit den Prozessen in Politik und Verwaltung sowie Kenntnisse der relevanten Sektorregulierung gefragt. Bei mir finden Sie diese seltene Kombination: **Vertrautheit mit unternehmerischen Fragestellungen** (regelmässiger Austausch mit GL- und VR-Mitgliedern der grossen bundesnahmen Unternehmen) und langjährige **Verwaltungserfahrung**, insbesondere im Bereich der **Finanzierung des öffentlichen Verkehrs**. 
+Für Verwaltungsräte von öffentlichen Unternehmen sind fundierte Kenntnisse des regulatorischen Umfelds und der relevanten politischen und administrativen Prozesse essenziell; bei mir finden Sie die besondere Kombination von langjähriger Verwaltungserfahrung und unternehmerischem Esprit! Mit diesen Kompetenzen kann ich als unabhängige, integre Persönlichkeit **Verwaltungsräte von öffentlichen Unternehmen** verstärken. 

@@ -1,7 +1,8 @@
 ---
-title: "Referenzen"
-hide_title: true
-header_menu: false
+title: ""
+url: "referenzen"
+url_title: "Referenzen"
+header_menu: true
 weight: 4
 type: carousel
 ---

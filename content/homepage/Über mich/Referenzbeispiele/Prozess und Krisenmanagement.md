@@ -3,7 +3,7 @@ title: "Projekt- und Prozessmanagement"
 weight: 2
 header_menu: true
 ---
-* Finanzierungs- und Regulierungsfragen im Bereich der Bahnstromversorgung, Unterstüzung der internen Projektleitung
+* Finanzierungs- und Regulierungsfragen im Bereich der Bahnstromversorgung, Unterstüzung der SBB-internen Projektleitung
 * Prozessverantwortlicher für das Controlling der Finanzierung der SBB-Infrastruktur
 * Aushandlung der Finanzierungsvereinbarung für die Durchmesserlinie Zürich
 * Fachverantwortlicher für die Finanzierung der deutschen Bahnstrecken in der Schweiz

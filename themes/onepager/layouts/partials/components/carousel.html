@@ -1,7 +1,9 @@
 <article id='{{ partial "utils/anchor.html" . }}' class="pt-2 px-0 pt-md-4 px-md-2 px-xl-3 pb-xl-5">
+  {{ if ne .Params.hide_title true }}
   <header class="p-4 pb-2 px-md-0 post-header">
     <h2 class="post-title">{{ .Title }}</h2>
   </header>
+  {{ end }}
   <section class="post-content">
     <div id='{{ partial "utils/anchor.html" .}}-carousel' class="container-fluid d-flex pb-4 p-0 pb-md-0 mt-md-4 carousel slide" data-bs-ride="none">
       <div class="carousel-indicators">

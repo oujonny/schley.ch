@@ -3,6 +3,7 @@ title: "Projekt- und Prozessmanagement"
 weight: 2
 header_menu: true
 ---
+* Varianten zur Gewährleistung einer sicheren, leistungsfähigen und effizienten Bahnstromversorgung, externe Projektleitung im Auftrag des BAV
 * Finanzierungs- und Regulierungsfragen im Bereich der Bahnstromversorgung, Unterstüzung der SBB-internen Projektleitung
 * Prozessverantwortlicher für das Controlling der Finanzierung der SBB-Infrastruktur
 * Aushandlung der Finanzierungsvereinbarung für die Durchmesserlinie Zürich

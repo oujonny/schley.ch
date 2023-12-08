@@ -4,6 +4,7 @@ weight: 3
 header_menu: true
 ---
 
+* Ansatzpunkte für Verbesserungen bei der Bahn-/öV-Finanzierung, Bericht im Auftrag der LITRA 
 * Wege zu mehr Nachhaltigkeit im Verkehr – Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen zur Begrenzung der Verkehrsnachfrage (Dissertation)
 * Urban Transport Strategy Review, im Auftrag der Deutschen Gesellschaft für technische Zusammenarbeit (GTZ)
 * Transporte y Medio Ambiente (Verkehr und Umwelt), jeweils einwöchige Gutachtereinsätze in Buenos Aires, Argentinien im Auftrag der GTZ

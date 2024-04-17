@@ -18,4 +18,4 @@ Von 2011 bis Februar 2023 war ich Sektionsleiter in der **Eidgenössischen Finan
 * Beteiligung an Eignergesprächen auf oberster Führungsebene zwischen Bund den Unternehmen 
 * Leitung der vorbereitenden Fachgespräche mit Beteilung von Konzernleitungsmitgliedern
 * Ansprechpartner für den Staatsvertreter im Verwaltungsrat der Swisscom AG
-* Beurteilung von Unternehmensstrategien und M&A-Projekten (Second Opinions)
+* Beurteilung von Unternehmensstrategien und M&A-Projekten

@@ -18,4 +18,4 @@ Ich verfüge über langjährige Erfahrung in strategischen Führungsfragen und b
 Einzigartige Praxiserfahrung mit der Steuerung öffentlicher Unternehmen. Als Verantwortlicher für das Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom war ich über 12 Jahre an den Quartalsgesprächen zwischen Bund und den Unternehmensleitungen dabei. 
 
 **Mein Plus:**
-Aufgrund meiner Herkunft bin ich auch mit der verkehrspolitischen Diskussion in Deutschland, bei der häufig auf die Erfahrungen der Schweizer Bahnpolitik Bezug genommen wird, bestens vertraut. 
+Ich bin auch mit der verkehrspolitischen Diskussion in Deutschland, bei der häufig auf die Erfahrungen der Schweizer Bahnpolitik Bezug genommen wird, bestens vertraut. 

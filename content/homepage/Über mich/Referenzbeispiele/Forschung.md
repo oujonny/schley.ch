@@ -1,9 +1,10 @@
 ---
-title: "Forschung"
+title: "Forschung und Beratung"
 weight: 3
 header_menu: true
 ---
 
+* Beratungs- und Unterstützungsleistungen für die Erarbeitung und Umsetzung einer Leistungsvereinbarung InfraGO, im (Unter)Auftrag des Bundesministeriums für Digitales und Verkehr (BMDV), Berlin
 * Ansatzpunkte für Verbesserungen bei der Schweizer Bahn-/öV-Finanzierung, Bericht im Auftrag der [LITRA](https://www.litra.ch)
 * Wege zu mehr Nachhaltigkeit im Verkehr – Die Anwendbarkeit einer Mengensteuerung mit handelbaren Lizenzen zur Begrenzung der Verkehrsnachfrage (Dissertation)
 * Urban Transport Strategy Review, im Auftrag der Deutschen Gesellschaft für technische Zusammenarbeit (GTZ)

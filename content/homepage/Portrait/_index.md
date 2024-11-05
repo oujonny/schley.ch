@@ -15,7 +15,7 @@ Kompetente Managementberatung für Verwaltung und öffentliche Unternehmen, insb
 Ich verfüge über langjährige Erfahrung in strategischen Führungsfragen und bin gut vernetzt mit Führungskräften in Verwaltung und öffentlichen Unternehmen in der Schweiz. Ausgeprägte Analysefähigkeiten, Lösungsorientierung und fundiertes betriebs- und volkswirtschaftliches Knowhow zeichnen mich aus.
 
 **Mein Alleinstellungsmerkmal:**
-Einzigartige Praxiserfahrung mit der Steuerung öffentlicher Unternehmen. Als Verantwortlicher für das Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom war ich über 12 Jahre an den Quartalsgesprächen zwischen Bund und den Unternehmensleitungen dabei. 
+Einzigartige Praxiserfahrung mit der Steuerung öffentlicher Unternehmen. Als Verantwortlicher für das Controlling der strategischen Ziele des Bundesrats für SBB, Post und Swisscom war ich über 12 Jahre an den C-Level-Gesprächen zwischen Bund und den Unternehmensleitungen dabei. 
 
 **Mein Plus:**
-Aufgrund meiner Herkunft bin ich auch mit der verkehrspolitischen Diskussion in Deutschland, bei der häufig auf die Erfahrungen der Schweizer Bahnpolitik Bezug genommen wird, bestens vertraut. 
+Ich bin auch mit der verkehrspolitischen Diskussion in Deutschland, bei der häufig auf die Erfahrungen der Schweizer Bahnpolitik Bezug genommen wird, bestens vertraut. 

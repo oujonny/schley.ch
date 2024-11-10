@@ -42,7 +42,7 @@ jobs:
         run: |
           hugo --minify --noBuildLock
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: public
           path: ./public
@@ -53,7 +53,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: public
           path: ./public

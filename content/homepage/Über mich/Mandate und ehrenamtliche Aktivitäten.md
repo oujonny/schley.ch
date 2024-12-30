@@ -11,7 +11,7 @@ weight: 2
 
 **Evangelisch-reformierte Gesamtkirchgemeinde Bern**: von 2015-2024 Mitglied des Kleinen Kirchenrats (Exekutive), zuständig für die Ressorts Personal und Kommunikation; von 2018-2024 Vizepräsident
 
-- *Die Ev-ref. GKG Bern hat rund 45'000 Mitglieder, ca. 250 Beschäftigte und ein Jahresbudget von rund 33 Millionen Franken.*
+- *Die GKG hat rund 45'000 Mitglieder, ca. 250 Beschäftigte und ein Jahresbudget von rund 33 Millionen Franken.*
  
 **Stadt Bern**: von 2008-2015 Co-Präsident der Quartierkommission QM3   
 

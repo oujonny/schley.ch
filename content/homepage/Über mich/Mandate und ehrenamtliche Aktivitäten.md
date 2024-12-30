@@ -14,3 +14,5 @@ weight: 2
 *Die Ev-ref. Gesamtkirchgemeinde Bern hat rund 45'000 Mitglieder und ca. 250 Beschäftigte und ein Jahresbudget von rund 30-35 Millionen Franken.*
  
 **Stadt Bern**: Co-Präsident der Quartierkommission QM3 für den Berner Stadtteil III (2008-2015)  
+
+*Die Quartierkommissionen diskutieren die lokalen Auswirkungen geplanter Vorhaben der Behörden und nehmen mit ihren Stellungnahmen Einfluss auf die politischen Entscheidungsprozesse in der Stadt Bern.* 

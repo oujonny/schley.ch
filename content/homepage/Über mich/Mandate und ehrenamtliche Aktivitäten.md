@@ -7,7 +7,7 @@ weight: 2
 
 **RefBernImmo AG (RBI)**: seit 2025 Präsident des Verwaltungsrats, von 2016-2024 Vizepräsident  
 
-- *Immobilengesellschaft im Eigentum der Evangelisch-reformierten Gesamtkirchgemeinde Bern (GKG). Die RBI bewirtschaftet und entwickelt Liegenschaften, die nicht mehr für kirchliche Zwecke genutzt werden.*
+- *Immobilengesellschaft im Eigentum der Ev.-ref. Gesamtkirchgemeinde Bern (GKG). Die RBI bewirtschaftet und entwickelt Liegenschaften, die nicht mehr für kirchliche Zwecke genutzt werden.*
 
 **Evangelisch-reformierte Gesamtkirchgemeinde Bern**: von 2015-2024 Mitglied des Kleinen Kirchenrats (Exekutive), zuständig für die Ressorts Personal und Kommunikation; von 2018-2024 Vizepräsident
 

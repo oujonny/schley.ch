@@ -5,8 +5,14 @@ weight: 2
 ---
 ##### Mandate und ehrenamtliche Aktivitäten
 
-Seit 2017 bin ich Vizepräsident des **Verwaltungsrats der RefBernImmo AG (RBI)**, einer Immobilengesellschaft im Eigentum der evangelisch-reformierten Gesamtkirchgemeinde Bern (GKG). Die RBI bewirtschaftet und entwickelt Liegenschaften, die nicht mehr für kirchliche Zwecke genutzt werden.
+**RefBernImmo AG (RBI)**: seit 2025 Präsident des Verwaltungsrats, von 2016-2024 Vizepräsident  
 
-Im **Kleinen Kirchenrat**, der Exekutive der ev.-ref. **Gesamtkirchgemeinde Bern** (ca. 45‘000 Mitglieder, ca. 250 Beschäftigte) bin ich für die Ressorts Personal (seit 2016) und Kommunikation (seit 2022) zuständig; seit 2018 bin ich Vizepräsident.
+- *Immobilengesellschaft im Eigentum der Ev.-ref. Gesamtkirchgemeinde Bern (GKG). Die RBI bewirtschaftet und entwickelt Liegenschaften, die nicht mehr für kirchliche Zwecke genutzt werden.*
 
-Von 2008 bis 2015 war ich **Co-Präsident der Quartierkommission QM3** für den Berner Stadtteil III (Mattenhof-Weissenbühl). 
+**Evangelisch-reformierte Gesamtkirchgemeinde Bern**: von 2015-2024 Mitglied des Kleinen Kirchenrats (Exekutive), zuständig für die Ressorts Personal und Kommunikation; von 2018-2024 Vizepräsident
+
+- *Die GKG hat rund 45'000 Mitglieder, ca. 250 Beschäftigte und ein Jahresbudget von rund 33 Millionen Franken.*
+ 
+**Stadt Bern**: von 2008-2015 Co-Präsident der Quartierkommission QM3   
+
+- *Die Quartierkommissionen diskutieren die lokalen Auswirkungen geplanter Vorhaben der Behörden und nehmen mit ihren Stellungnahmen Einfluss auf die politischen Entscheidungsprozesse in der Stadt Bern.* 

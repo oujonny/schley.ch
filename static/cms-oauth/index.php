@@ -128,7 +128,9 @@ function loadConfig(): array
 
 function callbackUrl(): string
 {
-    return 'https://schleyconsult.ch/cms-oauth/callback';
+    $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    return $scheme . '://' . $host . '/cms-oauth/callback';
 }
 
 /**
@@ -168,11 +170,22 @@ function renderSuccess(string $token): void
     <script>
     (function () {
       var payload = {$payload};
-      function receiveMessage(e) {
-        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
+
+      if (!window.opener) {
+        document.querySelector('p').textContent =
+          'Fehler: window.opener ist null – bitte Fenster schließen und erneut versuchen.';
+        return;
       }
-      window.addEventListener('message', receiveMessage, false);
+
+      // Step 1: tell the CMS we are starting the auth handshake
       window.opener.postMessage('authorizing:github', '*');
+
+      // Step 2: when the CMS responds with its origin, send the token back to that origin
+      window.addEventListener('message', function handler(e) {
+        window.removeEventListener('message', handler);
+        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
+        // Let the CMS close this popup; do NOT call window.close() ourselves
+      }, false);
     })();
     </script>
     </body>

@@ -4,7 +4,7 @@ name: Deploy to beta.schley.ch
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["development"]
+    branches: ["development", "cms/**"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

@@ -1,5 +1,5 @@
 ---
-title: "CH-D"
+title: "Schweiz Deutschland"
 
 header_menu: false
 ---

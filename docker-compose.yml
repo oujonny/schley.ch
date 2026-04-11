@@ -36,7 +36,7 @@ services:
   # Decap CMS local proxy – reads/writes files and commits to the local git repo
   # Acts as a drop-in replacement for the GitHub backend during local development
   cms-proxy:
-    image: node:20-alpine
+    image: node:25-alpine
     # npx caches the package after first run; subsequent starts are fast
     command: sh -c "npx --yes decap-server"
     environment:

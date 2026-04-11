@@ -1,0 +1,5 @@
+# Allow the CMS config file to be served
+# (LiteSpeed/Apache on cyon blocks .yml by default)
+<FilesMatch "\.ya?ml$">
+    Require all granted
+</FilesMatch>

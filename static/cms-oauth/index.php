@@ -170,10 +170,29 @@ function renderSuccess(string $token): void
     <script>
     (function () {
       var payload = {$payload};
-      function receiveMessage(e) {
-        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
+
+      if (!window.opener) {
+        document.querySelector('p').textContent =
+          'Fehler: Kommunikation mit dem CMS nicht möglich (window.opener ist null). ' +
+          'Bitte schließen Sie dieses Fenster und versuchen Sie es erneut.';
+        return;
       }
-      window.addEventListener('message', receiveMessage, false);
+
+      function sendToken(origin) {
+        window.opener.postMessage('authorization:github:success:' + payload, origin);
+        setTimeout(function () { window.close(); }, 200);
+      }
+
+      // Handshake: CMS sends back its origin, we reply to that exact origin.
+      // Fallback after 3 s: send with '*' in case the handshake message was missed.
+      var fallback = setTimeout(function () { sendToken('*'); }, 3000);
+
+      window.addEventListener('message', function handler(e) {
+        clearTimeout(fallback);
+        window.removeEventListener('message', handler);
+        sendToken(e.origin);
+      }, false);
+
       window.opener.postMessage('authorizing:github', '*');
     })();
     </script>

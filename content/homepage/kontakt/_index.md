@@ -1,10 +1,9 @@
 ---
-title: "Kontakt"
+title: Kontakt
 header_menu: true
 weight: 6
-
 page_image:
-    src: "portrait2.jpg"
+  src: portrait2.jpg
 ---
 Ich freue mich auf Ihren Anruf oder Ihre schriftliche Anfrage:
 

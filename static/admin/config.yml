@@ -10,153 +10,80 @@ media_folder: "static/images"
 public_folder: "/images"
 locale: 'de'
 
+local_backend: true
+
 collections:
-  - name: startseite
-    label: "Startseite"
+  - name: homepage
+    label: "Homepage"
     files:
-      - label: "Hero / Kopfbild"
-        name: hero
+      - label: "Landing Page"
+        name: landing_page
         file: "content/_index.md"
         fields:
           - {label: "Hauptzeile", name: header_headline, widget: string}
           - {label: "Unterzeile", name: header_subheadline, widget: string}
           - {label: "Hintergrundbild", name: header_image, widget: image}
-
-  - name: abschnitte
-    label: "Homepage Abschnitte"
-    files:
+      - label: "Portrait"
+        name: portrait_index
+        file: "content/homepage/portrait/_index.md"
+        fields:
+          - { label: "Inhalt", name: body, widget: markdown }
+          - { label: "Bild", name: page_image, widget: object, fields: [
+              { label: "Bilddatei", name: src, widget: image, media_folder: "content/homepage/portrait", public_folder: "" }
+            ]}
       - label: "Slogan"
         name: slogan
-        file: "content/homepage/Slogan.md"
+        file: "content/homepage/slogan.md"
         fields:
           - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Portrait"
-        name: portrait
-        file: "content/homepage/Portrait/_index.md"
-        fields:
-          - {label: "Inhalt", name: body, widget: markdown}
-          - label: "Bild"
-            name: page_image
-            widget: object
-            collapsed: true
-            fields:
-              - {label: "Bilddatei (z.B. portrait.jpg)", name: src, widget: string}
-
-      - label: "Ausbildungen"
-        name: ausbildungen
-        file: "content/homepage/Portrait/Ausbildungen.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Über mich – Berufliche Stationen"
-        name: berufliche_stationen
-        file: "content/homepage/Über mich/Berufliche Stationen.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Über mich – Mandate & Aktivitäten"
-        name: mandate_aktivitaeten
-        file: "content/homepage/Über mich/Mandate und ehrenamtliche Aktivitäten.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Referenzbeispiele (Einleitung)"
-        name: referenzbeispiele_index
-        file: "content/homepage/Über mich/Referenzbeispiele/_index.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Referenzbeispiel – Forschung"
-        name: ref_forschung
-        file: "content/homepage/Über mich/Referenzbeispiele/Forschung.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Referenzbeispiel – Auslagerungen"
-        name: ref_auslagerungen
-        file: "content/homepage/Über mich/Referenzbeispiele/Auslagerungen und Umstrukturierungen.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Referenzbeispiel – Prozess & Krisenmanagement"
-        name: ref_krisenmanagement
-        file: "content/homepage/Über mich/Referenzbeispiele/Prozess und Krisenmanagement.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
       - label: "Mein Versprechen"
         name: versprechen
-        file: "content/homepage/Mein Versprechen.md"
+        file: "content/homepage/mein_versprechen.md"
         fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: markdown }
       - label: "Kontakt"
         name: kontakt
-        file: "content/homepage/Kontakt/_index.md"
+        file: "content/homepage/kontakt/_index.md"
         fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: markdown }
+          - { label: "Bild", name: page_image, widget: object, fields: [
+              { label: "Bilddatei", name: src, widget: image, media_folder: "content/homepage/kontakt", public_folder: "" }
+            ]}
 
-  - name: dienstleistungen
-    label: "Dienstleistungen"
+  - name: angebot
+    label: "Angebot"
+    folder: "content/homepage/angebot"
+    create: true
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: markdown }
+
+  - name: ueber_mich
+    label: "Über mich"
     files:
-      - label: "Angebot (Einleitung)"
-        name: angebot_index
-        file: "content/homepage/dienstleistungen/_index.md"
+      - label: "Berufliche Stationen"
+        name: berufliche_stationen
+        file: "content/homepage/ueber_mich/berufliche_stationen.md"
         fields:
           - {label: "Titel", name: title, widget: string}
           - {label: "Inhalt", name: body, widget: markdown}
 
-      - label: "Mandate"
-        name: mandate
-        file: "content/homepage/dienstleistungen/mandate.md"
+      - label: "Mandate & Aktivitäten"
+        name: mandate_aktivitaeten
+        file: "content/homepage/ueber_mich/mandate_aktivitaeten.md"
         fields:
           - {label: "Titel", name: title, widget: string}
           - {label: "Inhalt", name: body, widget: markdown}
 
-      - label: "Management"
-        name: management
-        file: "content/homepage/dienstleistungen/management.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Zusammenarbeit"
-        name: zusammenarbeit
-        file: "content/homepage/dienstleistungen/Zusammenarbeit.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Sparring"
-        name: sparring
-        file: "content/homepage/dienstleistungen/Sparring.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Strategische Ziele"
-        name: strategische_ziele
-        file: "content/homepage/dienstleistungen/Strategische Ziele.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
-
-      - label: "Schweiz & Deutschland"
-        name: ch_deutschland
-        file: "content/homepage/dienstleistungen/CH Deutschland.md"
-        fields:
-          - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+  - name: referenzbeispiele
+    label: "Referenzbeispiele"
+    folder: "content/homepage/ueber_mich/referenzbeispiele"
+    create: true
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: markdown }
 
   - name: referenzen
     label: "Referenzen / Zitate"
@@ -170,6 +97,12 @@ collections:
   - name: seiten
     label: "Statische Seiten"
     files:
+      - label: "Ausbildungen"
+        name: ausbildungen
+        file: "content/homepage/portrait/ausbildungen.md"
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: markdown }
       - label: "Impressum"
         name: impressum
         file: "content/impressum.md"
@@ -178,13 +111,13 @@ collections:
 
       - label: "Datenschutz"
         name: datenschutz
-        file: "content/Datenschutz.md"
+        file: "content/datenschutz.md"
         fields:
           - {label: "Inhalt", name: body, widget: markdown}
 
       - label: "Kooperationspartner"
         name: kooperationspartner
-        file: "content/Kooperationspartner.md"
+        file: "content/kooperationspartner.md"
         fields:
           - {label: "Titel", name: title, widget: string}
           - {label: "Inhalt", name: body, widget: markdown}

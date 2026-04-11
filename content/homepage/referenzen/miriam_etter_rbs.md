@@ -1,4 +1,3 @@
-
 ---
 title: "Miriam Etter-Gutermuth"
 subtitle: "Projektleiterin Infrastruktur, Regionalverkehr Bern-Solothurn"

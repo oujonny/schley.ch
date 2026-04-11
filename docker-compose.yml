@@ -1,0 +1,49 @@
+# Local CMS development environment
+#
+# Usage:
+#   docker-compose up
+#
+# Then open: http://localhost:1313/admin/
+#
+# How it works:
+#   - Hugo serves the site with hot-reload at :1313
+#   - decap-server runs at :8081 and acts as a local git backend for the CMS
+#   - config.local.yml is mounted over config.yml so the CMS uses the
+#     local backend instead of GitHub OAuth (no credentials needed)
+#   - Edits made in the CMS are committed to your LOCAL git repo only —
+#     nothing is pushed to GitHub until you do so manually
+#
+# Note: The PHP OAuth proxy (cms-oauth/) is not needed for local testing.
+
+services:
+
+  # Hugo dev server – serves the site and the CMS admin panel
+  hugo:
+    image: hugomods/hugo:exts
+    command: >
+      server
+      --bind 0.0.0.0
+      --baseURL http://localhost:1313
+      --port 1313
+      --disableFastRender
+      --navigateToChanged
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src
+    working_dir: /src
+
+  # Decap CMS local proxy – reads/writes files and commits to the local git repo
+  # Acts as a drop-in replacement for the GitHub backend during local development
+  cms-proxy:
+    image: node:20-alpine
+    # npx caches the package after first run; subsequent starts are fast
+    command: sh -c "npx --yes decap-server"
+    environment:
+      # Allow requests from the Hugo dev server origin
+      - ALLOWED_ORIGINS=http://localhost:1313
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/repo
+    working_dir: /repo

@@ -10,8 +10,6 @@ media_folder: "static/images"
 public_folder: "/images"
 locale: 'de'
 
-local_backend: true
-
 collections:
   - name: homepage
     label: "Homepage"

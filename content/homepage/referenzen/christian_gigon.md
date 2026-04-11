@@ -1,4 +1,3 @@
-
 ---
 title: "Christian Gigon"
 weight: 1

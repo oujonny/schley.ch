@@ -31,8 +31,6 @@ services:
       - "1313:1313"
     volumes:
       - .:/src
-      # Shadow the production config with the local one (local_backend: true)
-      - ./static/admin/config.local.yml:/src/static/admin/config.yml:ro
     working_dir: /src
 
   # Decap CMS local proxy – reads/writes files and commits to the local git repo

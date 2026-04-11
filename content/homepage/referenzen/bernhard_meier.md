@@ -1,4 +1,3 @@
-
 ---
 title: "Bernhard Meier"
 weight: 1

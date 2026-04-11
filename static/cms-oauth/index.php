@@ -173,27 +173,19 @@ function renderSuccess(string $token): void
 
       if (!window.opener) {
         document.querySelector('p').textContent =
-          'Fehler: Kommunikation mit dem CMS nicht möglich (window.opener ist null). ' +
-          'Bitte schließen Sie dieses Fenster und versuchen Sie es erneut.';
+          'Fehler: window.opener ist null – bitte Fenster schließen und erneut versuchen.';
         return;
       }
 
-      function sendToken(origin) {
-        window.opener.postMessage('authorization:github:success:' + payload, origin);
-        setTimeout(function () { window.close(); }, 200);
-      }
-
-      // Handshake: CMS sends back its origin, we reply to that exact origin.
-      // Fallback after 3 s: send with '*' in case the handshake message was missed.
-      var fallback = setTimeout(function () { sendToken('*'); }, 3000);
-
-      window.addEventListener('message', function handler(e) {
-        clearTimeout(fallback);
-        window.removeEventListener('message', handler);
-        sendToken(e.origin);
-      }, false);
-
+      // Step 1: tell the CMS we are starting the auth handshake
       window.opener.postMessage('authorizing:github', '*');
+
+      // Step 2: when the CMS responds with its origin, send the token back to that origin
+      window.addEventListener('message', function handler(e) {
+        window.removeEventListener('message', handler);
+        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
+        // Let the CMS close this popup; do NOT call window.close() ourselves
+      }, false);
     })();
     </script>
     </body>

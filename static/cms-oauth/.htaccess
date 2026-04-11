@@ -1,0 +1,8 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Route /cms-oauth/auth and /cms-oauth/callback to index.php
+# (serves extension-less URLs as required by Decap CMS)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L,QSA]

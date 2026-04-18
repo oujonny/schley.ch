@@ -79,9 +79,7 @@ function callbackUrl(): string
 function verifyState(string $state, string $secret): bool
 {
     if ($state === '') return false;
-    // Reverse URL-safe base64 (-_ → +/) and restore padding before decoding
-    $b64     = strtr($state, '-_', '+/') . str_repeat('=', strlen($state) % 4);
-    $decoded = base64_decode($b64, strict: true);
+    $decoded = base64_decode($state . str_repeat('=', strlen($state) % 4), strict: true);
     if ($decoded === false) return false;
     $parts = explode(':', $decoded, 3);
     if (count($parts) !== 3) return false;
@@ -108,8 +106,7 @@ function curlPost(string $url, array $fields, array $headers = []): string|false
 
 function renderSuccess(string $token): void
 {
-    // json_encode produces a safe JS string literal (handles quotes, backslashes, etc.)
-    $token_js = json_encode($token);
+    $payload = json_encode(json_encode(['token' => $token, 'provider' => 'github']));
     echo <<<HTML
     <!DOCTYPE html>
     <html lang="de">
@@ -118,11 +115,7 @@ function renderSuccess(string $token): void
     <p>Authentifizierung erfolgreich. Dieses Fenster wird geschlossen…</p>
     <script>
     (function () {
-      var token    = {$token_js};
-      var provider = 'github';
-      var payload  = JSON.stringify({ token: token, provider: provider });
-
-      console.log('[OAuth] opener:', window.opener);
+      var payload = {$payload};
 
       if (!window.opener) {
         document.querySelector('p').textContent =
@@ -130,24 +123,12 @@ function renderSuccess(string $token): void
         return;
       }
 
-      // Decap CMS two-phase handshake:
-      //  1. Popup sends  'authorizing:github'              → opener
-      //  2. CMS checks   e.origin === base_url, then replies with e.data back to popup
-      //  3. Popup sends  'authorization:github:success:…'  → opener (targetOrigin = CMS origin)
+      window.opener.postMessage('authorizing:github', '*');
 
-      // Step 1 – register listener BEFORE sending so we don't miss the reply
-      window.addEventListener('message', function receiveMessage(event) {
-        if (event.source !== window.opener) return; // ignore unrelated messages
-        window.removeEventListener('message', receiveMessage);
-        console.log('[OAuth] CMS replied, origin:', event.origin, '– sending token');
-        // Step 3 – send token; targetOrigin must equal base_url so the CMS origin-check passes
-        window.opener.postMessage('authorization:' + provider + ':success:' + payload, event.origin);
-        setTimeout(function () { window.close(); }, 300);
+      window.addEventListener('message', function handler(e) {
+        window.removeEventListener('message', handler);
+        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
       }, false);
-
-      // Step 2 – announce we're authorising; CMS checks e.origin === base_url here
-      console.log('[OAuth] → authorizing:github');
-      window.opener.postMessage('authorizing:' + provider, '*');
     })();
     </script>
     </body>

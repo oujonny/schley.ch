@@ -11,6 +11,159 @@
     CMS.registerPreviewStyle("/css/bootstrap.min.css");
     CMS.registerPreviewStyle("/css/fork-awesome.min.css");
     CMS.registerPreviewStyle("/css/style.css");
+
+    // Default onepager preview — matches the Hugo onepager.html layout
+    var OnepagerPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(["data", "title"]);
+        var image = this.props.widgetsFor("page_image");
+        var imageSrc = entry.getIn(["data", "page_image", "src"]);
+
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              title ? h("header", { className: "post-header" },
+                h("h1", { className: "display-1 post-title" }, title)
+              ) : null,
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid d-flex mt-md-0" },
+                  h("div", { className: "row" },
+                    imageSrc
+                      ? [
+                          h("div", { className: "col-lg-7 px-0", key: "text" },
+                            this.props.widgetFor("body")
+                          ),
+                          h("div", { className: "page-image-div col-lg-5 order-first order-lg-last px-0 pb-4 pb-lg-2 ps-lg-4 pe-lg-0", key: "img" },
+                            h("img", { src: this.props.getAsset(imageSrc).toString(), style: { maxWidth: "100%" } })
+                          ),
+                        ]
+                      : h("div", { className: "col-12 px-0" },
+                          this.props.widgetFor("body")
+                        )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+
+    // Register onepager as default for all homepage collections
+    ["homepage", "ueber_mich"].forEach(function (name) {
+      CMS.registerPreviewTemplate(name, OnepagerPreview);
+    });
+
+    // Cards preview (angebot)
+    var CardPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid" },
+                  h("div", { className: "row" },
+                    h("div", { className: "col-12 px-0" },
+                      h("div", { className: "card d-flex mb-4 p-3 p-md-4 shadow-sm" },
+                        h("h5", {}, entry.getIn(["data", "title"])),
+                        this.props.widgetFor("body")
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("angebot", CardPreview);
+
+    // Accordion preview (referenzbeispiele)
+    var AccordionPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "accordion accordion-flush pt-3 px-2" },
+                  h("div", { className: "accordion-item" },
+                    h("div", { className: "accordion-header" },
+                      h("button", { className: "accordion-button px-0" },
+                        entry.getIn(["data", "title"])
+                      )
+                    ),
+                    h("div", { className: "py-4 accordion-collapse" },
+                      this.props.widgetFor("body")
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("referenzbeispiele", AccordionPreview);
+
+    // Static Page preview (impressum, datenschutz, kooperationspartner)
+    var StaticPagePreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(["data", "title"]);
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              title ? h("header", { className: "post-header" },
+                h("h1", { className: "display-1 post-title" }, title)
+              ) : null,
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid d-flex mt-md-0" },
+                  h("div", { className: "row" },
+                    h("div", { className: "col-12 px-0" },
+                      this.props.widgetFor("body")
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("seiten", StaticPagePreview);
+
+    // Carousel preview (referenzen)
+    var CarouselPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "carousel carousel-dark" },
+                  h("div", { className: "carousel-inner container-fluid p-0" },
+                    h("div", { className: "carousel-item active" },
+                      h("div", { className: "d-flex" },
+                        h("div", { className: "carousel-item-text p-0 blockqoute" },
+                          h("h4", {}, entry.getIn(["data", "title"])),
+                          h("h5", {}, entry.getIn(["data", "subtitle"])),
+                          h("blockquote", {}, this.props.widgetFor("body"))
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("referenzen", CarouselPreview);
   </script>
 </body>
 </html>

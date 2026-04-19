@@ -1,13 +1,16 @@
 backend:
   name: github
   repo: oujonny/schley.ch
+  # TODO: Switch to main branch once development is done
   branch: development
-  base_url: https://beta.schley.ch
   auth_endpoint: cms-oauth/auth
   squash_merges: true
 
 publish_mode: editorial_workflow
 show_preview_links: true
+
+site_url: "https://beta.schley.ch"
+display_url: "https://schley.ch"
 
 media_folder: "static/images"
 public_folder: "/images"
@@ -98,8 +101,9 @@ collections:
     create: true
     fields:
       - {label: "Name", name: title, widget: string}
+      - {label: "Position / Funktion", name: subtitle, widget: string}
       - {label: "Reihenfolge", name: weight, widget: number, default: 10}
-      - {label: "Zitat und Position", name: body, widget: markdown}
+      - {label: "Zitat", name: body, widget: markdown}
 
   - name: seiten
     label: "Statische Seiten"
@@ -117,6 +121,7 @@ collections:
         file: "content/impressum.md"
         preview_path: "/impressum"
         fields:
+          - {label: "Titel", name: title, widget: string}
           - {label: "Inhalt", name: body, widget: markdown}
 
       - label: "Datenschutz"

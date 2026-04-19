@@ -3,3 +3,6 @@
 <FilesMatch "\.ya?ml$">
     Require all granted
 </FilesMatch>
+
+# Prevent COOP from severing the opener reference when the OAuth popup returns
+Header always set Cross-Origin-Opener-Policy "unsafe-none"

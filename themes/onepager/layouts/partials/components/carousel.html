@@ -22,7 +22,9 @@
               </div>
               <div class="col-md-8 d-flex shadow my-auto">
                 <div class="carousel-item-text ms-0 px-4 p-md-4 blockqoute">
-                  {{ .Content }}
+                  <h4>{{ .Title }}</h4>
+                  {{ with .Params.subtitle }}<h5>{{ . }}</h5>{{ end }}
+                  <blockquote>{{ .Content }}</blockquote>
                 </div>
               </div>
             </div>

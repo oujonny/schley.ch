@@ -1,6 +1,6 @@
 ---
 title: Portrait
-url: Home
+url: portrait
 weight: 2
 header_menu: true
 page_image:

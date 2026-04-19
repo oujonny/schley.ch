@@ -23,41 +23,42 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
   build_deploy:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.105.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.105.0'
+          extended: true
       - name: Checkout
         uses: actions/checkout@v6
         with:
           submodules: recursive
-      - name: Deploy with Hugo
+          fetch-depth: 1
+      - name: Cache Hugo build
+        uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-build-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-hugo-build-
+      - name: Build
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: |
-          hugo --minify --noBuildLock
-      # deploy
+        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      - name: deploy
+      - name: Deploy
         env:
           SSH_USER: "toxykiwo"
           HOST: "s106.cyon.net"
           DIR: "public_html/beta.schley.ch/"
-        run: |
-          rsync -avz --delete public/ ${SSH_USER}@${HOST}:~/${DIR}
+        run: rsync -avz --delete-during public/ ${SSH_USER}@${HOST}:~/${DIR}
       - name: Set deploy status
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -3,6 +3,7 @@ backend:
   repo: oujonny/schley.ch
   # TODO: Switch to main branch once development is done
   branch: development
+  base_url: https://beta.schley.ch
   auth_endpoint: cms-oauth/auth
   squash_merges: true
 

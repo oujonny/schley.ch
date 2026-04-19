@@ -2,7 +2,8 @@ backend:
   name: github
   repo: oujonny/schley.ch
   branch: main
-  base_url: https://beta.schley.ch/cms-oauth
+  base_url: https://schleyconsult.ch
+  auth_endpoint: cms-oauth/auth
 
 publish_mode: editorial_workflow
 

@@ -6,6 +6,22 @@
   <title>Content Manager</title>
 </head>
 <body>
+  <!-- Prevent auto-init so we can inject base_url from the current host at runtime.
+       This makes the same build work on both beta.schley.ch and schleyconsult.ch
+       without needing environment-specific config.yml files. -->
+  <script>var CMS_MANUAL_INIT = true;</script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          // Decap CMS checks e.origin === base_url in its postMessage handler.
+          // e.origin is always scheme+host only, so base_url must not include a path.
+          base_url: window.location.origin,
+          auth_endpoint: 'cms-oauth/auth'
+        }
+      }
+    });
+  </script>
 </body>
 </html>

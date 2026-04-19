@@ -76,7 +76,9 @@ function callbackUrl(): string
 function verifyState(string $state, string $secret): bool
 {
     if ($state === '') return false;
-    $decoded = base64_decode($state . str_repeat('=', strlen($state) % 4), strict: true);
+    // Reverse URL-safe base64 (-_ → +/) and restore padding before decoding
+    $b64     = strtr($state, '-_', '+/') . str_repeat('=', strlen($state) % 4);
+    $decoded = base64_decode($b64, strict: true);
     if ($decoded === false) return false;
     $parts = explode(':', $decoded, 3);
     if (count($parts) !== 3) return false;
@@ -114,16 +116,21 @@ function renderSuccess(string $token): void
     (function () {
       var payload = {$payload};
 
+      console.log('[OAuth] opener:', window.opener);
+
       if (!window.opener) {
         document.querySelector('p').textContent =
           'Fehler: window.opener ist null – Fenster schließen und erneut versuchen.';
         return;
       }
 
+      console.log('[OAuth] → authorizing:github');
       window.opener.postMessage('authorizing:github', '*');
 
       window.addEventListener('message', function handler(e) {
+        console.log('[OAuth] ← message from CMS:', e.data, 'origin:', e.origin);
         window.removeEventListener('message', handler);
+        console.log('[OAuth] → sending success token');
         window.opener.postMessage('authorization:github:success:' + payload, e.origin);
       }, false);
     })();

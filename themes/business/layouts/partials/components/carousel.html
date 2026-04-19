@@ -5,7 +5,9 @@
       <div class="carousel-item">
         <div class="d-flex">
           <div class="carousel-item-text p-0 blockqoute">
-            {{ .Content }}
+            <h4>{{ .Title }}</h4>
+            {{ with .Params.subtitle }}<h5>{{ . }}</h5>{{ end }}
+            <blockquote>{{ .Content }}</blockquote>
           </div>
         </div>
       </div>

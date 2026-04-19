@@ -80,5 +80,6 @@ function makeState(string $secret): string
     $ts    = (string) time();
     $nonce = bin2hex(random_bytes(12));
     $sig   = hash_hmac('sha256', $ts . ':' . $nonce, $secret);
-    return rtrim(base64_encode($ts . ':' . $nonce . ':' . $sig), '=');
+    // URL-safe base64: +/ → -_ so the value survives PHP query-string decoding
+    return rtrim(strtr(base64_encode($ts . ':' . $nonce . ':' . $sig), '+/', '-_'), '=');
 }

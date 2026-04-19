@@ -12,9 +12,6 @@
 
 declare(strict_types=1);
 
-// Prevent COOP from severing the popup↔opener relationship during the OAuth redirect loop.
-header('Cross-Origin-Opener-Policy: unsafe-none');
-
 $config = loadConfig();
 $code   = $_GET['code']  ?? '';
 $state  = $_GET['state'] ?? '';
@@ -108,8 +105,7 @@ function curlPost(string $url, array $fields, array $headers = []): string|false
 
 function renderSuccess(string $token): void
 {
-    // json_encode produces a safe JS string literal (handles quotes, backslashes, etc.)
-    $token_js = json_encode($token);
+    $payload = json_encode(json_encode(['token' => $token, 'provider' => 'github']));
     echo <<<HTML
     <!DOCTYPE html>
     <html lang="de">
@@ -118,9 +114,7 @@ function renderSuccess(string $token): void
     <p>Authentifizierung erfolgreich. Dieses Fenster wird geschlossen…</p>
     <script>
     (function () {
-      var token    = {$token_js};
-      var provider = 'github';
-      var payload  = JSON.stringify({ token: token, provider: provider });
+      var payload = {$payload};
 
       console.log('[OAuth] opener:', window.opener);
 
@@ -130,24 +124,9 @@ function renderSuccess(string $token): void
         return;
       }
 
-      // Decap CMS two-phase handshake:
-      //  1. Popup sends  'authorizing:github'              → opener
-      //  2. CMS checks   e.origin === base_url, then replies with e.data back to popup
-      //  3. Popup sends  'authorization:github:success:…'  → opener (targetOrigin = CMS origin)
-
-      // Step 1 – register listener BEFORE sending so we don't miss the reply
-      window.addEventListener('message', function receiveMessage(event) {
-        if (event.source !== window.opener) return; // ignore unrelated messages
-        window.removeEventListener('message', receiveMessage);
-        console.log('[OAuth] CMS replied, origin:', event.origin, '– sending token');
-        // Step 3 – send token; targetOrigin must equal base_url so the CMS origin-check passes
-        window.opener.postMessage('authorization:' + provider + ':success:' + payload, event.origin);
-        setTimeout(function () { window.close(); }, 300);
-      }, false);
-
-      // Step 2 – announce we're authorising; CMS checks e.origin === base_url here
-      console.log('[OAuth] → authorizing:github');
-      window.opener.postMessage('authorizing:' + provider, '*');
+      // Decap CMS v3 does not reply to 'authorizing:github' — send the token directly.
+      console.log('[OAuth] → sending success token');
+      window.opener.postMessage('authorization:github:success:' + payload, '*');
     })();
     </script>
     </body>

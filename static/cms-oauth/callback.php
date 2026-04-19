@@ -127,15 +127,9 @@ function renderSuccess(string $token): void
         return;
       }
 
-      console.log('[OAuth] → authorizing:github');
-      window.opener.postMessage('authorizing:github', '*');
-
-      window.addEventListener('message', function handler(e) {
-        console.log('[OAuth] ← message from CMS:', e.data, 'origin:', e.origin);
-        window.removeEventListener('message', handler);
-        console.log('[OAuth] → sending success token');
-        window.opener.postMessage('authorization:github:success:' + payload, e.origin);
-      }, false);
+      // Decap CMS v3 does not reply to 'authorizing:github' — send the token directly.
+      console.log('[OAuth] → sending success token');
+      window.opener.postMessage('authorization:github:success:' + payload, '*');
     })();
     </script>
     </body>

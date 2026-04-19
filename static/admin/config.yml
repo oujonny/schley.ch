@@ -107,24 +107,30 @@ collections:
       - label: "Ausbildungen"
         name: ausbildungen
         file: "content/homepage/portrait/ausbildungen.md"
+        # TODO: Seite im Moment gar nicht öffentlich?
+        preview_path: ""
         fields:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: markdown }
       - label: "Impressum"
         name: impressum
         file: "content/impressum.md"
+        preview_path: "/impressum"
         fields:
           - {label: "Inhalt", name: body, widget: markdown}
 
       - label: "Datenschutz"
         name: datenschutz
         file: "content/datenschutz.md"
+        preview_path: "/datenschutz"
         fields:
           - {label: "Inhalt", name: body, widget: markdown}
 
       - label: "Kooperationspartner"
         name: kooperationspartner
         file: "content/kooperationspartner.md"
+        # TODO: Seite im Moment gar nicht öffentlich?
+        preview_path: ""
         fields:
           - {label: "Titel", name: title, widget: string}
           - {label: "Inhalt", name: body, widget: markdown}

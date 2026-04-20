@@ -13,6 +13,10 @@ show_preview_links: true
 site_url: "https://beta.schley.ch"
 display_url: "https://schley.ch"
 
+logo:
+  src: /images/logo.svg
+  show_in_header: true
+
 media_folder: "static/images"
 public_folder: "/images"
 locale: 'de'
@@ -40,7 +44,7 @@ collections:
         fields:
           - { label: "Inhalt", name: body, widget: markdown }
           - { label: "Bild", name: page_image, widget: object, fields: [
-              { label: "Bilddatei", name: src, widget: image, media_folder: "content/homepage/portrait", public_folder: "" }
+              { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
             ]}
       - label: "Mein Versprechen"
         name: versprechen
@@ -55,17 +59,17 @@ collections:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: markdown }
           - { label: "Bild", name: page_image, widget: object, fields: [
-              { label: "Bilddatei", name: src, widget: image, media_folder: "content/homepage/kontakt", public_folder: "" }
+              { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
             ]}
 
-  - name: angebot
+  - name: angebote
     label: "Angebot"
     folder: "content/homepage/angebot"
     preview_path: "/#angebot"
     create: true
     fields:
       - { label: "Titel", name: title, widget: string }
-      - { label: "Inhalt", name: body, widget: markdown }
+      - { label: "Inhalt", name: body, widget: richtext }
 
   - name: ueber_mich
     label: "Über mich"
@@ -76,7 +80,7 @@ collections:
         preview_path: "/#ueber-mich"
         fields:
           - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+          - {label: "Inhalt", name: body, widget: richtext}
 
       - label: "Mandate & Aktivitäten"
         name: mandate_aktivitaeten
@@ -84,7 +88,7 @@ collections:
         preview_path: "/#ueber-mich"
         fields:
           - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+          - {label: "Inhalt", name: body, widget: richtext}
 
   - name: referenzbeispiele
     label: "Referenzbeispiele"
@@ -93,7 +97,7 @@ collections:
     create: true
     fields:
       - { label: "Titel", name: title, widget: string }
-      - { label: "Inhalt", name: body, widget: markdown }
+      - { label: "Inhalt", name: body, widget: richtext }
 
   - name: referenzen
     label: "Referenzen / Zitate"
@@ -104,7 +108,23 @@ collections:
       - {label: "Name", name: title, widget: string}
       - {label: "Position / Funktion", name: subtitle, widget: string}
       - {label: "Reihenfolge", name: weight, widget: number, default: 10}
-      - {label: "Zitat", name: body, widget: markdown}
+      - {label: "Zitat", name: body, widget: richtext}
+
+  - name: blog
+    label: "Blog"
+    folder: "content/blog"
+    preview_path: "/blog/{{slug}}"
+    create: true
+    fields:
+      - { label: "Layout", name: layout, widget: hidden, default: "post" }
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Untertitel", name: subtitle, widget: string }
+      - { label: "Autor", name: author, widget: string, default: "Frank Schley" }
+      - { label: "Datum", name: date, widget: datetime }
+      - { label: "Bild", name: page_image, widget: object, fields: [
+          { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+          ] }
+      - { label: "Inhalt", name: body, widget: richtext }
 
   - name: seiten
     label: "Statische Seiten"
@@ -116,21 +136,21 @@ collections:
         preview_path: ""
         fields:
           - { label: "Titel", name: title, widget: string }
-          - { label: "Inhalt", name: body, widget: markdown }
+          - { label: "Inhalt", name: body, widget: richtext }
       - label: "Impressum"
         name: impressum
         file: "content/impressum.md"
         preview_path: "/impressum"
         fields:
           - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+          - {label: "Inhalt", name: body, widget: richtext}
 
       - label: "Datenschutz"
         name: datenschutz
         file: "content/datenschutz.md"
         preview_path: "/datenschutz"
         fields:
-          - {label: "Inhalt", name: body, widget: markdown}
+          - {label: "Inhalt", name: body, widget: richtext}
 
       - label: "Kooperationspartner"
         name: kooperationspartner
@@ -139,4 +159,4 @@ collections:
         preview_path: ""
         fields:
           - {label: "Titel", name: title, widget: string}
-          - {label: "Inhalt", name: body, widget: markdown}
+          - {label: "Inhalt", name: body, widget: richtext}

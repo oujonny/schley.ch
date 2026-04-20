@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ partial "components/nav.html" . }}
+<main id="wrap" role="main">
+  <div id="warp-pages" class="row" data-bs-spy="scroll">
+      <div class="col-12 px-md-0">
+          <div id="pages" class="container p-0" data-bs-smooth-scroll="true" tabindex="0">
+            <div class='page px-0 px-md-4 {{ if isset .Page.Params "background_color"}}page-bg-{{ .Page.Params.background_color }}{{ end }}'>
+              <article id='{{ partial "utils/anchor.html" . }}' class="post px-4 px-lg-3">
+                  {{ if ne .Params.hide_title true }}
+                      <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+                  {{ end }}
+                  {{ with .Params.page_image }}
+                      <div class="post-image" style="margin: 0 auto;">
+                          <img src="/blog{{ .src | relURL }}" alt="{{ $.Title }}" class="img-fluid">
+                          <p>{{ .caption }} - <span class="fst-italic">{{ .copyright }}</span></p>
+                      </div>
+                  {{ end }}
+                  <div class="post py-3">
+                    {{ if ne .Params.hide_title true }}
+                    <header class="post-header">
+                        <h1 class="display-1 post-title">{{ .Title }}</h1>
+                        <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
+                        <div class="author-date pt-3">
+                            <p class="post-author fst-italic">{{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Params.author }}{{ end }}  -  {{ .Date | time.Format "January 2, 2006" }}</p>
+                        </div>
+                    </header>
+                    {{ end }}
+                    <section class="post-content pt-4">
+                        <div class="container-fluid d-flex mt-md-0">
+                            <div class="row">
+                                <div class="col-12 px-0">
+                                    {{ .Content }}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                  </div>
+              </article>
+            </div>
+          </div>     
+      </div>
+  </div>
+</main>
+{{ end }}

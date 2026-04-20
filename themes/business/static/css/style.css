@@ -424,6 +424,15 @@ blockquote > p {
 }
 
 /* #################
+#      post      #
+################# */
+.post {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+
+/* #################
 #      footer      #
 ################# */
 .site-footer {
@@ -452,4 +461,3 @@ mobile tweeeks
     box-shadow: none !important;
   }
 }
-

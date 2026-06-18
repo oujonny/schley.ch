@@ -32,7 +32,7 @@ jobs:
           hugo-version: '0.105.0'
           extended: true
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 1

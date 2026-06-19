@@ -170,5 +170,119 @@
     });
     CMS.registerPreviewTemplate("referenzen", CarouselPreview);
   </script>
+
+  <script>
+    // Ersetzt den Platzhalter-Avatar oben rechts durch das echte GitHub-Profilbild
+    // und zeigt Benutzername / E-Mail (als Tooltip am Avatar und als Kopfzeile im
+    // Klick-Menü).
+    //
+    // Decap verwirft das Feld "avatar_url" und speichert vom angemeldeten Benutzer
+    // nur login/name/email/token unter dem localStorage-Schlüssel "decap-cms-user".
+    // Das Profilbild holen wir daher über die öffentliche GitHub-URL
+    // https://github.com/<login>.png – ohne Token, ohne API-Aufruf, ohne Scope.
+    (function () {
+      // aria-label des Avatar-Buttons (englischer Fallback, da die de-Lokalisierung
+      // diesen Schlüssel nicht übersetzt). Bei Decap-Updates ggf. anpassen.
+      var ACCOUNT_LABEL = "Account options dropdown";
+
+      function readUser() {
+        try {
+          return JSON.parse(window.localStorage.getItem("decap-cms-user"));
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function userText(user) {
+        var label = user.login || user.name || "";
+        if (user.email) label += " · " + user.email;
+        return label;
+      }
+
+      function accountButton() {
+        return document.querySelector('[aria-label="' + ACCOUNT_LABEL + '"]');
+      }
+
+      // 1) Platzhalter-Avatar durch das echte GitHub-Bild ersetzen.
+      function applyAvatar() {
+        var user = readUser();
+        var btn = accountButton();
+        if (!user || !user.login || !btn) return;
+
+        var src = "https://github.com/" + encodeURIComponent(user.login) + ".png?size=64";
+        btn.setAttribute("title", userText(user));
+
+        var existing = btn.querySelector(".cms-gh-avatar");
+        if (existing) {
+          if (existing.getAttribute("src") !== src) existing.setAttribute("src", src);
+          return;
+        }
+
+        // Decaps Platzhalter ausblenden (wir überlagern ihn mit unserem Bild).
+        Array.prototype.forEach.call(btn.children, function (child) {
+          child.style.visibility = "hidden";
+        });
+        if (getComputedStyle(btn).position === "static") btn.style.position = "relative";
+
+        var img = document.createElement("img");
+        img.className = "cms-gh-avatar";
+        img.src = src;
+        img.alt = user.login;
+        img.referrerPolicy = "no-referrer";
+        img.style.cssText =
+          "position:absolute;top:8px;left:8px;width:32px;height:32px;" +
+          "border-radius:50%;object-fit:cover;display:block;";
+        img.onerror = function () {
+          // Kein GitHub-Bild gefunden → Decaps Platzhalter wieder zeigen.
+          img.remove();
+          Array.prototype.forEach.call(btn.children, function (child) {
+            child.style.visibility = "";
+          });
+        };
+        btn.appendChild(img);
+      }
+
+      // 2) Benutzername / E-Mail beim Klick als Kopfzeile ins Avatar-Menü setzen.
+      function decorateMenu() {
+        var user = readUser();
+        var btn = accountButton();
+        if (!user || !btn || btn.getAttribute("aria-expanded") === "false") return;
+
+        // Das offene Menü liegt im selben react-aria-Wrapper wie der Button:
+        // vom Button nach oben laufen bis zum ersten Vorfahren mit einem
+        // [role="menuitem"] – das ist genau dieses Menü (nicht das "Neu"-Menü).
+        var el = btn.parentElement;
+        var list = null;
+        while (el && el !== document.body) {
+          var item = el.querySelector('[role="menuitem"]');
+          if (item) { list = item.parentElement; break; }
+          el = el.parentElement;
+        }
+        if (!list || list.querySelector(".cms-user-info")) return;
+
+        var info = document.createElement("li");
+        info.className = "cms-user-info";
+        info.textContent = userText(user);
+        info.style.cssText =
+          "padding:8px 14px;font:12px/1.4 -apple-system,Segoe UI,Roboto," +
+          "Helvetica,Arial,sans-serif;color:#5e6472;white-space:nowrap;" +
+          "border-bottom:1px solid rgba(0,0,0,.08);cursor:default;";
+        list.insertBefore(info, list.firstChild);
+      }
+
+      document.addEventListener("click", function (e) {
+        var btn = accountButton();
+        if (btn && (e.target === btn || btn.contains(e.target))) {
+          // Das Menü öffnet erst nach diesem Klick – kurz danach dekorieren.
+          setTimeout(decorateMenu, 0);
+          setTimeout(decorateMenu, 80);
+        }
+      }, true);
+
+      // Login passiert nach dem Laden und Decap rendert neu → regelmäßig prüfen.
+      applyAvatar();
+      setInterval(applyAvatar, 1500);
+    })();
+  </script>
 </body>
 </html>

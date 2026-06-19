@@ -11,9 +11,14 @@ Working branch: `claude/add-netlify-cms-github-cfBgS`
 ## Branch & Deployment Strategy
 | Branch | Deploys to |
 |--------|-----------|
-| `main` | `schleyconsult.ch` (production) |
+| `main` | `schleyconsult.ch` (production) — `schley.ch` 301-redirects here |
 | `development` | `beta.schley.ch` (staging) |
 | `cms/**` | `beta.schley.ch` (Decap CMS editorial workflow previews) |
+
+**Domain redirect:** `schley.ch` / `www.schley.ch` permanently (301) redirect to
+`schleyconsult.ch` via a host-based rule in `static/.htaccess`. On cyon,
+`schleyconsult.ch` is an alias of `schley.ch` (same docroot), so the rule fires
+only for the old host and leaves `schleyconsult.ch` and `beta.schley.ch` alone.
 
 CI workflows: `.github/workflows/deploy.yml` (beta), `.github/workflows/deploy_main.yml` (prod).
 
@@ -21,8 +26,9 @@ CI workflows: `.github/workflows/deploy.yml` (beta), `.github/workflows/deploy_m
 Admin panel at `/admin/` (source: `static/admin/`).
 
 - **Production config**: `static/admin/config.yml`
-  - Backend: GitHub OAuth via PHP proxy (`base_url: https://schleyconsult.ch/cms-oauth`)
-  - Editorial workflow enabled (`publish_mode: editorial_workflow`)
+  - Backend: GitHub OAuth via PHP proxy (`base_url: https://schleyconsult.ch`, `auth_endpoint: cms-oauth/auth`)
+  - Commits to `branch: main` → publishes live to `schleyconsult.ch`
+  - Editorial workflow enabled (`publish_mode: editorial_workflow`); CMS draft branches (`cms/**`) preview on `beta.schley.ch`, **Publish** merges to `main`
 - **Local config**: `static/admin/config.local.yml`
   - `local_backend: true` — bypasses GitHub, uses decap-server instead
   - Mounted over `config.yml` by docker-compose

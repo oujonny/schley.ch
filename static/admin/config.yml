@@ -1,17 +1,16 @@
 backend:
   name: github
   repo: oujonny/schley.ch
-  # TODO: Switch to main branch once development is done
-  branch: development
-  base_url: https://beta.schley.ch
+  branch: main
+  base_url: https://schleyconsult.ch
   auth_endpoint: cms-oauth/auth
   squash_merges: true
 
 publish_mode: editorial_workflow
 show_preview_links: true
 
-site_url: "https://beta.schley.ch"
-display_url: "https://schley.ch"
+site_url: "https://schleyconsult.ch"
+display_url: "https://schleyconsult.ch"
 
 logo:
   src: /images/logo.svg

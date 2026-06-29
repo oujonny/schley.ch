@@ -46,6 +46,11 @@ jobs:
         with:
           name: public
           path: ./public
+          # Keep dotfiles (.htaccess for the redirect, /admin, /cms-oauth).
+          # upload-artifact excludes hidden files by default since v4, which
+          # otherwise strips them from the artifact and rsync --delete then
+          # removes them from the server.
+          include-hidden-files: true
 
   # Deployment job
   deploy:

@@ -115,7 +115,7 @@ function renderSuccess(string $token): void
     <html lang="de">
     <head><meta charset="utf-8"><title>Authentifizierung erfolgreich</title></head>
     <body>
-    <p>Authentifizierung erfolgreich. Dieses Fenster wird geschlossen…</p>
+    <p style="font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:24px;color:#1f2430;">Anmeldung wird abgeschlossen…</p>
     <script>
     (function () {
       var token    = {$token_js};
@@ -130,24 +130,51 @@ function renderSuccess(string $token): void
         return;
       }
 
-      // Decap CMS two-phase handshake:
-      //  1. Popup sends  'authorizing:github'              → opener
-      //  2. CMS checks   e.origin === base_url, then replies with e.data back to popup
-      //  3. Popup sends  'authorization:github:success:…'  → opener (targetOrigin = CMS origin)
+      // Decap CMS handshake (mit Safari-Härtung):
+      //  1. Popup sendet  'authorizing:github'  → CMS  (wiederholt – Safari
+      //     verwirft einzelne postMessages nach dem GitHub-Umweg gerne mal)
+      //  2. CMS antwortet 'authorizing:github'  → Popup
+      //  3. Popup sendet  'authorization:github:success:…' → CMS
+      // Fallback: Bleibt die CMS-Antwort aus (Safari blockiert die Rückrichtung),
+      // senden wir das Token direkt. Der CMS hat seinen Success-Listener bereits
+      // registriert, sobald er EINE 'authorizing'-Nachricht gesehen hat.
 
-      // Step 1 – register listener BEFORE sending so we don't miss the reply
+      var done = false;
+
+      function finish(origin) {
+        if (done) return;
+        done = true;
+        window.opener.postMessage('authorization:' + provider + ':success:' + payload, origin || '*');
+
+        // Erfolg anzeigen, dann schließen. Safari verweigert window.close() bei
+        // Popups mit Verlauf – dann bleibt das Fenster mit diesem Hinweis offen.
+        document.querySelector('p').textContent =
+          '✓ Anmeldung erfolgreich. Sie können dieses Fenster jetzt schließen.';
+        setTimeout(function () { window.close(); }, 300);
+      }
+
+      // Schritt 1+3: auf die CMS-Antwort warten, dann Token senden
       window.addEventListener('message', function receiveMessage(event) {
-        if (event.source !== window.opener) return; // ignore unrelated messages
+        if (event.source !== window.opener || done) return;
         window.removeEventListener('message', receiveMessage);
         console.log('[OAuth] CMS replied, origin:', event.origin, '– sending token');
-        // Step 3 – send token; targetOrigin must equal base_url so the CMS origin-check passes
-        window.opener.postMessage('authorization:' + provider + ':success:' + payload, event.origin);
-        setTimeout(function () { window.close(); }, 300);
+        finish(event.origin);
       }, false);
 
-      // Step 2 – announce we're authorising; CMS checks e.origin === base_url here
-      console.log('[OAuth] → authorizing:github');
-      window.opener.postMessage('authorizing:' + provider, '*');
+      // Schritt 2: 'authorizing' senden – mehrfach, falls Safari die erste
+      // Nachricht verschluckt. Nach ~4 s ohne Antwort: Token direkt senden.
+      var tries = 0;
+      (function ping() {
+        if (done) return;
+        if (tries++ > 16) {
+          console.log('[OAuth] keine Antwort – sende Token direkt');
+          finish('*');
+          return;
+        }
+        console.log('[OAuth] → authorizing:github (' + tries + ')');
+        window.opener.postMessage('authorizing:' + provider, '*');
+        setTimeout(ping, 250);
+      })();
     })();
     </script>
     </body>

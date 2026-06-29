@@ -1,0 +1,161 @@
+backend:
+  name: github
+  repo: oujonny/schley.ch
+  branch: main
+  base_url: https://schleyconsult.ch
+  auth_endpoint: cms-oauth/auth
+  squash_merges: true
+
+publish_mode: editorial_workflow
+show_preview_links: true
+
+site_url: "https://schleyconsult.ch"
+display_url: "https://schleyconsult.ch"
+
+logo:
+  src: /images/logo.svg
+  show_in_header: true
+
+media_folder: "static/images"
+public_folder: "/images"
+locale: 'de'
+
+collections:
+  - name: homepage
+    label: "Homepage"
+    preview_path: "/#{{slug}}"
+    files:
+      - label: "Landing Page"
+        name: landing_page
+        file: "content/_index.md"
+        fields:
+          - {label: "Hauptzeile", name: header_headline, widget: string}
+          - {label: "Unterzeile", name: header_subheadline, widget: string}
+          - {label: "Hintergrundbild", name: header_image, widget: image}
+      - label: "Slogan"
+        name: slogan
+        file: "content/homepage/slogan.md"
+        fields:
+          - {label: "Inhalt", name: body, widget: markdown}
+      - label: "Portrait"
+        name: portrait_index
+        file: "content/homepage/portrait/_index.md"
+        fields:
+          - { label: "Inhalt", name: body, widget: markdown }
+          - { label: "Bild", name: page_image, widget: object, fields: [
+              { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+            ]}
+      - label: "Mein Versprechen"
+        name: versprechen
+        file: "content/homepage/mein_versprechen.md"
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: markdown }
+      - label: "Kontakt"
+        name: kontakt
+        file: "content/homepage/kontakt/_index.md"
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: markdown }
+          - { label: "Bild", name: page_image, widget: object, fields: [
+              { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+            ]}
+
+  - name: angebote
+    label: "Angebot"
+    folder: "content/homepage/angebot"
+    preview_path: "/#angebot"
+    create: true
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: richtext }
+
+  - name: ueber_mich
+    label: "Über mich"
+    files:
+      - label: "Berufliche Stationen"
+        name: berufliche_stationen
+        file: "content/homepage/ueber_mich/berufliche_stationen.md"
+        preview_path: "/#ueber-mich"
+        fields:
+          - {label: "Titel", name: title, widget: string}
+          - {label: "Inhalt", name: body, widget: richtext}
+
+      - label: "Mandate & Aktivitäten"
+        name: mandate_aktivitaeten
+        file: "content/homepage/ueber_mich/mandate_aktivitaeten.md"
+        preview_path: "/#ueber-mich"
+        fields:
+          - {label: "Titel", name: title, widget: string}
+          - {label: "Inhalt", name: body, widget: richtext}
+
+  - name: referenzbeispiele
+    label: "Referenzbeispiele"
+    folder: "content/homepage/ueber_mich/referenzbeispiele"
+    preview_path: "/#ueber-mich"
+    create: true
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: richtext }
+
+  - name: referenzen
+    label: "Referenzen / Zitate"
+    folder: "content/homepage/referenzen"
+    preview_path: "/#referenzen"
+    create: true
+    fields:
+      - {label: "Name", name: title, widget: string}
+      - {label: "Position / Funktion", name: subtitle, widget: string}
+      - {label: "Reihenfolge", name: weight, widget: number, default: 10}
+      - {label: "Zitat", name: body, widget: richtext}
+
+  - name: blog
+    label: "Blog"
+    folder: "content/blog"
+    preview_path: "/blog/{{slug}}"
+    create: true
+    fields:
+      - { label: "Layout", name: layout, widget: hidden, default: "post" }
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Untertitel", name: subtitle, widget: string }
+      - { label: "Autor", name: author, widget: string, default: "Frank Schley" }
+      - { label: "Datum", name: date, widget: datetime }
+      - { label: "Bild", name: page_image, widget: object, fields: [
+          { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+          ] }
+      - { label: "Inhalt", name: body, widget: richtext }
+
+  - name: seiten
+    label: "Statische Seiten"
+    files:
+      - label: "Ausbildungen"
+        name: ausbildungen
+        file: "content/homepage/portrait/ausbildungen.md"
+        # TODO: Seite im Moment gar nicht öffentlich?
+        preview_path: ""
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Inhalt", name: body, widget: richtext }
+      - label: "Impressum"
+        name: impressum
+        file: "content/impressum.md"
+        preview_path: "/impressum"
+        fields:
+          - {label: "Titel", name: title, widget: string}
+          - {label: "Inhalt", name: body, widget: richtext}
+
+      - label: "Datenschutz"
+        name: datenschutz
+        file: "content/datenschutz.md"
+        preview_path: "/datenschutz"
+        fields:
+          - {label: "Inhalt", name: body, widget: richtext}
+
+      - label: "Kooperationspartner"
+        name: kooperationspartner
+        file: "content/kooperationspartner.md"
+        # TODO: Seite im Moment gar nicht öffentlich?
+        preview_path: ""
+        fields:
+          - {label: "Titel", name: title, widget: string}
+          - {label: "Inhalt", name: body, widget: richtext}

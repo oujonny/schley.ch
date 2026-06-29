@@ -1,0 +1,17 @@
+# ───────────────────────────────────────────────────────────────────────────
+# Permanent redirect: schley.ch → schleyconsult.ch
+#
+# schleyconsult.ch is the canonical domain (matches the Hugo baseURL). On cyon
+# it is an alias of schley.ch and serves from this same docroot, so the rule is
+# host-based: it fires ONLY for the old domain and leaves schleyconsult.ch and
+# the beta.schley.ch staging host untouched (no redirect loop possible, since
+# the target host never matches the condition).
+#
+# 301 = permanent: search engines transfer ranking signals to the new domain.
+# The full path + query string are preserved (%{REQUEST_URI}).
+# ───────────────────────────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^(www\.)?schley\.ch$ [NC]
+    RewriteRule ^ https://schleyconsult.ch%{REQUEST_URI} [R=301,L]
+</IfModule>

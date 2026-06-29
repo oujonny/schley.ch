@@ -1,11 +1,10 @@
 ---
-title: "Portrait"
-url: "Home"
+title: Portrait
+url: portrait
 weight: 2
 header_menu: true
-
 page_image:
-    src: "portrait.jpg"
+  src: portrait.jpg
 ---
 ### Dr. Frank Schley
 **Mein Fokus:**

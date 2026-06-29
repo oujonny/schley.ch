@@ -1,4 +1,3 @@
-
 ---
 title: "Dr. Bernhard Meier"
 subtitle: "Delegierter Public Affairs und Regulation, SBB AG"

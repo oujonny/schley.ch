@@ -1,4 +1,3 @@
-
 ---
 title: "Christian Gigon"
 subtitle: "Projektleiter, Bundesamt für Verkehr"

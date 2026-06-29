@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@3.12.2/dist/decap-cms.js"></script>
+  <style>nav>ul>li>img { width: 190px;}</style>
+  <script>
+    CMS.registerPreviewStyle("/css/bootstrap.min.css");
+    CMS.registerPreviewStyle("/css/fork-awesome.min.css");
+    CMS.registerPreviewStyle("/css/style.css");
+
+    // Default onepager preview — matches the Hugo onepager.html layout
+    var OnepagerPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(["data", "title"]);
+        var image = this.props.widgetsFor("page_image");
+        var imageSrc = entry.getIn(["data", "page_image", "src"]);
+
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              title ? h("header", { className: "post-header" },
+                h("h1", { className: "display-1 post-title" }, title)
+              ) : null,
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid d-flex mt-md-0" },
+                  h("div", { className: "row" },
+                    imageSrc
+                      ? [
+                          h("div", { className: "col-lg-7 px-0", key: "text" },
+                            this.props.widgetFor("body")
+                          ),
+                          h("div", { className: "page-image-div col-lg-5 order-first order-lg-last px-0 pb-4 pb-lg-2 ps-lg-4 pe-lg-0", key: "img" },
+                            h("img", { src: this.props.getAsset(imageSrc).toString(), style: { maxWidth: "100%" } })
+                          ),
+                        ]
+                      : h("div", { className: "col-12 px-0" },
+                          this.props.widgetFor("body")
+                        )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    // Register onepager as default for all homepage collections
+    ["homepage", "ueber_mich"].forEach(function (name) {
+      CMS.registerPreviewTemplate(name, OnepagerPreview);
+    });
+
+    // Cards preview (angebot)
+    var CardPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid" },
+                  h("div", { className: "row" },
+                    h("div", { className: "col-12 px-0" },
+                      h("div", { className: "card d-flex mb-4 p-3 p-md-4 shadow-sm" },
+                        h("h5", {}, entry.getIn(["data", "title"])),
+                        this.props.widgetFor("body")
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("angebote", CardPreview);
+
+    // Accordion preview (referenzbeispiele)
+    var AccordionPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "accordion accordion-flush pt-3 px-2" },
+                  h("div", { className: "accordion-item" },
+                    h("div", { className: "accordion-header" },
+                      h("button", { className: "accordion-button px-0" },
+                        entry.getIn(["data", "title"])
+                      )
+                    ),
+                    h("div", { className: "py-4 accordion-collapse" },
+                      this.props.widgetFor("body")
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("referenzbeispiele", AccordionPreview);
+
+    // Static Page preview (impressum, datenschutz, kooperationspartner)
+    var StaticPagePreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var title = entry.getIn(["data", "title"]);
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              title ? h("header", { className: "post-header" },
+                h("h1", { className: "display-1 post-title" }, title)
+              ) : null,
+              h("section", { className: "post-content" },
+                h("div", { className: "container-fluid d-flex mt-md-0" },
+                  h("div", { className: "row" },
+                    h("div", { className: "col-12 px-0" },
+                      this.props.widgetFor("body")
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("seiten", StaticPagePreview);
+
+    // Carousel preview (referenzen)
+    var CarouselPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        return h("div", { className: "page px-0 px-md-4" },
+          h("article", { className: "px-4 px-lg-3" },
+            h("div", { className: "post py-3 py-md-5" },
+              h("section", { className: "post-content" },
+                h("div", { className: "carousel carousel-dark" },
+                  h("div", { className: "carousel-inner container-fluid p-0" },
+                    h("div", { className: "carousel-item active" },
+                      h("div", { className: "d-flex" },
+                        h("div", { className: "carousel-item-text p-0 blockqoute" },
+                          h("h4", {}, entry.getIn(["data", "title"])),
+                          h("h5", {}, entry.getIn(["data", "subtitle"])),
+                          h("blockquote", {}, this.props.widgetFor("body"))
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      },
+    });
+    CMS.registerPreviewTemplate("referenzen", CarouselPreview);
+  </script>
+
+  <script>
+    // Ersetzt den Platzhalter-Avatar oben rechts durch das echte GitHub-Profilbild
+    // und zeigt Benutzername / E-Mail (als Tooltip am Avatar und als Kopfzeile im
+    // Klick-Menü).
+    //
+    // Decap verwirft das Feld "avatar_url" und speichert vom angemeldeten Benutzer
+    // nur login/name/email/token unter dem localStorage-Schlüssel "decap-cms-user".
+    // Das Profilbild holen wir daher über die öffentliche GitHub-URL
+    // https://github.com/<login>.png – ohne Token, ohne API-Aufruf, ohne Scope.
+    (function () {
+      // aria-label des Avatar-Buttons (englischer Fallback, da die de-Lokalisierung
+      // diesen Schlüssel nicht übersetzt). Bei Decap-Updates ggf. anpassen.
+      var ACCOUNT_LABEL = "Account options dropdown";
+
+      function readUser() {
+        try {
+          return JSON.parse(window.localStorage.getItem("decap-cms-user"));
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function userText(user) {
+        var label = user.login || user.name || "";
+        if (user.email) label += " · " + user.email;
+        return label;
+      }
+
+      function accountButton() {
+        return document.querySelector('[aria-label="' + ACCOUNT_LABEL + '"]');
+      }
+
+      // 1) Platzhalter-Avatar durch das echte GitHub-Bild ersetzen.
+      function applyAvatar() {
+        var user = readUser();
+        var btn = accountButton();
+        if (!user || !user.login || !btn) return;
+
+        var src = "https://github.com/" + encodeURIComponent(user.login) + ".png?size=64";
+        btn.setAttribute("title", userText(user));
+
+        var existing = btn.querySelector(".cms-gh-avatar");
+        if (existing) {
+          if (existing.getAttribute("src") !== src) existing.setAttribute("src", src);
+          return;
+        }
+
+        // Decaps Platzhalter ausblenden (wir überlagern ihn mit unserem Bild).
+        Array.prototype.forEach.call(btn.children, function (child) {
+          child.style.visibility = "hidden";
+        });
+        if (getComputedStyle(btn).position === "static") btn.style.position = "relative";
+
+        var img = document.createElement("img");
+        img.className = "cms-gh-avatar";
+        img.src = src;
+        img.alt = user.login;
+        img.referrerPolicy = "no-referrer";
+        img.style.cssText =
+          "position:absolute;top:8px;left:8px;width:32px;height:32px;" +
+          "border-radius:50%;object-fit:cover;display:block;";
+        img.onerror = function () {
+          // Kein GitHub-Bild gefunden → Decaps Platzhalter wieder zeigen.
+          img.remove();
+          Array.prototype.forEach.call(btn.children, function (child) {
+            child.style.visibility = "";
+          });
+        };
+        btn.appendChild(img);
+      }
+
+      // 2) Benutzername / E-Mail beim Klick als Kopfzeile ins Avatar-Menü setzen.
+      function decorateMenu() {
+        var user = readUser();
+        var btn = accountButton();
+        if (!user || !btn || btn.getAttribute("aria-expanded") === "false") return;
+
+        // Das offene Menü liegt im selben react-aria-Wrapper wie der Button:
+        // vom Button nach oben laufen bis zum ersten Vorfahren mit einem
+        // [role="menuitem"] – das ist genau dieses Menü (nicht das "Neu"-Menü).
+        var el = btn.parentElement;
+        var list = null;
+        while (el && el !== document.body) {
+          var item = el.querySelector('[role="menuitem"]');
+          if (item) { list = item.parentElement; break; }
+          el = el.parentElement;
+        }
+        if (!list || list.querySelector(".cms-user-info")) return;
+
+        var info = document.createElement("li");
+        info.className = "cms-user-info";
+        info.textContent = userText(user);
+        info.style.cssText =
+          "padding:8px 14px;font:12px/1.4 -apple-system,Segoe UI,Roboto," +
+          "Helvetica,Arial,sans-serif;color:#5e6472;white-space:nowrap;" +
+          "border-bottom:1px solid rgba(0,0,0,.08);cursor:default;";
+        list.insertBefore(info, list.firstChild);
+      }
+
+      document.addEventListener("click", function (e) {
+        var btn = accountButton();
+        if (btn && (e.target === btn || btn.contains(e.target))) {
+          // Das Menü öffnet erst nach diesem Klick – kurz danach dekorieren.
+          setTimeout(decorateMenu, 0);
+          setTimeout(decorateMenu, 80);
+        }
+      }, true);
+
+      // Login passiert nach dem Laden und Decap rendert neu → regelmäßig prüfen.
+      applyAvatar();
+      setInterval(applyAvatar, 1500);
+    })();
+  </script>
+</body>
+</html>

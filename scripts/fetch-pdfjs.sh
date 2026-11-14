@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-# Lädt den offiziellen PDF.js-Viewer von Mozilla (vorgebaute "dist"-Version)
-# nach static/pdfjs/ und hängt unser Theme (static/css/pdfjs-theme.css) ein.
+# Holt den offiziellen PDF.js-Viewer von Mozilla (vorgebaute "dist"-Version)
+# nach static/pdfjs/ und hängt unser Theme (/css/pdfjs-theme.css) ein.
+# Das Ergebnis wird ins Repo eingecheckt und von unserem Server ausgeliefert –
+# das Skript braucht es nur für ein Update:
 #
-# Wird in CI vor dem Hugo-Build ausgeführt; lokal einmalig von Hand:
-#   bash scripts/fetch-pdfjs.sh
-#
-# Update: PDFJS_VERSION + PDFJS_SHA256 anpassen
-#   (Releases: https://github.com/mozilla/pdf.js/releases).
+#   1. PDFJS_VERSION + PDFJS_SHA256 anpassen
+#      (Releases: https://github.com/mozilla/pdf.js/releases)
+#   2. bash scripts/fetch-pdfjs.sh
+#   3. static/pdfjs/ committen
 set -euo pipefail
 
 PDFJS_VERSION="6.5.438"
@@ -36,6 +37,21 @@ unzip -q "$TMP/pdfjs.zip" -d "$DEST"
 find "$DEST" -name '*.map' -delete
 rm -f "$DEST/web/debugger.mjs" "$DEST/web/debugger.css" \
       "$DEST/web/compressed.tracemonkey-pldi-09.pdf"
+
+# Nur die Landessprachen + Englisch behalten (spart ~3 MB). locale.json wird
+# passend gekürzt; andere Browsersprachen fallen auf Englisch zurück.
+KEEP_LOCALES="de en-US fr it"
+for dir in "$DEST"/web/locale/*/; do
+  name="$(basename "$dir")"
+  [[ " $KEEP_LOCALES " == *" $name "* ]] || rm -rf "$dir"
+done
+python3 - "$DEST/web/locale/locale.json" $KEEP_LOCALES <<'PY'
+import json, sys
+path, keep = sys.argv[1], set(sys.argv[2:])
+data = json.load(open(path))
+data = {k: v for k, v in data.items() if v.split("/")[0] in keep}
+json.dump(data, open(path, "w"), indent=1, sort_keys=True)
+PY
 
 # Unser Theme nach viewer.css einbinden.
 sed -i 's|</head>|<link rel="stylesheet" href="/css/pdfjs-theme.css">\n</head>|' \

@@ -42,8 +42,6 @@ jobs:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugo-build-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-hugo-build-
-      - name: Fetch PDF.js viewer
-        run: bash scripts/fetch-pdfjs.sh
       - name: Build
         env:
           HUGO_ENVIRONMENT: production

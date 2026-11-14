@@ -34,8 +34,6 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: recursive
-      - name: Fetch PDF.js viewer
-        run: bash scripts/fetch-pdfjs.sh
       - name: Deploy with Hugo
         env:
           # For maximum backward compatibility with Hugo modules

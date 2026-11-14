@@ -4,6 +4,3 @@ public/
 # system files
 *.DS_Store*
 
-
-# PDF.js viewer (downloaded by scripts/fetch-pdfjs.sh)
-static/pdfjs/

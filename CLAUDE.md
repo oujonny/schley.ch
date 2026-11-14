@@ -64,15 +64,14 @@ docker-compose up
 - `decap-server` on port 8081 (local git backend — reads/writes files, commits locally)
 - No GitHub account or OAuth credentials needed locally
 - Changes commit to your **local** git repo; push to GitHub manually when ready
-- PDF previews need the PDF.js viewer once locally: `bash scripts/fetch-pdfjs.sh`
 
 ## Blog PDFs
 - CMS field `downloads` (list: `title`, `file`, `preview`) on blog posts; uploads go to `static/files/blog/`
 - Rendered by `themes/business/layouts/partials/components/downloads.html`
 - `preview: true` embeds Mozilla's PDF.js viewer (`/pdfjs/web/viewer.html?file=…`)
-- PDF.js is **not in Git**: `scripts/fetch-pdfjs.sh` downloads a pinned, checksummed
-  release into `static/pdfjs/` (gitignored) — CI runs it before the Hugo build.
-  Update = bump `PDFJS_VERSION` + `PDFJS_SHA256` in that script.
+- PDF.js is vendored in `static/pdfjs/` (committed, served from our own server, ~9 MB;
+  locales trimmed to de/fr/it/en-US). Update = bump `PDFJS_VERSION` + `PDFJS_SHA256`
+  in `scripts/fetch-pdfjs.sh`, run it, commit `static/pdfjs/`.
 - Viewer styling: `themes/business/static/css/pdfjs-theme.css` (overrides PDF.js CSS variables)
 - Inline "PDF" button in the body editor: custom `registerEditorComponent` in `static/admin/index.html`
 
@@ -94,7 +93,7 @@ static/admin/config.yml          # Production CMS config (GitHub backend)
 static/admin/config.local.yml    # Local CMS config (local_backend: true)
 static/cms-oauth/index.php       # PHP OAuth proxy
 static/cms-oauth/.htaccess       # URL rewrite rules for the proxy
-scripts/fetch-pdfjs.sh           # Downloads PDF.js viewer (CI + local)
+scripts/fetch-pdfjs.sh           # Updates the vendored PDF.js viewer
 docker-compose.yml               # Local dev environment
 .github/workflows/deploy.yml     # CI: beta deployment (development + cms/**)
 .github/workflows/deploy_main.yml# CI: production deployment (main)

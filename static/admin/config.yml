@@ -124,6 +124,22 @@ collections:
           { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
           ] }
       - { label: "Inhalt", name: body, widget: richtext }
+      - label: "PDF-Downloads"
+        name: downloads
+        label_singular: "PDF"
+        widget: list
+        required: false
+        summary: "{{fields.title}}"
+        hint: "PDFs, die unter dem Beitrag als Download angezeigt werden."
+        fields:
+          - { label: "Bezeichnung", name: title, widget: string }
+          - label: "PDF-Datei"
+            name: file
+            widget: file
+            media_folder: "/static/files/blog"
+            public_folder: "/files/blog"
+            choose_url: false
+            pattern: ['(?i)\.pdf$', "Bitte eine PDF-Datei hochladen (.pdf)"]
 
   - name: seiten
     label: "Statische Seiten"

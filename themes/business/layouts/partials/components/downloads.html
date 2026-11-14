@@ -1,0 +1,17 @@
+{{ with .Params.downloads }}
+<div class="post-downloads pt-4">
+    <h4>Downloads</h4>
+    <ul class="list-unstyled">
+        {{ range . }}
+        {{ if .file }}
+        <li class="py-1">
+            <a href="{{ .file | relURL }}" target="_blank" rel="noopener">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                {{ .title | default (path.Base .file) }}
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

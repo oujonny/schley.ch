@@ -21,6 +21,7 @@
                                 {{ if isset .Page.Params "page_image" }}
                                         <div class="col-lg-7 px-0">
                                             {{ .Content }}
+                                            {{ partial "components/downloads.html" . }}
                                         </div>
                                         <div class="col-lg-5 order-first order-lg-last px-0 pb-4 pb-xl-2 ps-xl-4 pe-xl-0">
                                             {{ partial "utils/page_image.html" . }}
@@ -28,6 +29,7 @@
                                 {{ else }}
                                     <div class="col-12 px-0">
                                         {{ .Content }}
+                                        {{ partial "components/downloads.html" . }}
                                     </div>
                                 {{ end }}
                             </div>

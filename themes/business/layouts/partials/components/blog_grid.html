@@ -1,0 +1,6 @@
+{{/* Raster aus Blog-Karten. Parameter: Liste von Seiten. */}}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 blog-grid">
+    {{ range . }}
+    <div class="col">{{ partial "components/blog_card.html" . }}</div>
+    {{ end }}
+</div>

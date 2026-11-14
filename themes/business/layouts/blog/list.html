@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ partial "components/nav.html" . }}
+<main id="wrap" role="main">
+  <div id="warp-pages" class="row">
+    <div class="col-12 px-md-0">
+      <div id="pages" class="container p-0">
+        <div class="page px-0 px-md-4">
+          <article class="px-4 px-lg-3">
+            <div class="offset" style="padding-top: var(--scroll-offset);"></div>
+            <div class="post py-3 py-md-5">
+              <header class="post-header">
+                <h1 class="display-1 post-title">{{ .Title }}</h1>
+              </header>
+              <section class="post-content">
+                {{ .Content }}
+                {{ with .RegularPages.ByDate.Reverse }}
+                  <div class="mt-4">{{ partial "components/blog_grid.html" . }}</div>
+                {{ else }}
+                  <p class="mt-4">Noch keine Beiträge.</p>
+                {{ end }}
+              </section>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{{ end }}

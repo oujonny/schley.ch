@@ -11,4 +11,4 @@ navLinks.forEach((l) => {
 // randomize referenzen
 const caourselItems = document.querySelectorAll('.carousel-item');
 var item = caourselItems[Math.floor(Math.random()*caourselItems.length)];
-item.classList.add('active')
+if (item) item.classList.add('active')

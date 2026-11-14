@@ -9,24 +9,22 @@
                   {{ if ne .Params.hide_title true }}
                       <div class="offset" style="padding-top: var(--scroll-offset);"></div>
                   {{ end }}
-                  {{ with .Params.page_image }}
-                      <div class="post-image" style="margin: 0 auto;">
-                          <img src="/blog{{ .src | relURL }}" alt="{{ $.Title }}" class="img-fluid">
-                          <p>{{ .caption }} - <span class="fst-italic">{{ .copyright }}</span></p>
-                      </div>
-                  {{ end }}
                   <div class="post py-3">
-                    {{ if ne .Params.hide_title true }}
+                    <p class="blog-back mb-4"><a href="{{ .Parent.RelPermalink }}"><i class="fa fa-angle-left" aria-hidden="true"></i> Alle Beiträge</a></p>
                     <header class="post-header">
                         <h1 class="display-1 post-title">{{ .Title }}</h1>
-                        <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
-                        <div class="author-date pt-3">
-                            <p class="post-author fst-italic">{{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Params.author }}{{ end }}  -  {{ .Date | time.Format "January 2, 2006" }}</p>
-                        </div>
+                        {{ with .Params.subtitle }}<p class="post-subtitle h4">{{ . }}</p>{{ end }}
+                        <p class="post-meta pt-2">
+                            {{ with .Params.author }}{{ . }} · {{ end }}{{ partial "utils/date_de.html" .Date }}
+                        </p>
                     </header>
+                    {{ with partial "utils/blog_image.html" . }}
+                        {{ with .Resize "1600x q85" }}
+                        <img src="{{ .RelPermalink }}" class="post-cover img-fluid w-100 mt-3" alt="" width="{{ .Width }}" height="{{ .Height }}">
+                        {{ end }}
                     {{ end }}
                     <section class="post-content pt-4">
-                        <div class="container-fluid d-flex mt-md-0">
+                        <div class="container-fluid mt-md-0">
                             <div class="row">
                                 <div class="col-12 px-0">
                                     {{ .Content }}

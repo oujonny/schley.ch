@@ -1,0 +1,12 @@
+{{- /*
+  Titelbild eines Blogbeitrags als Hugo-Ressource (oder nil).
+  Der CMS speichert Bilder neben den Beiträgen in content/blog/, sie gehören
+  damit zum Bundle der Blog-Übersicht (content/blog/_index.md).
+*/ -}}
+{{- $img := false -}}
+{{- with .Params.page_image -}}
+  {{- with .src -}}
+    {{- $img = (site.GetPage "/blog").Resources.GetMatch (strings.TrimPrefix "/" (path.Base .)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $img -}}

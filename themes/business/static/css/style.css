@@ -474,3 +474,78 @@ mobile tweeeks
 .post-content .row:has(.pdf-preview) {
   width: 100%;
 }
+
+/* #################
+#       blog       #
+################# */
+.blog-card {
+  transition: background-color .2s ease, color .2s ease;
+}
+.blog-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.blog-card-date,
+.post-meta {
+  font-size: .85rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.blog-card-title {
+  color: var(--primary);
+  font-weight: bolder;
+}
+.blog-card-title a {
+  text-decoration: none;
+}
+.blog-card-subtitle,
+.blog-card-summary {
+  font-size: 1rem;
+}
+.blog-card-subtitle {
+  font-weight: bolder;
+}
+.blog-card-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card-more {
+  color: var(--highlight);
+  font-weight: bolder;
+}
+.blog-card:hover .blog-card-title,
+.blog-card:hover .blog-card-date,
+.blog-card:hover .blog-card-more {
+  color: var(--white);
+}
+.blog-all-btn {
+  border-radius: 0;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: .6rem 1.4rem;
+}
+.blog-all-btn:hover {
+  background-color: var(--highlight);
+  color: var(--white);
+}
+.blog-back a {
+  color: var(--grey);
+  text-decoration: none;
+}
+.blog-back a:hover {
+  color: var(--primary);
+}
+.post-subtitle {
+  color: var(--primary);
+  font-weight: 200;
+}
+.post-cover {
+  max-height: 32rem;
+  object-fit: cover;
+}

@@ -51,6 +51,13 @@ collections:
         fields:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: markdown }
+      - label: "Blog (Startseite)"
+        name: blog_teaser
+        file: "content/homepage/blog.md"
+        preview_path: "/#blog"
+        fields:
+          - { label: "Titel", name: title, widget: string, hint: "Zeigt automatisch die 3 neusten Beiträge. Wird ausgeblendet, solange es keine Beiträge gibt." }
+          - { label: "Einleitung", name: body, widget: markdown, required: false }
       - label: "Kontakt"
         name: kontakt
         file: "content/homepage/kontakt/_index.md"
@@ -114,6 +121,9 @@ collections:
     folder: "content/blog"
     preview_path: "/blog/{{slug}}"
     create: true
+    # Nur Beiträge, nicht die Übersichtsseite content/blog/_index.md
+    filter: { field: layout, value: post }
+    sortable_fields: ["date", "title"]
     fields:
       - { label: "Layout", name: layout, widget: hidden, default: "post" }
       - { label: "Titel", name: title, widget: string }
@@ -158,6 +168,14 @@ collections:
         fields:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: richtext }
+      - label: "Blog-Übersicht"
+        name: blog_uebersicht
+        file: "content/blog/_index.md"
+        preview_path: "/blog/"
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Einleitung", name: body, widget: markdown, required: false }
+
       - label: "Impressum"
         name: impressum
         file: "content/impressum.md"

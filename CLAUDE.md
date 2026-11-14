@@ -65,6 +65,14 @@ docker-compose up
 - No GitHub account or OAuth credentials needed locally
 - Changes commit to your **local** git repo; push to GitHub manually when ready
 
+## Blog
+- Overview `/blog/`: `themes/business/layouts/blog/list.html` (card grid, intro from `content/blog/_index.md`)
+- Posts: `themes/business/layouts/blog/single.html`; cards: `partials/components/blog_card.html`
+- Homepage section `content/homepage/blog.md` (`type: blog_teaser`) shows the 3 newest posts;
+  it and its menu item are hidden automatically while there are no posts
+- Cover images live next to the posts in `content/blog/` (resources of the `_index.md` bundle)
+- CMS blog collection filters on `layout: post` so `_index.md` isn't listed as a post
+
 ## Blog PDFs
 - CMS field `downloads` (list: `title`, `file`, `preview`) on blog posts; uploads go to `static/files/blog/`
 - Rendered by `themes/business/layouts/partials/components/downloads.html`

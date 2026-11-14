@@ -1,0 +1,10 @@
+{{/* Startseite: die neusten Blogbeiträge + Link zur Übersicht. */}}
+{{ $blog := site.GetPage "/blog" }}
+{{ with first 3 $blog.RegularPages.ByDate.Reverse }}
+<div class="blog-teaser mt-4">
+    {{ partial "components/blog_grid.html" . }}
+    <p class="mt-4 mb-0">
+        <a href="{{ $blog.RelPermalink }}" class="btn blog-all-btn">Alle Beiträge <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </p>
+</div>
+{{ end }}

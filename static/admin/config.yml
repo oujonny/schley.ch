@@ -140,6 +140,12 @@ collections:
             public_folder: "/files/blog"
             choose_url: false
             pattern: ['(?i)\.pdf$', "Bitte eine PDF-Datei hochladen (.pdf)"]
+          - label: "Vorschau anzeigen"
+            name: preview
+            widget: boolean
+            default: false
+            required: false
+            hint: "Zeigt das PDF direkt im Beitrag an (zusätzlich zum Download-Link)."
 
   - name: seiten
     label: "Statische Seiten"

@@ -461,3 +461,16 @@ mobile tweeeks
     box-shadow: none !important;
   }
 }
+
+/* PDF-Vorschau in Blogbeiträgen (partials/components/downloads.html) */
+.pdf-preview iframe {
+  display: block;
+  width: 100%;
+  height: min(80vh, 760px);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+/* Die Spalte wächst sonst nur so breit wie der Text (d-flex-Container). */
+.post-content .row:has(.pdf-preview) {
+  width: 100%;
+}

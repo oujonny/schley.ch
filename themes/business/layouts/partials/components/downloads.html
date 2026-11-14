@@ -1,3 +1,8 @@
+{{/*
+  PDF-Downloads eines Beitrags (Front Matter "downloads", gepflegt im CMS).
+  Einträge mit "preview: true" werden zusätzlich mit dem PDF.js-Viewer
+  (static/pdfjs, siehe scripts/fetch-pdfjs.sh) im Beitrag angezeigt.
+*/}}
 {{ with .Params.downloads }}
 <div class="post-downloads pt-4">
     <h4>Downloads</h4>
@@ -13,5 +18,14 @@
         {{ end }}
         {{ end }}
     </ul>
+    {{ range . }}
+    {{ if and .file .preview }}
+    <figure class="pdf-preview mt-4">
+        <iframe src="{{ printf "/pdfjs/web/viewer.html?file=%s" (.file | relURL | urlquery) | relURL }}"
+                title="{{ .title | default (path.Base .file) }}"
+                loading="lazy" allowfullscreen></iframe>
+    </figure>
+    {{ end }}
+    {{ end }}
 </div>
 {{ end }}

@@ -127,11 +127,11 @@ collections:
     fields:
       - { label: "Layout", name: layout, widget: hidden, default: "post" }
       - { label: "Titel", name: title, widget: string }
-      - { label: "Untertitel", name: subtitle, widget: string }
+      - { label: "Untertitel", name: subtitle, widget: string, required: false }
       - { label: "Autor", name: author, widget: string, default: "Frank Schley" }
       - { label: "Datum", name: date, widget: datetime }
-      - { label: "Bild", name: page_image, widget: object, fields: [
-          { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+      - { label: "Bild", name: page_image, widget: object, required: false, fields: [
+          { label: "Bilddatei", name: src, widget: image, required: false, media_folder: "./", public_folder: "" }
           ] }
       - { label: "Inhalt", name: body, widget: richtext }
       - label: "PDF-Downloads"
@@ -139,6 +139,7 @@ collections:
         label_singular: "PDF"
         widget: list
         required: false
+        default: []
         summary: "{{fields.title}}"
         hint: "PDFs, die unter dem Beitrag als Download angezeigt werden."
         fields:

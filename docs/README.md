@@ -2,6 +2,7 @@
 
 | Guide | For |
 |-------|-----|
+| [Using the CMS](cms.md) | Logging in, finding and editing content, draft → publish |
 | [Blog](blog.md) | Writing posts, the `/blog/` overview, the homepage section |
 | [PDFs in blog posts](pdf.md) | PDF downloads, the in-page PDF preview, the inline "PDF" button |
 | [Previewing changes](preview.md) | How to see changes on `beta.schley.ch` before they go live |

@@ -19,6 +19,9 @@ they go live.
 > *"✓ Anmeldung erfolgreich"*. That's expected — you're already logged in, just
 > close the popup. (Safari blocks pop‑ups from closing themselves.)
 
+Guides for specific features (blog, PDFs, previewing changes) are in
+**[docs/](docs/README.md)**.
+
 ---
 
 ## Editorial workflow (draft → review → publish)

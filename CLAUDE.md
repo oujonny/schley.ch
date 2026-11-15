@@ -66,6 +66,10 @@ docker-compose up
 - Changes commit to your **local** git repo; push to GitHub manually when ready
 
 ## Blog
+> ⚠️ **Sample content – remove before merging to `main`:** three sample blog posts
+> (all files named `beispiel-*`) exist only for the beta preview. Remove them with:
+> `git rm content/blog/beispiel-* static/files/blog/beispiel-*`
+
 - Overview `/blog/`: `themes/business/layouts/blog/list.html` (card grid, intro from `content/blog/_index.md`)
 - Posts: `themes/business/layouts/blog/single.html`; cards: `partials/components/blog_card.html`
 - Homepage section `content/homepage/blog.md` (`type: blog_teaser`) shows the 3 newest posts;

@@ -62,7 +62,10 @@ CMS fields.
 
 ## Status (15 Nov 2026)
 
-- **No blog posts** exist on `main` or `development` yet.
+- **No real blog posts** exist on `main` or `development` yet.
+- The feature branch contains **3 sample posts** for previewing (all files
+  named `beispiel-*`). **Remove them before merging:**
+  `git rm content/blog/beispiel-* static/files/blog/beispiel-*`
 - The blog overview, homepage section and PDF features are on the branch
   `claude/great-meitner-5qzo0g` and **not yet on beta or live**.
 - Once on `main`: the blog section and menu item stay hidden until the first

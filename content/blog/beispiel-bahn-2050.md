@@ -2,11 +2,15 @@
 # BEISPIELBEITRAG – nur für die Vorschau auf beta.schley.ch, vor dem Merge löschen
 layout: post
 title: "Bahn 2050: Was jetzt zählt"
-subtitle: "Beispielbeitrag – Strategische Weichenstellungen im öffentlichen Verkehr"
+subtitle: "Beispielbeitrag – mit PDF nur als Download"
 author: Frank Schley
 date: 2026-11-10T09:00:00+01:00
 page_image:
   src: beispiel-see.jpg
+downloads:
+  - title: "Präsentation Bahn 2050 (Beispiel)"
+    file: /files/blog/beispiel-praesentation.pdf
+    preview: false
 ---
 *Dies ist ein Beispielbeitrag, um das Blog-Layout zu zeigen. Der Text ist ein Platzhalter.*
 

@@ -12,6 +12,6 @@
         </h3>
         {{ with .Params.subtitle }}<p class="blog-card-subtitle mb-2">{{ . }}</p>{{ end }}
         <p class="blog-card-summary mb-3">{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>
-        <span class="blog-card-more mt-auto">Weiterlesen <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+        <a href="{{ .RelPermalink }}" class="blog-card-more mt-auto" aria-hidden="true" tabindex="-1">Weiterlesen <i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </div>
 </article>

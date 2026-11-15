@@ -2,7 +2,7 @@
 # BEISPIELBEITRAG – nur für die Vorschau auf beta.schley.ch, vor dem Merge löschen
 layout: post
 title: "Energiewende und Netzausbau"
-subtitle: "Beispielbeitrag – mit PDF-Download und Vorschau"
+subtitle: "Beispielbeitrag – mit PDF als Download und Vorschau"
 author: Frank Schley
 date: 2026-08-20T09:00:00+01:00
 downloads:

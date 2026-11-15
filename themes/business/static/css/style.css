@@ -518,6 +518,18 @@ mobile tweeeks
 .blog-card-more {
   color: var(--highlight);
   font-weight: bolder;
+  align-self: flex-start;
+  position: relative;
+  z-index: 2; /* über dem klickbaren Karten-Overlay */
+}
+/* Ganze Karte klickbar: Das Theme setzt "a { position: relative }", dadurch
+   würde Bootstraps .stretched-link nur den Titel abdecken statt die Karte. */
+.blog-card .stretched-link {
+  position: static;
+}
+/* Unterstrich-Animation des Themes (a::before) in Karten ausschalten. */
+.blog-card a::before {
+  display: none;
 }
 .blog-card:hover .blog-card-title,
 .blog-card:hover .blog-card-date,

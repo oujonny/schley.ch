@@ -15,8 +15,9 @@
     RewriteCond %{HTTP_HOST} ^(www\.)?schley\.ch$ [NC]
     RewriteRule ^ https://schleyconsult.ch%{REQUEST_URI} [R=301,L]
 
-    # Old beta address -> beta.schleyconsult.ch (both serve the same folder on
-    # cyon, like schley.ch / schleyconsult.ch).
+    # Old beta address -> beta.schleyconsult.ch. Only takes effect if
+    # beta.schley.ch serves this folder (alias on cyon); otherwise the old
+    # folder needs its own redirect (see docs/preview.md).
     RewriteCond %{HTTP_HOST} ^beta\.schley\.ch$ [NC]
     RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
 

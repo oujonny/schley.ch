@@ -3,19 +3,20 @@
 One-time steps to bring branch `claude/great-meitner-5qzo0g` live. Work through
 them in order and tick them off. Delete this file once everything is done.
 
-## 1. cyon (anytime before step 6)
+## 1. cyon ✅ done
 
-- [ ] **preview.schleyconsult.ch**: create a new subdomain
-  - Document root: `public_html/preview.schleyconsult.ch/`
-  - Enable SSL (Let's Encrypt)
-- [ ] **beta.schleyconsult.ch**: add as an **alias** of the existing beta
-  subdomain (same folder `public_html/beta.schley.ch/`)
-  - Enable SSL for the new name
-  - Keep `beta.schley.ch`; it redirects to the new name automatically once
-    step 4 is deployed
-- [ ] Check both names resolve: `https://preview.schleyconsult.ch` (may be
-  empty or a cyon default page for now) and `https://beta.schleyconsult.ch`
-  (shows the current beta)
+- [x] **preview.schleyconsult.ch**: folder `public_html/preview.schleyconsult.ch/`, SSL
+- [x] **beta.schleyconsult.ch**: own folder `public_html/beta.schleyconsult.ch/`, SSL
+- [ ] **Old beta.schley.ch → redirect.** Its folder no longer gets deploys,
+  so it keeps showing the old beta. Either:
+  - point the beta.schley.ch subdomain at `public_html/beta.schleyconsult.ch/`
+    (the rule in `static/.htaccess` then redirects it), **or**
+  - empty `public_html/beta.schley.ch/` and put only this `.htaccess` in it:
+    ```apache
+    RewriteEngine On
+    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
+    ```
+  - or simply delete the beta.schley.ch subdomain if nobody uses the old link.
 
 ## 2. GitHub settings (check once)
 
@@ -52,13 +53,9 @@ them in order and tick them off. Delete this file once everything is done.
   # also delete the "Sample content" warnings in CLAUDE.md and docs/preview.md
   git commit -m "Remove sample blog posts" && git push
   ```
-- [ ] **Bring `development` up to date with `main`** (one time only, the sync
-  workflow does this automatically from step 6 on). `main` has 4 commits that
-  `development` lacks:
-  ```bash
-  git checkout development && git pull
-  git merge origin/main && git push
-  ```
+- [x] **`development` is up to date with `main`** (done: `development` already
+  contained `main`, and it has been merged into the feature branch, so PR 1
+  has no conflicts)
 
 ## 5. PR 1: feature → `development`
 

@@ -57,6 +57,5 @@ jobs:
         env:
           SSH_USER: "toxykiwo"
           HOST: "s106.cyon.net"
-          # Folder keeps its old name; beta.schleyconsult.ch is an alias of it on cyon.
           DIR: "public_html/beta.schleyconsult.ch/"
         run: rsync -avz --delete-during public/ ${SSH_USER}@${HOST}:~/${DIR}

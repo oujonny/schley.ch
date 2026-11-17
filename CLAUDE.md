@@ -16,8 +16,9 @@ Working branch: `claude/add-netlify-cms-github-cfBgS`
 | `cms/**` | `preview.schleyconsult.ch` (Decap CMS draft previews, "Vorschau ansehen") |
 
 `sync_development.yml` merges `main` into `development` after every push to `main`
-(CMS publishes go straight to `main`). Old `beta.schley.ch` 301-redirects to `beta.schleyconsult.ch` (same docroot
-`public_html/beta.schley.ch/` on cyon). Beta + preview send `X-Robots-Tag: noindex`
+(CMS publishes go straight to `main`). Beta docroot: `public_html/beta.schleyconsult.ch/`; preview docroot:
+`public_html/preview.schleyconsult.ch/`. Old `beta.schley.ch` should 301-redirect
+to `beta.schleyconsult.ch` (see `docs/preview.md`). Beta + preview send `X-Robots-Tag: noindex`
 and redirect `/admin` to the live CMS (host rules in `static/.htaccess`).
 Full description: `docs/preview.md`.
 

@@ -15,9 +15,8 @@
   They aren't password-protected.
 - `/admin` on preview and beta redirects to the real CMS on
   `schleyconsult.ch/admin/`. There is only one CMS.
-- The old address **beta.schley.ch** redirects permanently to
-  beta.schleyconsult.ch. On cyon both are the same folder
-  (`public_html/beta.schley.ch/`).
+- The old address **beta.schley.ch** should redirect permanently to
+  beta.schleyconsult.ch (see the setup notes below).
 
 ## Editor: preview a change
 
@@ -87,6 +86,14 @@ deploy.
 - **One-time setup on cyon:**
   - **preview.schleyconsult.ch:** new subdomain, document root
     `public_html/preview.schleyconsult.ch/`, SSL (Let's Encrypt).
-  - **beta.schleyconsult.ch:** add as an alias of the existing beta subdomain
-    (same folder `public_html/beta.schley.ch/`), SSL. The redirect from
-    beta.schley.ch is handled by `static/.htaccess`.
+  - **beta.schleyconsult.ch:** subdomain with its own document root
+    `public_html/beta.schleyconsult.ch/`, SSL.
+  - **beta.schley.ch** (old): its folder `public_html/beta.schley.ch/` no
+    longer gets deploys. Either point the subdomain at
+    `public_html/beta.schleyconsult.ch/` (then the rule in `static/.htaccess`
+    redirects it), or replace the old folder's content with just this
+    `.htaccess`:
+    ```apache
+    RewriteEngine On
+    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
+    ```

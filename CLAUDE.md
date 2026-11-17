@@ -5,7 +5,7 @@ Hugo static site for **schleyconsult.ch** (business consulting, German-language)
 Hosted on **cyon.net** (LiteSpeed / Apache-compatible, PHP 8.x, cURL available,
 `allow_url_fopen` is off by default).
 
-Repo: `oujonny/schley.ch`
+Repo: `oujonny/schleyconsult.ch` (renamed from `oujonny/schley.ch`)
 Working branch: `claude/add-netlify-cms-github-cfBgS`
 
 ## Branch & Deployment Strategy

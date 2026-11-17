@@ -7,16 +7,10 @@ them in order and tick them off. Delete this file once everything is done.
 
 - [x] **preview.schleyconsult.ch**: folder `public_html/preview.schleyconsult.ch/`, SSL
 - [x] **beta.schleyconsult.ch**: own folder `public_html/beta.schleyconsult.ch/`, SSL
-- [ ] **Old beta.schley.ch → redirect.** Its folder no longer gets deploys,
-  so it keeps showing the old beta. Either:
-  - point the beta.schley.ch subdomain at `public_html/beta.schleyconsult.ch/`
-    (the rule in `static/.htaccess` then redirects it), **or**
-  - empty `public_html/beta.schley.ch/` and put only this `.htaccess` in it:
-    ```apache
-    RewriteEngine On
-    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
-    ```
-  - or simply delete the beta.schley.ch subdomain if nobody uses the old link.
+- [ ] **Old beta.schley.ch → redirect.** Its folder no longer gets deploys.
+  Empty `public_html/beta.schley.ch/` and upload the two files from
+  [`ops/beta.schley.ch/`](../ops/README.md) (redirect + fallback page).
+  Later: delete the subdomain.
 
 ## 2. GitHub settings (check once)
 

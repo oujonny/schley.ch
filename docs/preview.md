@@ -89,11 +89,5 @@ deploy.
   - **beta.schleyconsult.ch:** subdomain with its own document root
     `public_html/beta.schleyconsult.ch/`, SSL.
   - **beta.schley.ch** (old): its folder `public_html/beta.schley.ch/` no
-    longer gets deploys. Either point the subdomain at
-    `public_html/beta.schleyconsult.ch/` (then the rule in `static/.htaccess`
-    redirects it), or replace the old folder's content with just this
-    `.htaccess`:
-    ```apache
-    RewriteEngine On
-    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
-    ```
+    longer gets deploys. It only holds a redirect to beta.schleyconsult.ch,
+    uploaded by hand from `ops/beta.schley.ch/` (see `ops/README.md`).

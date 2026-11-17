@@ -48,21 +48,22 @@ For blog posts and PDFs, see [Blog](blog.md) and [PDFs](pdf.md).
 
 ## 4. Check and publish
 
-Every saved change is a **draft** first:
+Every saved change is a **draft** first. Nothing is live until you publish.
 
 ![Workflow board](images/cms-workflow.jpg)
 
-1. **Entwurf** – saved, still being worked on.
-2. **In Prüfung** (status "Zur Überprüfung") – ready to be checked. 2–3
-   minutes after saving, click **Vorschau ansehen** at the top of the entry:
-   it opens the page on **preview.schleyconsult.ch**, exactly as it will look
-   when published.
-3. **Abgeschlossen** – approved, ready to go live.
-4. In the entry, click **Veröffentlichen → Jetzt veröffentlichen**.
-   After a few minutes the change is live on **schleyconsult.ch**.
+1. **Speichern** – the draft is saved. New drafts start as **Abgeschlossen**
+   (ready to publish). Right after the first save the editor may still show
+   "Entwurf" for a moment; after a reload it shows "Abgeschlossen".
+2. **Check it:** 2–3 minutes after saving, click **Vorschau ansehen** at the
+   top of the entry. It opens the page on **preview.schleyconsult.ch**,
+   exactly as it will look when published.
+3. **Veröffentlichen → Jetzt veröffentlichen**. After a few minutes the change
+   is live on **schleyconsult.ch**.
 
-Change the status with the **Status** button at the top of the entry, or drag
-the card on the **Arbeitsablauf** board.
+Not finished yet? Set the **Status** button at the top of the entry to
+**Entwurf** (or drag the card on the **Arbeitsablauf** board). This is only a
+reminder for yourself; a draft is never published by itself.
 
 **Changed your mind?** Click **Lösche unveröffentlichten Beitrag**. The draft
 is removed and nothing reaches the website.

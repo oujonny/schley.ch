@@ -28,7 +28,8 @@ Full description: `docs/preview.md`.
 only for the old host and leaves `schleyconsult.ch` and `beta.schleyconsult.ch` alone.
 
 CI workflows: `deploy_main.yml` (prod), `deploy_preview.yml` (CMS previews),
-`deploy.yml` (beta), `sync_development.yml` (main → development), all in `.github/workflows/`.
+`deploy.yml` (beta), `sync_development.yml` (main → development),
+`cms_draft_ready.yml` (new CMS drafts start as "Abgeschlossen" via PR label), all in `.github/workflows/`.
 
 ## CMS – Decap CMS
 Admin panel at `/admin/` (source: `static/admin/`).

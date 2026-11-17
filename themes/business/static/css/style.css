@@ -222,7 +222,7 @@ th, td {
 #site-head-content {
   background-color: rgba(31, 59, 96, 0.3);
   height: 100vh;
-  width: 100vw;
+  width: 100%; /* not 100vw: that includes the scrollbar and makes the page scroll sideways */
 }
 
 #site-header-image {

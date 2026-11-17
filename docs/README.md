@@ -5,7 +5,7 @@
 | [Using the CMS](cms.md) | Logging in, finding and editing content, draft → publish |
 | [Blog](blog.md) | Writing posts, the `/blog/` overview, the homepage section |
 | [PDFs in blog posts](pdf.md) | PDF downloads, the in-page PDF preview, the inline "PDF" button |
-| [Previewing changes](preview.md) | How to see changes on `beta.schley.ch` before they go live |
+| [Sites, branches and previews](preview.md) | Live, preview and beta sites; releasing features; keeping branches in sync |
 
 General CMS usage (login, editorial workflow, branches) is in the main
 [README](../README.md); technical details for maintainers are in

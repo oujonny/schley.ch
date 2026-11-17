@@ -12,15 +12,21 @@ Working branch: `claude/add-netlify-cms-github-cfBgS`
 | Branch | Deploys to |
 |--------|-----------|
 | `main` | `schleyconsult.ch` (production) — `schley.ch` 301-redirects here |
-| `development` | `beta.schley.ch` (staging) |
-| `cms/**` | `beta.schley.ch` (Decap CMS editorial workflow previews) |
+| `development` | `beta.schley.ch` (developer staging, customer review; any branch via manual dispatch) |
+| `cms/**` | `preview.schleyconsult.ch` (Decap CMS draft previews, "Vorschau ansehen") |
+
+`sync_development.yml` merges `main` into `development` after every push to `main`
+(CMS publishes go straight to `main`). Beta + preview send `X-Robots-Tag: noindex`
+and redirect `/admin` to the live CMS (host rules in `static/.htaccess`).
+Full description: `docs/preview.md`.
 
 **Domain redirect:** `schley.ch` / `www.schley.ch` permanently (301) redirect to
 `schleyconsult.ch` via a host-based rule in `static/.htaccess`. On cyon,
 `schleyconsult.ch` is an alias of `schley.ch` (same docroot), so the rule fires
 only for the old host and leaves `schleyconsult.ch` and `beta.schley.ch` alone.
 
-CI workflows: `.github/workflows/deploy.yml` (beta), `.github/workflows/deploy_main.yml` (prod).
+CI workflows: `deploy_main.yml` (prod), `deploy_preview.yml` (CMS previews),
+`deploy.yml` (beta), `sync_development.yml` (main → development), all in `.github/workflows/`.
 
 ## CMS – Decap CMS
 Admin panel at `/admin/` (source: `static/admin/`).
@@ -28,7 +34,7 @@ Admin panel at `/admin/` (source: `static/admin/`).
 - **Production config**: `static/admin/config.yml`
   - Backend: GitHub OAuth via PHP proxy (`base_url: https://schleyconsult.ch`, `auth_endpoint: cms-oauth/auth`)
   - Commits to `branch: main` → publishes live to `schleyconsult.ch`
-  - Editorial workflow enabled (`publish_mode: editorial_workflow`); CMS draft branches (`cms/**`) preview on `beta.schley.ch`, **Publish** merges to `main`
+  - Editorial workflow enabled (`publish_mode: editorial_workflow`); CMS draft branches (`cms/**`) preview on `preview.schleyconsult.ch`, **Publish** merges to `main`
 - **Local config**: `static/admin/config.local.yml`
   - `local_backend: true` — bypasses GitHub, uses decap-server instead
   - Mounted over `config.yml` by docker-compose
@@ -107,6 +113,8 @@ static/cms-oauth/index.php       # PHP OAuth proxy
 static/cms-oauth/.htaccess       # URL rewrite rules for the proxy
 scripts/fetch-pdfjs.sh           # Updates the vendored PDF.js viewer
 docker-compose.yml               # Local dev environment
-.github/workflows/deploy.yml     # CI: beta deployment (development + cms/**)
+.github/workflows/deploy.yml     # CI: beta deployment (development, manual)
+.github/workflows/deploy_preview.yml # CI: CMS draft previews (cms/**)
+.github/workflows/sync_development.yml # CI: merge main into development
 .github/workflows/deploy_main.yml# CI: production deployment (main)
 ```

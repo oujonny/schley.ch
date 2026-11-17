@@ -20,7 +20,7 @@ In the CMS (`/admin/`) open **Blog → Neuer Blog**:
 | **Inhalt** | The text. The first ~70 words become the card summary |
 | **PDF-Downloads** | See [PDFs in blog posts](pdf.md) |
 
-Then follow the normal editorial workflow (save → review on beta → publish),
+Then follow the normal editorial workflow (save → "Vorschau ansehen" → publish),
 see the main [README](../README.md#editorial-workflow-draft--review--publish).
 
 **Cover images** are cropped automatically to 16:9 for the cards. The crop

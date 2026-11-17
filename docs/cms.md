@@ -53,8 +53,10 @@ Every saved change is a **draft** first:
 ![Workflow board](images/cms-workflow.jpg)
 
 1. **Entwurf** – saved, still being worked on.
-2. **In Prüfung** (status "Zur Überprüfung") – ready to be checked. A few minutes after saving, the
-   change can be viewed on **<https://beta.schley.ch>** (the test website).
+2. **In Prüfung** (status "Zur Überprüfung") – ready to be checked. 2–3
+   minutes after saving, click **Vorschau ansehen** at the top of the entry:
+   it opens the page on **preview.schleyconsult.ch**, exactly as it will look
+   when published.
 3. **Abgeschlossen** – approved, ready to go live.
 4. In the entry, click **Veröffentlichen → Jetzt veröffentlichen**.
    After a few minutes the change is live on **schleyconsult.ch**.
@@ -67,8 +69,10 @@ is removed and nothing reaches the website.
 
 ## Good to know
 
-- `beta.schley.ch` shows only **one** draft at a time: whichever was saved
+- The preview site shows only **one** draft at a time: whichever was saved
   most recently.
+- Always edit on **schleyconsult.ch/admin/**. `beta.schley.ch` is the
+  developer's test site; its `/admin` just redirects here.
 - Nothing can break the live site by accident; only **Veröffentlichen**
   changes it.
 - Something wrong after publishing? Edit it again and publish the fix. Every

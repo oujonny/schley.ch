@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: oujonny/schley.ch
+  repo: oujonny/schleyconsult.ch
   branch: main
   base_url: https://schleyconsult.ch
   auth_endpoint: cms-oauth/auth

@@ -1,6 +1,5 @@
 ---
 title: "Blog"
-url: "blog"
 header_menu: true
 weight: 6
 

@@ -10,7 +10,7 @@ they go live.
 
 1. Open **<https://schleyconsult.ch/admin/>**
 2. Click **Login with GitHub** and authorise (you need write access to the
-   `oujonny/schley.ch` repo).
+   `oujonny/schleyconsult.ch` repo).
 3. Pick a collection in the sidebar (Homepage, Angebot, Über mich, Referenzen,
    Blog, Statische Seiten …), open or create an entry, and edit.
 4. Use the live **preview pane** on the right to see roughly how it will look.

@@ -2,7 +2,6 @@
 
 | Guide | For |
 |-------|-----|
-| [Rollout checklist](rollout-checklist.md) | **Next steps:** cyon setup, branch merges, PR reviews (one-time) |
 | [Using the CMS](cms.md) | Logging in, finding and editing content, draft → publish |
 | [Blog](blog.md) | Writing posts, the `/blog/` overview, the homepage section |
 | [PDFs in blog posts](pdf.md) | PDF downloads, the in-page PDF preview, the inline "PDF" button |

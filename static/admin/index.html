@@ -169,6 +169,35 @@
       },
     });
     CMS.registerPreviewTemplate("referenzen", CarouselPreview);
+
+    // Editor-Baustein "PDF": fügt im Text einen Link auf ein hochgeladenes PDF ein.
+    // Gespeichert wird ein normaler Markdown-Link, den Hugo ohne Shortcode rendert.
+    CMS.registerEditorComponent({
+      id: "pdf",
+      label: "PDF",
+      fields: [
+        { name: "title", label: "Linktext", widget: "string" },
+        {
+          // Hinweis: Decap ignoriert hier feldspezifische media_folder-Angaben,
+          // Uploads landen daher im globalen Medienordner (static/images).
+          name: "file", label: "PDF-Datei", widget: "file", choose_url: false,
+        },
+      ],
+      pattern: /^\[([^\]]*)\]\(([^)\s]+\.pdf)\)$/i,
+      fromBlock: function (match) {
+        return { title: match[1], file: match[2] };
+      },
+      toBlock: function (data) {
+        var file = data.file || "";
+        var title = data.title || file.split("/").pop();
+        return "[" + title + "](" + file.replace(/ /g, "%20") + ")";
+      },
+      toPreview: function (data) {
+        var file = data.file || "";
+        return '<a href="' + file + '" target="_blank" rel="noopener">' +
+          (data.title || file.split("/").pop()) + "</a>";
+      },
+    });
   </script>
 
   <script>

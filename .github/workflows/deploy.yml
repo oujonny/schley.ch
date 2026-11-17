@@ -1,21 +1,21 @@
-# Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy to beta.schley.ch
+# Beta / staging: https://beta.schleyconsult.ch
+# For developers: test new features and show them to the customer before release.
+# CMS drafts (cms/**) do NOT deploy here - they go to preview.schleyconsult.ch
+# (deploy_preview.yml).
+name: Deploy to beta.schleyconsult.ch
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["development", "cms/**"]
+    branches: ["development"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Manual: Actions -> "Deploy to beta.schleyconsult.ch" -> Run workflow -> pick any
+  # branch (e.g. a feature branch) to show it on beta.
   workflow_dispatch:
 
-# Allow one concurrent deployment
+# Own group per site, so a beta deploy never cancels a production or preview deploy.
 concurrency:
-  group: "pages"
+  group: "deploy-beta"
   cancel-in-progress: true
-
-permissions:
-  statuses: write
 
 # Default to bash
 defaults:
@@ -46,7 +46,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache
+        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache --baseURL https://beta.schleyconsult.ch/
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -59,12 +59,3 @@ jobs:
           HOST: "s106.cyon.net"
           DIR: "public_html/beta.schleyconsult.ch/"
         run: rsync -avz --delete-during public/ ${SSH_USER}@${HOST}:~/${DIR}
-      - name: Set deploy status
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} \
-            -f state=success \
-            -f target_url=https://beta.schley.ch \
-            -f description="deploy" \
-            -f context="deploy"

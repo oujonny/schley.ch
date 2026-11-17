@@ -1,0 +1,59 @@
+# Keeps `development` up to date with `main`.
+#
+# `main` receives commits that never pass through `development` (content
+# published from the CMS). After every push to `main`, this merges `main` into
+# `development` so beta.schleyconsult.ch always shows "live site + unreleased
+# features". Direction is always main -> development; the other direction is
+# only your release pull request (development -> main).
+#
+# If the merge has a conflict, the run fails (GitHub emails you) and nothing is
+# pushed. Resolve it locally:
+#   git checkout development && git pull && git merge origin/main
+name: Sync main into development
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: "sync-development"
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # push to development
+  actions: write   # start the beta deploy afterwards
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development
+        uses: actions/checkout@v7
+        with:
+          ref: development
+          fetch-depth: 0
+
+      - name: Merge main into development
+        id: merge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          before=$(git rev-parse HEAD)
+          git merge --no-edit origin/main -m "Sync main into development"
+          if [ "$(git rev-parse HEAD)" = "$before" ]; then
+            echo "development already contains main - nothing to do."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git push origin development
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows (GitHub's
+      # loop protection); a manual dispatch is the allowed exception.
+      - name: Redeploy beta
+        if: steps.merge.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref development --repo ${{ github.repository }}

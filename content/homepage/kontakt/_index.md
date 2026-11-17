@@ -1,7 +1,7 @@
 ---
 title: Kontakt
 header_menu: true
-weight: 6
+weight: 7
 page_image:
   src: portrait2.jpg
 ---

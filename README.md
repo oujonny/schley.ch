@@ -19,6 +19,9 @@ they go live.
 > *"✓ Anmeldung erfolgreich"*. That's expected — you're already logged in, just
 > close the popup. (Safari blocks pop‑ups from closing themselves.)
 
+Guides for specific features (blog, PDFs, previewing changes) are in
+**[docs/](docs/README.md)**.
+
 ---
 
 ## Editorial workflow (draft → review → publish)
@@ -32,9 +35,9 @@ a review stage first, using the **Workflow** tab at the top of the CMS.
    - **Drafts** – work in progress
    - **In Review** – ready for someone to look at
    - **Ready** – approved, waiting to be published
-3. **Review on staging:** each `cms/**` branch is automatically deployed to
-   **<https://beta.schley.ch>**, so you can open the real rendered site there and
-   check the change before publishing.
+3. **Preview:** each `cms/**` branch is automatically deployed to
+   **<https://preview.schleyconsult.ch>**. Click **Vorschau ansehen** in the
+   entry to open the rendered page there and check it before publishing.
 4. When you're happy, click **Publish → Publish now**. Decap merges the pull
    request into `main`, which deploys to **<https://schleyconsult.ch>** (live).
 
@@ -48,17 +51,19 @@ closes the pull request — nothing reaches production.
 | Branch     | Deploys to                          | Purpose                                   |
 |------------|-------------------------------------|-------------------------------------------|
 | `main`     | <https://schleyconsult.ch>          | **Production** (live site)                |
-| `development` | <https://beta.schley.ch>         | Staging / integration                     |
-| `cms/**`   | <https://beta.schley.ch>            | Editorial workflow previews (per draft)   |
+| `development` | <https://beta.schleyconsult.ch>         | Developer staging: new features, customer review |
+| `cms/**`   | <https://preview.schleyconsult.ch>  | CMS draft previews ("Vorschau ansehen")   |
 
 - `schley.ch` / `www.schley.ch` permanently (301) redirect to `schleyconsult.ch`.
-- CI is in `.github/workflows/`: `deploy_main.yml` (production) and
-  `deploy.yml` (beta, for `development` and `cms/**`).
+- CI is in `.github/workflows/`: `deploy_main.yml` (production),
+  `deploy_preview.yml` (CMS previews), `deploy.yml` (beta) and
+  `sync_development.yml` (merges `main` back into `development` after every
+  push to `main`). Details: [docs/preview.md](docs/preview.md).
 - Both build with Hugo and `rsync` to the cyon host.
 
-> **Note:** `beta.schley.ch` always shows the **last branch that was pushed**
-> (`development` or a `cms/**` draft). If two drafts are in review at once, the
-> beta site reflects whichever deployed most recently.
+> **Note:** preview.schleyconsult.ch shows one draft at a time: the one saved
+> most recently. Beta and preview are not indexed by search engines, and their
+> `/admin` redirects to the real CMS.
 
 ---
 

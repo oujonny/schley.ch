@@ -14,4 +14,40 @@
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^(www\.)?schley\.ch$ [NC]
     RewriteRule ^ https://schleyconsult.ch%{REQUEST_URI} [R=301,L]
+
+    # Old beta address -> beta.schleyconsult.ch. Only takes effect if
+    # beta.schley.ch serves this folder (alias on cyon); otherwise the old
+    # folder needs its own redirect (see docs/preview.md).
+    RewriteCond %{HTTP_HOST} ^beta\.schley\.ch$ [NC]
+    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
+
+    # Beta and preview sites: the CMS lives only on the live site. Opening
+    # /admin there would show a CMS form built from unreleased code, so send
+    # editors to the real one. 302 = temporary, nothing gets cached for good.
+    RewriteCond %{HTTP_HOST} ^(beta|preview)\.schleyconsult\.ch$ [NC]
+    RewriteRule ^admin(/.*)?$ https://schleyconsult.ch/admin/ [R=302,L]
+</IfModule>
+
+# ───────────────────────────────────────────────────────────────────────────
+# Beta (beta.schleyconsult.ch) and CMS previews (preview.schleyconsult.ch) must not
+# appear in search engines. Not password-protected - just not indexed.
+# ───────────────────────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    SetEnvIfNoCase Host ^(beta|preview)\.schleyconsult\.ch$ NOINDEX_HOST
+    Header always set X-Robots-Tag "noindex, nofollow" env=NOINDEX_HOST
+</IfModule>
+
+# ───────────────────────────────────────────────────────────────────────────
+# MIME types for the PDF.js viewer (static/pdfjs/).
+#
+# The server doesn't know .mjs and serves it as application/octet-stream;
+# browsers then refuse to run it ("Expected a JavaScript-or-Wasm module
+# script"), and the PDF preview stays empty. .wasm must be application/wasm,
+# and the .ftl translation files are UTF-8 text.
+# ───────────────────────────────────────────────────────────────────────────
+<IfModule mod_mime.c>
+    AddType text/javascript .mjs
+    AddType application/wasm .wasm
+    AddType text/plain .ftl
+    AddCharset utf-8 .mjs .ftl
 </IfModule>

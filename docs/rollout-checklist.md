@@ -17,12 +17,16 @@ them in order and tick them off. Delete this file once everything is done.
   empty or a cyon default page for now) and `https://beta.schleyconsult.ch`
   (shows the current beta)
 
-## 2. GitHub settings (once)
+## 2. GitHub settings (check once)
 
-- [ ] **Settings → Actions → General → Workflow permissions**: allow
-  "Read and write permissions". The sync workflow pushes to `development`.
-- [ ] If `development` has **branch protection**: allow GitHub Actions to push,
-  or the sync will fail with error 403.
+- [ ] **Workflow permissions:** nothing to change. `sync_development.yml`
+  declares its own permissions (`contents: write`, `actions: write`), so the
+  safer default "Read repository contents" can stay
+  (Settings → Actions → General → Workflow permissions). Switch to
+  "Read and write" only if the sync run fails with error 403.
+- [ ] **Branch protection on `development`** (Settings → Rules → Rulesets, and
+  Settings → Branches): if a rule blocks direct pushes, add GitHub Actions to
+  its bypass list, or the sync will fail.
 
 ## 3. Customer review on beta (feature branch, with sample posts)
 
@@ -105,7 +109,7 @@ them in order and tick them off. Delete this file once everything is done.
 
 | Problem | What to do |
 |---------|-----------|
-| "Sync main into development" fails with 403 | Step 2 (permissions / branch protection) |
+| "Sync main into development" fails with 403 | Step 2: branch protection on `development`; otherwise set workflow permissions to "Read and write" |
 | Sync fails with a merge conflict | `git checkout development && git pull && git merge origin/main`, resolve, push |
 | PDF viewer empty | Check the browser console; `.mjs` must be served as `text/javascript` (rule in `static/.htaccess`) |
 | "Vorschau ansehen" missing or wrong page | Check "Deploy CMS preview" in Actions; send Claude the link it opens |

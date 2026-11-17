@@ -6,7 +6,7 @@
 |------|-----------|-----|--------------|
 | **schleyconsult.ch** | `main` | The live website | Everyone |
 | **preview.schleyconsult.ch** | CMS drafts (`cms/**`) | "This is how my change will look" before publishing | The editor, via **"Vorschau ansehen"** in the CMS |
-| **beta.schley.ch** | `development` (or any branch, started by hand) | New features: testing, showing the customer | The developer, the customer via a link |
+| **beta.schleyconsult.ch** | `development` (or any branch, started by hand) | New features: testing, showing the customer | The developer, the customer via a link |
 
 - **preview** always runs the **same code as the live site**, only the draft's
   content differs. It shows exactly what publishing will produce.
@@ -15,6 +15,9 @@
   They aren't password-protected.
 - `/admin` on preview and beta redirects to the real CMS on
   `schleyconsult.ch/admin/`. There is only one CMS.
+- The old address **beta.schley.ch** redirects permanently to
+  beta.schleyconsult.ch. On cyon both are the same folder
+  (`public_html/beta.schley.ch/`).
 
 ## Editor: preview a change
 
@@ -28,7 +31,7 @@ There is one preview site: if two drafts are saved, it shows the one saved last.
 ## Developer: release a new feature
 
 ```
-feature branch ──► development ──► beta.schley.ch      (you + customer check)
+feature branch ──► development ──► beta.schleyconsult.ch      (you + customer check)
                         │
          PR development → main ──► schleyconsult.ch    (live)
                                         │
@@ -37,7 +40,7 @@ feature branch ──► development ──► beta.schley.ch      (you + custom
 ```
 
 1. Work on a feature branch. To show it on beta without merging: **Actions →
-   "Deploy to beta.schley.ch" → Run workflow →** pick the branch.
+   "Deploy to beta.schleyconsult.ch" → Run workflow →** pick the branch.
 2. Merge it into `development` → beta updates automatically.
 3. Customer OK → pull request `development` → `main` → live.
 4. Only now can editors use new CMS fields. The CMS form always comes from the
@@ -67,7 +70,7 @@ every push to `main`, merges `main` into `development` and redeploys beta.
 |------|---------|-----------|
 | `.github/workflows/deploy_main.yml` | push to `main` | schleyconsult.ch |
 | `.github/workflows/deploy_preview.yml` | push to `cms/**` | preview.schleyconsult.ch (+ sets the CMS "Vorschau ansehen" link) |
-| `.github/workflows/deploy.yml` | push to `development`, or manual for any branch | beta.schley.ch |
+| `.github/workflows/deploy.yml` | push to `development`, or manual for any branch | beta.schleyconsult.ch |
 | `.github/workflows/sync_development.yml` | push to `main` | merges `main` into `development`, then redeploys beta |
 
 Each site is built with its own address (`--baseURL`), and each deploy has its
@@ -81,6 +84,9 @@ deploy.
 - That branch contains **3 sample posts** for previewing (all files named
   `beispiel-*`). **Remove them before merging to `main`:**
   `git rm content/blog/beispiel-* static/files/blog/beispiel-*`
-- **One-time setup on cyon** for preview.schleyconsult.ch: create the
-  subdomain with the document root `public_html/preview.schleyconsult.ch/`
-  and enable SSL (Let's Encrypt). The DNS entry must point to the cyon server.
+- **One-time setup on cyon:**
+  - **preview.schleyconsult.ch:** new subdomain, document root
+    `public_html/preview.schleyconsult.ch/`, SSL (Let's Encrypt).
+  - **beta.schleyconsult.ch:** add as an alias of the existing beta subdomain
+    (same folder `public_html/beta.schley.ch/`), SSL. The redirect from
+    beta.schley.ch is handled by `static/.htaccess`.

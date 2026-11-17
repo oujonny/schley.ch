@@ -51,7 +51,7 @@ closes the pull request — nothing reaches production.
 | Branch     | Deploys to                          | Purpose                                   |
 |------------|-------------------------------------|-------------------------------------------|
 | `main`     | <https://schleyconsult.ch>          | **Production** (live site)                |
-| `development` | <https://beta.schley.ch>         | Developer staging: new features, customer review |
+| `development` | <https://beta.schleyconsult.ch>         | Developer staging: new features, customer review |
 | `cms/**`   | <https://preview.schleyconsult.ch>  | CMS draft previews ("Vorschau ansehen")   |
 
 - `schley.ch` / `www.schley.ch` permanently (301) redirect to `schleyconsult.ch`.

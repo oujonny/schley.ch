@@ -2,7 +2,7 @@
 #
 # `main` receives commits that never pass through `development` (content
 # published from the CMS). After every push to `main`, this merges `main` into
-# `development` so beta.schley.ch always shows "live site + unreleased
+# `development` so beta.schleyconsult.ch always shows "live site + unreleased
 # features". Direction is always main -> development; the other direction is
 # only your release pull request (development -> main).
 #

@@ -71,7 +71,7 @@ is removed and nothing reaches the website.
 
 - The preview site shows only **one** draft at a time: whichever was saved
   most recently.
-- Always edit on **schleyconsult.ch/admin/**. `beta.schley.ch` is the
+- Always edit on **schleyconsult.ch/admin/**. `beta.schleyconsult.ch` is the
   developer's test site; its `/admin` just redirects here.
 - Nothing can break the live site by accident; only **Veröffentlichen**
   changes it.

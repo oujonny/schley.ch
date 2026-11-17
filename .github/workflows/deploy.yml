@@ -1,14 +1,14 @@
-# Beta / staging: https://beta.schley.ch
+# Beta / staging: https://beta.schleyconsult.ch
 # For developers: test new features and show them to the customer before release.
 # CMS drafts (cms/**) do NOT deploy here - they go to preview.schleyconsult.ch
 # (deploy_preview.yml).
-name: Deploy to beta.schley.ch
+name: Deploy to beta.schleyconsult.ch
 
 on:
   push:
     branches: ["development"]
 
-  # Manual: Actions -> "Deploy to beta.schley.ch" -> Run workflow -> pick any
+  # Manual: Actions -> "Deploy to beta.schleyconsult.ch" -> Run workflow -> pick any
   # branch (e.g. a feature branch) to show it on beta.
   workflow_dispatch:
 
@@ -46,7 +46,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache --baseURL https://beta.schley.ch/
+        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache --baseURL https://beta.schleyconsult.ch/
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -57,5 +57,6 @@ jobs:
         env:
           SSH_USER: "toxykiwo"
           HOST: "s106.cyon.net"
+          # Folder keeps its old name; beta.schleyconsult.ch is an alias of it on cyon.
           DIR: "public_html/beta.schley.ch/"
         run: rsync -avz --delete-during public/ ${SSH_USER}@${HOST}:~/${DIR}

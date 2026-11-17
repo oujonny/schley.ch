@@ -12,18 +12,19 @@ Working branch: `claude/add-netlify-cms-github-cfBgS`
 | Branch | Deploys to |
 |--------|-----------|
 | `main` | `schleyconsult.ch` (production) — `schley.ch` 301-redirects here |
-| `development` | `beta.schley.ch` (developer staging, customer review; any branch via manual dispatch) |
+| `development` | `beta.schleyconsult.ch` (developer staging, customer review; any branch via manual dispatch) |
 | `cms/**` | `preview.schleyconsult.ch` (Decap CMS draft previews, "Vorschau ansehen") |
 
 `sync_development.yml` merges `main` into `development` after every push to `main`
-(CMS publishes go straight to `main`). Beta + preview send `X-Robots-Tag: noindex`
+(CMS publishes go straight to `main`). Old `beta.schley.ch` 301-redirects to `beta.schleyconsult.ch` (same docroot
+`public_html/beta.schley.ch/` on cyon). Beta + preview send `X-Robots-Tag: noindex`
 and redirect `/admin` to the live CMS (host rules in `static/.htaccess`).
 Full description: `docs/preview.md`.
 
 **Domain redirect:** `schley.ch` / `www.schley.ch` permanently (301) redirect to
 `schleyconsult.ch` via a host-based rule in `static/.htaccess`. On cyon,
 `schleyconsult.ch` is an alias of `schley.ch` (same docroot), so the rule fires
-only for the old host and leaves `schleyconsult.ch` and `beta.schley.ch` alone.
+only for the old host and leaves `schleyconsult.ch` and `beta.schleyconsult.ch` alone.
 
 CI workflows: `deploy_main.yml` (prod), `deploy_preview.yml` (CMS previews),
 `deploy.yml` (beta), `sync_development.yml` (main → development), all in `.github/workflows/`.

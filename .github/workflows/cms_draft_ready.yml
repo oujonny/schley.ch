@@ -1,0 +1,41 @@
+# New CMS drafts start as "Abgeschlossen" (ready to publish) instead of
+# "Entwurf".
+#
+# Decap CMS has no setting for the initial workflow status. With the GitHub
+# backend it stores the status as a label on the draft's pull request
+# (decap-cms/draft, decap-cms/pending_review, decap-cms/pending_publish).
+# When the CMS opens the pull request for a new draft (branch cms/**), this
+# swaps the label to decap-cms/pending_publish, so "Veröffentlichen" is
+# available right away. Status changes made in the CMS afterwards are kept.
+#
+# In an editor that is already open, the new status shows after a reload.
+name: CMS drafts start as "Abgeschlossen"
+
+on:
+  pull_request:
+    types: [opened]
+    branches: ["main"]
+
+permissions:
+  pull-requests: write
+  issues: write  # labels are managed through the issues API
+
+jobs:
+  ready:
+    if: startsWith(github.head_ref, 'cms/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set status to "Abgeschlossen"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          # The CMS adds its draft label right after opening the PR; give it
+          # time so we don't end up with both labels.
+          sleep 15
+          gh label create "decap-cms/pending_publish" --repo "$REPO" \
+            --color "c8f07a" --description "Decap CMS: ready to publish" --force
+          gh pr edit "$PR" --repo "$REPO" --add-label "decap-cms/pending_publish"
+          gh pr edit "$PR" --repo "$REPO" --remove-label "decap-cms/draft" \
+            || echo "No draft label to remove."

@@ -21,6 +21,7 @@
 ## Editor: preview a change
 
 1. Edit in the CMS on **schleyconsult.ch/admin/** and click **Speichern**.
+   New drafts start as "Abgeschlossen", ready to publish.
 2. Wait 2–3 minutes, then click **Vorschau ansehen** at the top of the entry.
    It opens the page on preview.schleyconsult.ch.
 3. Happy? Set the status to **Abgeschlossen** and **Veröffentlichen**.
@@ -71,6 +72,7 @@ every push to `main`, merges `main` into `development` and redeploys beta.
 | `.github/workflows/deploy_preview.yml` | push to `cms/**` | preview.schleyconsult.ch (+ sets the CMS "Vorschau ansehen" link) |
 | `.github/workflows/deploy.yml` | push to `development`, or manual for any branch | beta.schleyconsult.ch |
 | `.github/workflows/sync_development.yml` | push to `main` | merges `main` into `development`, then redeploys beta |
+| `.github/workflows/cms_draft_ready.yml` | CMS opens a draft PR (`cms/**`) | sets the new draft's status to "Abgeschlossen" (PR label `decap-cms/pending_publish`) |
 
 Each site is built with its own address (`--baseURL`), and each deploy has its
 own concurrency group, so a beta or preview deploy never cancels a production

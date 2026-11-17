@@ -5,7 +5,7 @@ Hugo static site for **schleyconsult.ch** (business consulting, German-language)
 Hosted on **cyon.net** (LiteSpeed / Apache-compatible, PHP 8.x, cURL available,
 `allow_url_fopen` is off by default).
 
-Repo: `oujonny/schley.ch`
+Repo: `oujonny/schleyconsult.ch` (renamed from `oujonny/schley.ch`)
 Working branch: `claude/add-netlify-cms-github-cfBgS`
 
 ## Branch & Deployment Strategy
@@ -28,7 +28,8 @@ Full description: `docs/preview.md`.
 only for the old host and leaves `schleyconsult.ch` and `beta.schleyconsult.ch` alone.
 
 CI workflows: `deploy_main.yml` (prod), `deploy_preview.yml` (CMS previews),
-`deploy.yml` (beta), `sync_development.yml` (main → development), all in `.github/workflows/`.
+`deploy.yml` (beta), `sync_development.yml` (main → development),
+`cms_draft_ready.yml` (new CMS drafts start as "Abgeschlossen" via PR label), all in `.github/workflows/`.
 
 ## CMS – Decap CMS
 Admin panel at `/admin/` (source: `static/admin/`).

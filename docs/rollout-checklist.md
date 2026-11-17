@@ -53,7 +53,7 @@ them in order and tick them off. Delete this file once everything is done.
 
 ## 5. PR 1: feature → `development`
 
-- [ ] Open a PR: `claude/great-meitner-5qzo0g` → `development`
+- [x] PR opened: [#101](https://github.com/oujonny/schley.ch/pull/101) `claude/great-meitner-5qzo0g` → `development`
 - [ ] **Review** (Files changed). Most of the diff is `static/pdfjs/` (vendored
   Mozilla code, skip it). Look at:
   - `.github/workflows/`: `deploy.yml`, `deploy_preview.yml`,
@@ -68,7 +68,7 @@ them in order and tick them off. Delete this file once everything is done.
 
 ## 6. PR 2: release `development` → `main`
 
-- [ ] Open a PR: `development` → `main`, title e.g. "Release: Blog & PDFs"
+- [x] PR opened as draft: [#102](https://github.com/oujonny/schley.ch/pull/102) `development` → `main`. After #101 is merged, click "Ready for review"
 - [ ] Review: should contain PR 1 and nothing unexpected
 - [ ] Merge → production deploys
 - [ ] **Actions**: these must be green

@@ -9,9 +9,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow one concurrent deployment
+# Own group per site, so beta/preview deploys never cancel a production deploy.
 concurrency:
-  group: "pages"
+  group: "deploy-production"
   cancel-in-progress: true
 
 # Default to bash
@@ -40,7 +40,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --minify --noBuildLock
+          hugo --minify --noBuildLock --baseURL https://schleyconsult.ch/
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:

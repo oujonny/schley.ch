@@ -1,0 +1,17 @@
+{{/* Karte für einen Blogbeitrag (Übersicht /blog und Startseite). */}}
+<article class="card blog-card h-100 shadow-sm">
+    {{ with partial "utils/blog_image.html" . }}
+        {{ with .Fill "800x450 q85 smart" }}
+        <img src="{{ .RelPermalink }}" class="blog-card-img" alt="" loading="lazy" width="{{ .Width }}" height="{{ .Height }}">
+        {{ end }}
+    {{ end }}
+    <div class="card-body d-flex flex-column p-3 p-md-4">
+        <p class="blog-card-date mb-2">{{ partial "utils/date_de.html" .Date }}</p>
+        <h3 class="blog-card-title h5 mb-2">
+            <a href="{{ .RelPermalink }}" class="stretched-link">{{ .Title }}</a>
+        </h3>
+        {{ with .Params.subtitle }}<p class="blog-card-subtitle mb-2">{{ . }}</p>{{ end }}
+        <p class="blog-card-summary mb-3">{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>
+        <a href="{{ .RelPermalink }}" class="blog-card-more mt-auto" aria-hidden="true" tabindex="-1">Weiterlesen <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+</article>

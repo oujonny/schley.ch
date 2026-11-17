@@ -1,0 +1,72 @@
+# CMS draft previews: https://preview.schleyconsult.ch
+# Every draft saved in the CMS (editorial workflow) lives on a cms/** branch,
+# which is based on main. It is built and deployed here, and the commit status
+# below makes the "Vorschau ansehen" link in the CMS point to it.
+# Only one preview at a time: the most recently saved draft wins.
+name: Deploy CMS preview to preview.schleyconsult.ch
+
+on:
+  push:
+    branches: ["cms/**"]
+
+concurrency:
+  group: "deploy-preview"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  statuses: write
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.105.0'
+          extended: true
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          fetch-depth: 1
+      - name: Cache Hugo build
+        uses: actions/cache@v5
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-build-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-hugo-build-
+      - name: Build
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --minify --noBuildLock --cacheDir /tmp/hugo_cache --baseURL https://preview.schleyconsult.ch/
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Deploy
+        env:
+          SSH_USER: "toxykiwo"
+          HOST: "s106.cyon.net"
+          DIR: "public_html/preview.schleyconsult.ch/"
+        run: rsync -avz --delete-during public/ ${SSH_USER}@${HOST}:~/${DIR}
+      # Decap CMS reads this status (context contains "deploy") and shows a
+      # "Vorschau ansehen" link = target_url + the collection's preview_path.
+      - name: Set deploy status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} \
+            -f state=success \
+            -f target_url=https://preview.schleyconsult.ch \
+            -f description="deploy" \
+            -f context="deploy"

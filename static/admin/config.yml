@@ -51,6 +51,13 @@ collections:
         fields:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: markdown }
+      - label: "Blog (Startseite)"
+        name: blog_teaser
+        file: "content/homepage/blog.md"
+        preview_path: "/#blog"
+        fields:
+          - { label: "Titel", name: title, widget: string, hint: "Zeigt automatisch die 3 neusten Beiträge. Wird ausgeblendet, solange es keine Beiträge gibt." }
+          - { label: "Einleitung", name: body, widget: markdown, required: false }
       - label: "Kontakt"
         name: kontakt
         file: "content/homepage/kontakt/_index.md"
@@ -114,16 +121,42 @@ collections:
     folder: "content/blog"
     preview_path: "/blog/{{slug}}"
     create: true
+    # Nur Beiträge, nicht die Übersichtsseite content/blog/_index.md
+    filter: { field: layout, value: post }
+    sortable_fields: ["date", "title"]
     fields:
       - { label: "Layout", name: layout, widget: hidden, default: "post" }
       - { label: "Titel", name: title, widget: string }
-      - { label: "Untertitel", name: subtitle, widget: string }
+      - { label: "Untertitel", name: subtitle, widget: string, required: false }
       - { label: "Autor", name: author, widget: string, default: "Frank Schley" }
       - { label: "Datum", name: date, widget: datetime }
-      - { label: "Bild", name: page_image, widget: object, fields: [
-          { label: "Bilddatei", name: src, widget: image, media_folder: "./", public_folder: "" }
+      - { label: "Bild", name: page_image, widget: object, required: false, fields: [
+          { label: "Bilddatei", name: src, widget: image, required: false, media_folder: "./", public_folder: "" }
           ] }
       - { label: "Inhalt", name: body, widget: richtext }
+      - label: "PDF-Downloads"
+        name: downloads
+        label_singular: "PDF"
+        widget: list
+        required: false
+        default: []
+        summary: "{{fields.title}}"
+        hint: "PDFs, die unter dem Beitrag als Download angezeigt werden."
+        fields:
+          - { label: "Bezeichnung", name: title, widget: string }
+          - label: "PDF-Datei"
+            name: file
+            widget: file
+            media_folder: "/static/files/blog"
+            public_folder: "/files/blog"
+            choose_url: false
+            pattern: ['(?i)\.pdf$', "Bitte eine PDF-Datei hochladen (.pdf)"]
+          - label: "Vorschau anzeigen"
+            name: preview
+            widget: boolean
+            default: false
+            required: false
+            hint: "Zeigt das PDF direkt im Beitrag an (zusätzlich zum Download-Link)."
 
   - name: seiten
     label: "Statische Seiten"
@@ -136,6 +169,14 @@ collections:
         fields:
           - { label: "Titel", name: title, widget: string }
           - { label: "Inhalt", name: body, widget: richtext }
+      - label: "Blog-Übersicht"
+        name: blog_uebersicht
+        file: "content/blog/_index.md"
+        preview_path: "/blog/"
+        fields:
+          - { label: "Titel", name: title, widget: string }
+          - { label: "Einleitung", name: body, widget: markdown, required: false }
+
       - label: "Impressum"
         name: impressum
         file: "content/impressum.md"

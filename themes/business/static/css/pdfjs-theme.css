@@ -1,0 +1,58 @@
+/*
+ * Theme für den PDF.js-Viewer (/pdfjs/web/viewer.html), eingebunden durch
+ * scripts/fetch-pdfjs.sh. Überschreibt nur die CSS-Variablen, die PDF.js selbst
+ * anbietet, plus ein paar Element-IDs. Nach einem PDF.js-Update kurz prüfen,
+ * ob die Namen noch stimmen (sonst fällt der Viewer einfach auf sein
+ * Standard-Aussehen zurück).
+ */
+
+@font-face {
+  font-family: "Moderat";
+  src: url(../fonts/Moderat-Regular.woff2);
+  font-weight: 200;
+}
+
+:root {
+  color-scheme: light; /* immer hell, passend zur Website */
+  --main-color: #1f3b60;
+  --body-bg-color: #f3f4f6;
+  --toolbar-bg-color: #ffffff;
+  --toolbar-border-color: #e5e7eb;
+  --toolbar-box-shadow: 0 1px 0 #e5e7eb;
+  --toolbar-height: 44px;
+  --toolbar-icon-bg-color: #1f3b60;
+  --toolbar-icon-hover-bg-color: #35a9e1;
+  --button-hover-color: #eef6fc;
+  --field-bg-color: #f3f4f6;
+  --field-border-color: transparent;
+  --field-color: #1f3b60;
+  --dropdown-btn-bg-color: #f3f4f6;
+  --separator-color: #e5e7eb;
+}
+
+body {
+  font-family: Moderat, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Nur Lesen: Bearbeitungs-Werkzeuge, Seitenleiste und "Datei öffnen" ausblenden */
+#editorModeButtons,
+#editorModeSeparator,
+#sidebarToggleButton,
+#secondaryOpenFile,
+#viewsManagerAddFileButton {
+  display: none !important;
+}
+
+.toolbarButton,
+#toolbarContainer input,
+#toolbarContainer select,
+.dropdownToolbarButton {
+  border-radius: 8px !important;
+}
+
+#viewerContainer .page {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 18px rgb(31 59 96 / 0.1);
+  margin-bottom: 16px;
+}

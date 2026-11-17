@@ -13,6 +13,9 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
             {{ $currentPage := .Page.RelPermalink }}
             {{ $sections := (.Site.GetPage "/homepage").Pages }}
+            {{ if eq (len (where site.RegularPages "Section" "blog")) 0 }}
+                {{ $sections = where $sections ".Params.type" "!=" "blog_teaser" }}
+            {{ end }}
             {{ range where $sections ".Params.header_menu" true }}
                 <li class="nav-item">
                     <a class="nav-link px-0 mx-2" aria-current="page" href='{{ if ne $currentPage "/" }}/{{ end }}#{{ partial "utils/anchor.html" . }}'>

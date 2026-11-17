@@ -1,0 +1,6 @@
+# Old beta address -> https://beta.schleyconsult.ch (permanent)
+# Upload by hand to public_html/beta.schley.ch/ on cyon (see ops/README.md).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^ https://beta.schleyconsult.ch%{REQUEST_URI} [R=301,L]
+</IfModule>

@@ -80,9 +80,6 @@ deploy.
 
 - The blog overview, homepage section and PDF features are on the branch
   `claude/great-meitner-5qzo0g`, not yet on `development` or `main`.
-- That branch contains **3 sample posts** for previewing (all files named
-  `beispiel-*`). **Remove them before merging to `main`:**
-  `git rm content/blog/beispiel-* static/files/blog/beispiel-*`
 - **One-time setup on cyon:**
   - **preview.schleyconsult.ch:** new subdomain, document root
     `public_html/preview.schleyconsult.ch/`, SSL (Let's Encrypt).

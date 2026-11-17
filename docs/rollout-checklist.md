@@ -40,7 +40,7 @@ them in order and tick them off. Delete this file once everything is done.
 
 ## 4. Prepare the release branch
 
-- [ ] **Remove the sample posts** (or ask Claude to):
+- [x] **Sample posts removed** (by Claude). For reference:
   ```bash
   git checkout claude/great-meitner-5qzo0g && git pull
   git rm content/blog/beispiel-* static/files/blog/beispiel-*
